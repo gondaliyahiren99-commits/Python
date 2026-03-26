@@ -1,64 +1,67 @@
-Python is a  widely used genrel purpose, high level, programing language. it was intially design by Guido van Rossum in 1991 and developed by Oython Software fundATION.
+PYTHON :-
 
-it was mainely develope for emphasis on code redability,and its syntax allows programeers to express concepts in fewer line code.
+        --> it is widely used general purpose, high level prgraming language.
+        --> it was initly desiged by GUIDO VAN ROSSUM in 1991 and developed by python softwere foundation.
+        --> It was mainly developed for emphasis on code readablity, and it's syntax allows programmers to 
+            express concept in fewer line of code.
+        --> Python is a programming  language that lets you work qiukly and integrate systems morw effcienty.
+        --> Python is an interpreted, object-oriented, high-level Programing language with dynamic semantic.
+        --> It's high-level bulit in data structure, combined with dynamic typing and dynamic bindling , make it very attractive for 
+            Rapid Appication Development.
 
-python is programing language that lets you work quickly and integrete system more efficien
+        --> Python support modules and packages, which encourages progran modularity and code reuse.
+        --> The Python interpre and the extensive standerd library are available in source or binary form without charges for all 
+            major platforms and can be freely distributed.
 
-python is interpreted, object-oriented, high level programing language with dynamic typing and dynamic bindingsemantics.
+Why Python ::-
 
-Its high-level built in data structures,combined with dynamic binding, make it very attractive for Rapid Application Development.
+        * Designed to be easy to learn and master *
 
-python supprts moduals and packages, which encourages programe   modularity and code reuse.
+            --> Clean , clear syntax.
+            --> Very few keywords
 
-The python interpreter and the extensive standerd liberary are availabile in source  or binary from without charge all 
-major
+        *  Highly Portable *
 
+            --> Runs almost anywere --high end server and workstations , down to windowos CE User Machin independent byte-code.
 
+        ** Extensible **
 
-
-why python:
-        Desigen to be easy to learn master  
-        -Cleaan an cleaar syntax
-        -Very few keywords
-
-
-        High portable
-        -Runs almoost anywhere-high and servers and workstatiotions,down to window CE uses machine indeoendent byte-code.
+            --> Designed to be extensible using C/C++,
+            --> Allowing access to many external library.
         
-        Extensible
-        -Design to be extensible using c/c++
-        allowing acess to many exter
+        * Clean syntax plus high-level data type *
 
+            --> leads to first coding (First langiage in many  univercity)
+        
+        * Uses white-space to delimit blocks *
 
+        * Variable do not need declaretion *
 
-Clean syntax plus high-level data types
-    leads to fast coding(First language it many university)
+        * reduced development maintaenance *
 
+            ---> code is 2-10x shoter than c,c++,java.
+        
+        * Improved programing maintaenance *
 
-Ues white space to delimite blocks
+            --> code is extremly readable.
 
-Redused development typescode is 2-10* shortter than c/c++.java.
+        * Less Training* 
+            --> language is very essy.
 
+        --> An interpreter translate high-level instruction into an intermediate from , which it then executes.
+        --> in contrast a compiler translate high-level instruction directly into machine language.
 
-improve programe mainely
+        --> to have an interpreter to imterpret and run program.
 
+        --> There are cretain online interpreter like http://codeoad.org/ that can be used to start python without installing an interpreter.
 
+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+ JK =+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
 
-------------------------------------------------------------------
-an interpreted translates high-level instruction into an intermediate form, which it then execute. in contrast, a compiler translates high-level instructions directly into machine language.
+    print :-
 
-to have a interpreter to interpreter and run programe 
+        --> print is functions in python.
+        --> using that print function we can display appropriate message in console screen
 
-there are certain interpreters like http:/coded.org/ that can be used to start python 
+        syntax :-
 
-
----------------------------------------------------------------------------------------------------------
-
-print- print is an inbuit-function in python    
-       using of print function we can display approciate message on console screen
-
-
-    syntax :
-
-            print("message")
-
+            print("Hello I am Python")
