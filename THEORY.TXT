@@ -1,0 +1,64 @@
+Python is a  widely used genrel purpose, high level, programing language. it was intially design by Guido van Rossum in 1991 and developed by Oython Software fundATION.
+
+it was mainely develope for emphasis on code redability,and its syntax allows programeers to express concepts in fewer line code.
+
+python is programing language that lets you work quickly and integrete system more efficien
+
+python is interpreted, object-oriented, high level programing language with dynamic typing and dynamic bindingsemantics.
+
+Its high-level built in data structures,combined with dynamic binding, make it very attractive for Rapid Application Development.
+
+python supprts moduals and packages, which encourages programe   modularity and code reuse.
+
+The python interpreter and the extensive standerd liberary are availabile in source  or binary from without charge all 
+major
+
+
+
+
+why python:
+        Desigen to be easy to learn master  
+        -Cleaan an cleaar syntax
+        -Very few keywords
+
+
+        High portable
+        -Runs almoost anywhere-high and servers and workstatiotions,down to window CE uses machine indeoendent byte-code.
+        
+        Extensible
+        -Design to be extensible using c/c++
+        allowing acess to many exter
+
+
+
+Clean syntax plus high-level data types
+    leads to fast coding(First language it many university)
+
+
+Ues white space to delimite blocks
+
+Redused development typescode is 2-10* shortter than c/c++.java.
+
+
+improve programe mainely
+
+
+
+------------------------------------------------------------------
+an interpreted translates high-level instruction into an intermediate form, which it then execute. in contrast, a compiler translates high-level instructions directly into machine language.
+
+to have a interpreter to interpreter and run programe 
+
+there are certain interpreters like http:/coded.org/ that can be used to start python 
+
+
+---------------------------------------------------------------------------------------------------------
+
+print- print is an inbuit-function in python    
+       using of print function we can display approciate message on console screen
+
+
+    syntax :
+
+            print("message")
+
