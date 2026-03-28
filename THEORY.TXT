@@ -57,11 +57,56 @@ Why Python ::-
 
 =+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+ JK =+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
 
-    print :-
+     print :-
 
-        --> print is functions in python.
-        --> using that print function we can display appropriate message in console screen
+        --> print is functions in python
 
-        syntax :-
 
-            print("Hello I am Python")
+
+
+
+
+        ---------------------------------------------------------------------
+        to check python is im=nstall in my sysytem or not
+
+
+
+
+        win + r press
+
+            |
+            |
+
+            cmd
+
+        ----------------------------------------------------------------------------------
+
+        #pythom ---version
+        =================================================================================
+        by defaualt whenever install pythonit provide use IDLE
+
+        IDLE: intergreted learning development enviournment
+        for professional development purpose we have use 
+
+        IDE:integreted development enviournment
+
+        there are lots of IDEs available in market but python official s IDE is pycharm
+
+        but pychrm advance tools is paid mode so  we use 
+
+        VS code,or Antigravity
+
+        ===================================================================
+    in python there are two way to define comments
+
+    1)single line :
+    which is represent by
+    # this is single line comments
+
+    2)multi-line coment: which is represent by
+    """
+    this is
+    multiline 
+    comments
+
+    """
