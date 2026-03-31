@@ -10,7 +10,7 @@ PYTHON :-
             Rapid Appication Development.
 
         --> Python support modules and packages, which encourages progran modularity and code reuse.
-        --> The Python interpre and the extensive standerd library are available in source or binary form without charges for all 
+        --> The Python interpreted and the extensive standerd library are available in source or binary form without charges for all 
             major platforms and can be freely distributed.
 
 Why Python ::-
@@ -110,3 +110,111 @@ Why Python ::-
     comments
 
     """
+    There are mainly 5 type of conditional statement
+
+    1)if statements
+    2) if...else statements
+    3)elif statements
+    4)nested if statement
+    5)when statement
+
+
+
+
+    1)if statement :
+        when condion goes true statement will execute if part 
+
+        syntax:
+
+        if condition:
+            statement
+
+        if condition :
+            statement
+
+        note: identation of if block
+
+    2) if....else statement:
+
+            when condition goes true it will execute if block and if condion goes false 
+            it will execute else part 
+
+            syntax:
+
+            if condition:
+                statement
+            else
+                statement
+
+
+    3) elif statement:
+    there is no else if statement in python we are using elif statement.we are using 
+    elif statement.
+
+    syntax:
+    
+    if codition :
+        statement
+    elif codition:
+        statement
+    elif codition:
+        statement
+    else:
+        statement
+
+
+    opraters : to spacific  oprations we have use to some specific symbol
+    its called opraters 
+
+    and to perform oprations beetwen oprands
+
+    A)Airthmatic opraters :
+        + - * / //(floor division) **(exponentiation)
+
+        e.g. a + b
+
+        here a and b are operands and + is oprater
+
+    B)assignment oprater :
+
+        = (To assign a value)
+
+        shorthand oprater:
+
+             combination of airthmatic and assignment oprater
+             
+             += -= *= /= //=
+
+
+    C)relation or conditional oprater
+
+        > < >= <= ==(comaprision) !=(oposite result)
+
+
+    D)Logical oprater :
+
+        and
+        or
+        not
+
+    E)membership oprater:
+
+        in 
+        not in
+
+    F)identify oprater :
+        is 
+        is not
+
+    4)Nested if statement :
+
+        when condition inside another condition its called nested if
+
+        syntax :
+
+        if condition :
+            if condition:
+                statement
+            else:
+                statement
+        else :

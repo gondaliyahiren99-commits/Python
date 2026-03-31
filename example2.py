@@ -22,7 +22,7 @@ escape sequence
 \\ : to print slash
 
 """
-
+"""
 ============================================
 variable : A name which can store a Value
 
@@ -33,3 +33,5 @@ we can just take variablename and store value into.
 syntax:
 
     <variablename>  value
+
+    """

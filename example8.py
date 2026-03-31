@@ -22,4 +22,4 @@ n2 = int(input("Enter your num : "))
 
 ans = n1 + n2
 
-print(f"{n1} + {n2} + {ans}")
+print(f"{0} + {1} = {2}")
