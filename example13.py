@@ -9,4 +9,6 @@ if num1 > num2:
             print(f"{num2} is grater")
         else:
             print(f"{num3} is grater")
+else:
+    print(f"{num3} is grater")
     
