@@ -251,15 +251,147 @@ Lab Exercise : 8)
 Write a C program that calculates the factorial of a number using a function.
 Include function declaration, definition, and call.
 #include<stdio.h>
-void fact()
+void fact(int n)
         {
-            while()
+            int i = 1, fact = 1;
+            while(i<=n)
+                {
+                    fact = fact * i ;
+                    i++;
+                }
+                printf("fact %d = %d",i,fact);
         }
 int main()
         {
             int num;
             printf("Enter number :");
-            scanf("%d",num);
+            scanf("%d",&num);
 
+
+            fact(num);
+            return 0;
             
+        }
+
+
+    ===================================================================================
+
+    Lab Exercise : 9)
+    Write a C program that stores 5 integers in a one-dimensional array and prints
+    them. Extend this to handle a two-dimensional array (3x3 matrix) and
+    calculate the sum of all elements.
+
+    
+  #include<stdio.h>
+    int main()
+        {
+            int arr[5];
+            int i=0;
+            printf("Enter 5 Number :\n");
+            do 
+			{
+                scanf("%d",&arr[i]);
+                i++;
+            }while(i<5);
+            
+            printf("\n");
+
+            for(int j=0;j<5;j++)
+                {
+                    printf("%d\n",arr[j]);
+                    
+                }
+
+
+            return 0;
+        }
+===================================================================================
+
+Lab exercise : 10)
+Write a C program to demonstrate pointer usage. Use a pointer to modify the
+value of a variable and print the result.
+
+#include<stdio.h>
+void CallByRef(int *num)
+        {
+            *num = 30;
+        }
+int main()
+        {
+            int a = 10;
+            printf("Before : %d\n", a);
+            CallByRef(&a);
+            printf("After : %d", a);
+            return 0;
+        }
+===================================================================================
+***********************
+
+
+
+
+                                        Do work better111213
+
+
+
+
+
+
+*******************************************************************************************
+Lab Exercise : 11)
+Write a C program that takes two strings from the user and concatenates them
+using strcat(). Display the concatenated string and its length using
+strlen().
+
+
+#include<stdio.h>
+#include<string.h>
+int main()
+        {
+           char Name[20];
+           char SurName[20];
+           fgets(Name,20,stdin);
+           fgets(SurName,20,stdin);
+           full_name=strcat(Name,SurName);
+
+           printf("%s",Name);
+
+            return 0;
+        }
+
+
+==========================================================================================
+
+Lab Exercise : 12)
+
+Write a C program that defines a structure to store a students details (name,
+roll number, and marks).Use an array of structures to store details of 3
+students and print them.
+
+#include<stdio.h>
+struct student
+    {
+        char Name[20] ="Hiren";
+        int Roll_No = 1;
+        int Marks = 98;
+    };
+int main()
+        {
+            struct student s;
+            printf("%s,%d,%d",s.Name,s.Roll_No,s.Marks);
+            return 0;
+        }
+==========================================================================================
+
+Lab Exercise : 14)
+Write a C program to create a file, write a string into it, close the file, then
+open the file again to read and display its contents.
+#include<stdio.h>
+int main()
+        {
+            FILE *p;
+            
+            p=fopen("Cprograme.text","w");
+            fprintf(p,"Welcome to c");
+            fclose(p);
         }

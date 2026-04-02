@@ -2,9 +2,9 @@
 
 ternery operator
 
-which is devided on . pRT OF CONDITION
+which is devided on . part of conditin
 
-EXP1 ="result0" if exp1> else "elseresult"
+EXP1 ="result" if exp1> else "elseresult"
 """
 
 num1 = 89

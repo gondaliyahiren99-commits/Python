@@ -116,7 +116,7 @@ Why Python ::-
     2) if...else statements
     3)elif statements
     4)nested if statement
-    5)when statement
+    5)match statement
 
 
 
@@ -218,3 +218,53 @@ Why Python ::-
             else:
                 statement
         else :
+
+
+
+5) match statement 
+
+inmpu]ython match statement is supported only after python 3.10+ version
+
+it is similier like switch case(c,C++),when(in kotelin)
+
+
+
+syntax :
+
+match exponentiation :
+    case condition:
+        statement
+    case condition:
+        statement
+    case condition:
+        statement
+    case _:
+    statement
+
+    case _ : represent default statement there  is no such keywords defaualt in match statement
+
+    =========================================================================================
+    looping concept :
+
+        when we want to repeat any value at that time we can use loop.
+
+        there are 2 tyoe of loop
+
+        1)for
+        2)while
+        
+
+    1)forloop  : for is sequence controlled loop
+
+        syntax :
+
+        for var in sequence:
+            statement
+
+    range() : range is function which is used to represent sequence
+
+        range([start],end,[step]) : here,start and step is optional
+
+        by default range fun start from 0 and increment by step 1
+
+    2)whileloop :
