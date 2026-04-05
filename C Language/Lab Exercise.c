@@ -246,7 +246,7 @@ int main()
                 }
                 return 0;
         }
-=================================================================================        
+=================================================================================       
 Lab Exercise : 8)
 Write a C program that calculates the factorial of a number using a function.
 Include function declaration, definition, and call.
@@ -274,7 +274,7 @@ int main()
         }
 
 
-    ===================================================================================
+    =============================================================================================================
 
     Lab Exercise : 9)
     Write a C program that stores 5 integers in a one-dimensional array and prints
@@ -305,7 +305,7 @@ int main()
 
             return 0;
         }
-===================================================================================
+=================================================================================================================
 
 Lab exercise : 10)
 Write a C program to demonstrate pointer usage. Use a pointer to modify the
@@ -324,8 +324,8 @@ int main()
             printf("After : %d", a);
             return 0;
         }
-===================================================================================
-***********************
+==================================================================================================================
+
 
 
 
@@ -337,7 +337,7 @@ int main()
 
 
 
-*******************************************************************************************
+*************************************************************************************************************
 Lab Exercise : 11)
 Write a C program that takes two strings from the user and concatenates them
 using strcat(). Display the concatenated string and its length using
@@ -360,7 +360,7 @@ int main()
         }
 
 
-==========================================================================================
+===============================================================================================================
 
 Lab Exercise : 12)
 
@@ -370,18 +370,37 @@ students and print them.
 
 #include<stdio.h>
 struct student
-    {
-        char Name[20] ="Hiren";
-        int Roll_No = 1;
-        int Marks = 98;
-    };
+{
+	char Name[3][20];
+	int Roll_No[3];
+	int Marks[3];
+};
 int main()
         {
-            struct student s;
-            printf("%s,%d,%d",s.Name,s.Roll_No,s.Marks);
-            return 0;
+        	struct student s;
+            for(int i=0;i<3;i++)
+            	{
+            		printf("Enter Student NAme:");
+            		scanf("%s",s.Name[i]);
+            		
+            		
+            		printf("Enter Roll Number :");
+            		scanf("%d",&s.Roll_No);
+            		
+            		printf("Enter Marks :");
+            		scanf("%d",&s.Marks);
+				}
+				
+			for(int i=0;i<3;i++)
+			{
+				printf("%s\n",s.Name[i]);
+				printf("%d\n",s.Roll_No[i]);
+				printf("%d\n",s.Marks[i]);
+			}
+			
+			return 0;
         }
-==========================================================================================
+==================================================================================================
 
 Lab Exercise : 14)
 Write a C program to create a file, write a string into it, close the file, then
@@ -395,3 +414,119 @@ int main()
             fprintf(p,"Welcome to c");
             fclose(p);
         }
+
+===========================================================================================
+/*Write a C program that takes the marks of a student as input and displays the corresponding
+grade based on the following conditions:
+o Marks > 90: Grade A
+o Marks > 75 and <= 90: Grade B
+o Marks > 50 and <= 75: Grade C
+o Marks <= 50: Grade D
+• Use if-else orswitch statements for the decision-making pro
+*/
+
+#include<stdio.h>
+int main()
+        {
+            int choice;
+            int marks;
+            printf("Enter Marks:");
+            scanf("%d",&marks);
+            choice=marks;
+
+            switch(choice/10)
+                {
+                    case 10:
+                    case 9:
+                        printf("A Grade :");
+                        break;
+
+                    case 8:
+                    case 7:
+                        printf("B Grade :");
+                        break;
+
+
+                    case 6:
+                    case 5:
+                        printf("C Grade :");
+                        break;
+
+                    default: 
+                        printf("Invalid :");
+                    
+                }
+            
+            return 0;
+        }
+
+
+
+        #include<stdio.h>
+int main()
+        {
+        	int num1,num2,num3;
+        	int min=0,max=0;
+
+        	printf("Enter Three Number :");
+           	scanf("%d\n %d\n  %d",&num1,&num2,&num3);
+          	printf("%d,%d,%d",num1,num2,num3);
+          	
+          	max=num1;
+          	if(num2>=max)
+          		{
+          			max=num2;
+          			
+				}
+				printf("%d",max);
+				
+			if(num3>=max)
+				{
+						max=num3;
+								
+				}
+				
+			
+		min=num2;
+        if(num3<=min)
+        	{
+        		min=num3;
+			}
+		if(num1<=min)
+			{
+				min=num1;
+			}
+			printf("%d",min);
+
+
+        }
+
+
+          // Largest
+    switch((num1 >= num2 && num1 >= num3) ? 1 : (num2 >= num1 && num2 >= num3) ? 2 : 3) {
+        case 1:
+            printf("Largest = %d\n", a);
+            break;
+        case 2:
+            printf("Largest = %d\n", b);
+            break;
+        case 3:
+            printf("Largest = %d\n", c);
+            break;
+    }
+
+    // Smallest
+    switch((num1 <= num2 && num1 <= num3) ? 1 : (num2 <= num1 && num2 <= num3) ? 2 : 3 ? 2 : 3) {
+        case 1:
+            printf("Smallest = %d\n", a);
+            break;
+        case 2:
+            printf("Smallest = %d\n", b);
+            break;
+        case 3:
+            printf("Smallest = %d\n", c);
+            break;
+    }
+
+    return 0;
+}

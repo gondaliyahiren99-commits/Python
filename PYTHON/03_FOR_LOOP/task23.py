@@ -4,4 +4,4 @@ for i in range(1,6):
     if num>0:
         print(f"{num} is posistive=")
     else:
-        print(f"{num} is nagati")
+        print(f"{num} is nagative ")

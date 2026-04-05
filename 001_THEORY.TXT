@@ -267,4 +267,60 @@ match exponentiation :
 
         by default range fun start from 0 and increment by step 1
 
-    2)whileloop :
+    2)whileloop : while loop is an entry controlled loop
+
+        it check condiotion at entry level if condition goes true loop will execute
+        otherwise loop wilm terminated
+
+        syntax:
+
+        initilization
+        while condition:
+            ststement
+            updation
+
+    ================================================================
+    jumping statements:
+         
+         there are threee jumping statement
+
+         1)break
+         2)continue
+         3)pass
+
+        break : break the loop
+
+        syntax:
+
+            break
+
+
+continue : it skip the statement but loop will continue
+
+    syntax 
+         continue
+
+
+pass : nothing to display in python beacuse of identation
+
+        we cant skip the block empty
+
+    syntax:
+        
+         pass
+
+=====================================================================================================
+string : string is collection of character 
+
+    whichis represent by double quotes and single quotes
+
+e.g. name = "python"
+
+        or
+
+    name ='java'
+
+===========================================================================================================
+
+
+    

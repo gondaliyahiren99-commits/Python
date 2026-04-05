@@ -10,6 +10,5 @@ price = 155.55
 
 
 print("type of name = ",type(name))
-
 print("type of score = ",type(score))
 print("type of price = ",type(price))
