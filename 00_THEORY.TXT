@@ -1,326 +1,512 @@
 PYTHON :-
 
-        --> it is widely used general purpose, high level prgraming language.
-        --> it was initly desiged by GUIDO VAN ROSSUM in 1991 and developed by python softwere foundation.
-        --> It was mainly developed for emphasis on code readablity, and it's syntax allows programmers to 
-            express concept in fewer line of code.
-        --> Python is a programming  language that lets you work qiukly and integrate systems morw effcienty.
-        --> Python is an interpreted, object-oriented, high-level Programing language with dynamic semantic.
-        --> It's high-level bulit in data structure, combined with dynamic typing and dynamic bindling , make it very attractive for 
-            Rapid Appication Development.
+> python is a widely used general-purpase,high level programing language it was initialy designed by 
+    <  GUIDO VAN ROSSUM  > 1991 and developed by python softwer foundation.
 
-        --> Python support modules and packages, which encourages progran modularity and code reuse.
-        --> The Python interpreted and the extensive standerd library are available in source or binary form without charges for all 
-            major platforms and can be freely distributed.
+~> it was mainly developed for emphasis on code readability and its syntax allow programmers to express
+    concepts in fewer lines of code
 
-Why Python ::-
+~> python is a programing language that lets you work quickly and integate syntax more efficiently
 
-        * Designed to be easy to learn and master *
+~> python is a interpreted, object-oriented,high-level programing language with
+    dynamic semantics
 
-            --> Clean , clear syntax.
-            --> Very few keywords
+~> it's high-level built in data structure , combined with dynamic typing and dynamic binding, make it 
+    very attractive for rapid application development
 
-        *  Highly Portable *
+~> python supports modules and packeges which encourages programs modularity and code reuse
 
-            --> Runs almost anywere --high end server and workstations , down to windowos CE User Machin independent byte-code.
+~> the python support modules and packeges which encourages programs modularity and code reuse
 
-        ** Extensible **
+~> the python interpreter and the extensive standard library and aviailable in source or binary from
+    without charge from all major platforms and can'be freely distributed
 
-            --> Designed to be extensible using C/C++,
-            --> Allowing access to many external library.
+
+                            * why python *
+
+~> designed to be easy to learn and master
+    clean,clear syntax
+    very few kywords
+
+~> highly portebale
+    -> runs almost anywher high end servers and work station, down to windous CE user machine indepandent byte-code
+
+~> Extensible
+    -> designed to be extensible using C/C++ allowing access to many external libraries
+
+~> clean syntax plus high-level data type
+    -> leads to fast coding(first language in many universities)
+
+~> uses white-spuce to delimit blocks
+~> variables do not neet to declaration
+~> reduced development time 
+    -> code is 2-10x shorter then C,C++,java
+
+~> Improved program maintanance
+    -> code is extremely readable
+
+~> Less training
+    -> language is very easy to learn
+
+
+                            * INTERPETER *
+
+~> An interpeter translates high-level instructions into an intermediate from, witch it then executes in contrast a compiler 
+   translates high-level instruction directly into machine language
+
+~> to have an interpreter to interpret and run programs
+
+~> there are creation online interpeter like 
+
+            http://codepad.org/
+    that can be used to start python without installing an interpeter
+
+
+*printing*
+
+    syntax:
+        print("message")
         
-        * Clean syntax plus high-level data type *
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-            --> leads to first coding (First langiage in many  univercity)
+~> to check python is installed in my system or not
+
+    press->  win+R
+                |
+                V
+                CMD
+    in cmd type
+            # python --vertion
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+by default whenever we install python it provide us IDLE
+
+    IDLE: integrated development learning enviroment
+
+    -> it is only use for learning purpose
+    for professional purpose we have to use
+
+    IDE: integrated development enviroment
+        -> therare lost od IDEs in  available in market but python official's IDE is pycharm
+
+            but pycharm advance tools is paid mode so we use visual stodio code or antigravity
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+                                        print()
+~> print is a function witch print values on ouput screan 
+    e.g
+        print("hello")
+~> but print end with new line if we cal to print 2 value in single row we use end paramenter
+    e.g
+    problam:
+
+
+                                                 output
+        print("hello",)              |  hello
+        print("mustved",)            |  mustved
+
+solusion:
+                                                 output
+        print("hello",end=" ")              |  hello mustved
+        print("mustved",)                   |  
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+~> comments in python
+    -> ther are 2 type comments
+
+    (1) single line comment : which is represent by -> #
+        e.g
+        # this is my single line comment
+    
+    (2) multi line comment: represent by ''' or """
+    e.g
+        ''' 
+            tis is my
+            multi line
+            comment 
+        '''
+=======================================================================================================
+~> variable : A name which is can store a value
+
+    -> in python there is no need to declare variable we can just take variable name and values
+
+===========================================
+~> datatype: which type of value store in a variable its called datatype
+        there are mainly 3 types of datatype
+(1) numeric
+    (i) int 
+    (ii) float
+
+(2) chracter
+    (i) chr
+    (ii) str(string)
+
+(3) bool (boolean) for true or false value
+============================================
+
+~> type(): to check witch type of value store in a variable using of type() function we can check it 
+                
+    e.g 
+    name="mustved"
+    price=155.53
+    score=76
+    print("type of name =",type(name)) # output: type of name = <class 'str'>
+
+    print("type of score =",type(score)) # output: type of score = <class 'int'>
+    
+    print("type of price =",type(price)) # output: type of price = <class 'float'>
+    
+    print("type of True =",type(True)) # output: type of True = <class 'bool'>
+
+==============================================
+~> accept dynamic values :
+    input(): using of input function we can accept dynamic value from user at run time
+
+NOTE: by default input function accept value in string formant
+
+    syntax: 
+            input("promt message")
+        e.g
+        name=input("enter your name")
+---------------------------------------
+~> type casting : when datatypeconvert into another datatype its called type kasting
+      
+problem:
+      e.g.
+      num1=input("enter a number 1 :")
+      num2=input("enter a number 2 :")
         
-        * Uses white-space to delimit blocks *
+        ans=num1+num2
 
-        * Variable do not need declaretion *
+        print(ans)
 
-        * reduced development maintaenance *
+      OUTPUT: enter a number 1 : 4  
+              enter a number 2 : 6
+                            46      {plus nhi huva  q ki by default input string
+                                     leta hai ye concatination ho gya}
 
-            ---> code is 2-10x shoter than c,c++,java.
+solusion : {using type casting}
+
+      num1=int(input("enter a number 1 :"))
+      num2=int(input("enter a number 2 :"))
+
+        print(ans)
+
+       OUTPUT: enter a number 1 : 4  
+               enter a number 2 : 6
+                            10    
+
+
+==============================================
+
+~> ID() : return address of spacific variable{address check karne ke liye}
+
+        e.g
         
-        * Improved programing maintaenance *
+        name="mustved"
 
-            --> code is extremly readable.
+        print("address = ",id(name))
 
-        * Less Training* 
-            --> language is very essy.
+=============================================
 
-        --> An interpreter translate high-level instruction into an intermediate from , which it then executes.
-        --> in contrast a compiler translate high-level instruction directly into machine language.
+formant function or  formant string
+{ 3 type se hota hai}
 
-        --> to have an interpreter to imterpret and run program.
+    |EXPECTED OUTPUT:
+    |~~~~~~~~~~~~~~~~~~~~~~~
+    |your name is __________ and your number is _________.
+    |~~~~~~~~~~~~~~~~~~~~~~~
+    
+    e.g.
 
-        --> There are cretain online interpreter like http://codeoad.org/ that can be used to start python without installing an interpreter.
+    name=input("enter your name :")
+    number=int(input("enter a number :"))
 
-=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+ JK =+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+type 1 =  print("your name is",name,"and your number is",number,".")
 
-     print :-
+type 2 =  print(f"your name is{name}and your number is{number}.")  #most usfull
 
-        --> print is functions in python
-
-
-
-
-
-
-        ---------------------------------------------------------------------
-        to check python is im=nstall in my sysytem or not
+type 3 = print("your name is(1)and your number is(0)",formant(name,number)) 
+{type 3 index value se hota hai jese array mai hota tha 0,1,2,3 }
 
 
 
 
-        win + r press
-
-            |
-            |
-
-            cmd
-
-        ----------------------------------------------------------------------------------
-
-        #pythom ---version
-        =================================================================================
-        by defaualt whenever install pythonit provide use IDLE
-
-        IDLE: intergreted learning development enviournment
-        for professional development purpose we have use 
-
-        IDE:integreted development enviournment
-
-        there are lots of IDEs available in market but python official s IDE is pycharm
-
-        but pychrm advance tools is paid mode so  we use 
-
-        VS code,or Antigravity
-
-        ===================================================================
-    in python there are two way to define comments
-
-    1)single line :
-    which is represent by
-    # this is single line comments
-
-    2)multi-line coment: which is represent by
-    """
-    this is
-    multiline 
-    comments
-
-    """
-    There are mainly 5 type of conditional statement
-
-    1)if statements
-    2) if...else statements
-    3)elif statements
-    4)nested if statement
-    5)match statement
 
 
 
 
-    1)if statement :
-        when condion goes true statement will execute if part 
 
-        syntax:
 
+
+
+
+
+
+        -===========================================================
+
+                                                ::Operators::                             <<-30-03-26>>
+
+Operators: to parform spacific operations we have to use some spacific symbols its called Operators
+~> and to porform operations between operands
+
+    e.g.
+    a + b
+    hear a and b is operands and + is Operators
+
+~> ther are mainly 6 Operators
+
+(1) airthmetic operator:
+    + -  *  / //(floro division) **(exponentiation)
+
+(2) assigment operators:
+    =(to assighn a values)
+
+  -> shorthand operator: combination of airthmatic and assigmnet operator
+        += -+ *= /+ //+ **=
+
+(3) relational operators:
+    < > <= >= == !=
+
+(4) logical operator:
+    and
+    or
+    not
+
+(5) membership operator:
+    in
+    not in
+
+(6) identify operator:
+    is 
+    not is
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+                                    ::Condition::                                          <<30-03-26>>
+
+~> when we whant to run by condition we have to use condition ther are mainlly 5 type of condition
+~> when we give parmision to the program that mack changes acording to the condition it's called 
+    condition.
+
+(1) if statement
+(2) if...else statement
+(3) elif statement (hear we are using elif not else if)
+(4) nested statement
+(5) match statement
+
+(1) if statement:
+~> when condition is ture it will exicuet if block
+
+    syntex: 
         if condition:
             statement
 
-        if condition :
+note: identation for if block {statement se pehle humko 4 space ya 1 tab dena hoga }
+---------------------------------------
+(2) if.. else statement
+~> when condition is true it will exicuet if block and if condition become false it will exicuet else
+    block.
+
+    syntex: 
+        if condition:
+            statement
+        else:
+            statement
+---------------------------------------
+(3) elif statement:
+~> when we have multipul condition to check we use elif statement but if first condition is true it will
+    not going to check other condition it will exicuet first condition block 
+
+    syntex: 
+        if condition:
             statement
 
-        note: identation of if block
+        elif condition:
+            statement
+        elif condition:
+            statement
+        elif condition:
+            statement
 
-    2) if....else statement:
+        else:
+            statement
+---------------------------------------
+(4) nested statement:
+~> when we have one condition inside another condition we use nested statement
 
-            when condition goes true it will execute if block and if condion goes false 
-            it will execute else part 
-
-            syntax:
-
-            if condition:
-                statement
-            else
-                statement
-
-
-    3) elif statement:
-    there is no else if statement in python we are using elif statement.we are using 
-    elif statement.
-
-    syntax:
-    
-    if codition :
-        statement
-    elif codition:
-        statement
-    elif codition:
-        statement
+    if condition:
+        if condition:
+            statement
+        else:
+            statement
     else:
-        statement
-
-
-    opraters : to spacific  oprations we have use to some specific symbol
-    its called opraters 
-
-    and to perform oprations beetwen oprands
-
-    A)Airthmatic opraters :
-        + - * / //(floor division) **(exponentiation)
-
-        e.g. a + b
-
-        here a and b are operands and + is oprater
-
-    B)assignment oprater :
-
-        = (To assign a value)
-
-        shorthand oprater:
-
-             combination of airthmatic and assignment oprater
-             
-             += -= *= /= //=
-
-
-    C)relation or conditional oprater
-
-        > < >= <= ==(comaprision) !=(oposite result)
-
-
-    D)Logical oprater :
-
-        and
-        or
-        not
-
-    E)membership oprater:
-
-        in 
-        not in
-
-    F)identify oprater :
-        is 
-        is not
-
-    4)Nested if statement :
-
-        when condition inside another condition its called nested if
-
-        syntax :
-
-        if condition :
-            if condition:
-                statement
-            else:
-                statement
-        else :
-
-
-
-5) match statement 
-
-inmpu]ython match statement is supported only after python 3.10+ version
-
-it is similier like switch case(c,C++),when(in kotelin)
-
-
-
-syntax :
-
-match exponentiation :
-    case condition:
-        statement
-    case condition:
-        statement
-    case condition:
-        statement
-    case _:
-    statement
-
-    case _ : represent default statement there  is no such keywords defaualt in match statement
-
-    =========================================================================================
-    looping concept :
-
-        when we want to repeat any value at that time we can use loop.
-
-        there are 2 tyoe of loop
-
-        1)for
-        2)while
-        
-
-    1)forloop  : for is sequence controlled loop
-
-        syntax :
-
-        for var in sequence:
+        if condition:
             statement
-
-    range() : range is function which is used to represent sequence
-
-        range([start],end,[step]) : here,start and step is optional
-
-        by default range fun start from 0 and increment by step 1
-
-    2)whileloop : while loop is an entry controlled loop
-
-        it check condiotion at entry level if condition goes true loop will execute
-        otherwise loop wilm terminated
-
-        syntax:
-
-        initilization
-        while condition:
-            ststement
-            updation
-
-    ================================================================
-    jumping statements:
-         
-         there are threee jumping statement
-
-         1)break
-         2)continue
-         3)pass
-
-        break : break the loop
-
-        syntax:
-
-            break
-
-
-continue : it skip the statement but loop will continue
-
-    syntax 
-         continue
-
-
-pass : nothing to display in python beacuse of identation
-
-        we cant skip the block empty
+        else:
+            statement
+---------------------------------------
+(5) match statement:
+~> in python match statement is supported only after python 3.10+ version only it is similer like 
+    switch(C,c++,java) when case(in kotlin)
 
     syntax:
-        
-         pass
-
-=====================================================================================================
-string : string is collection of character 
-
-    whichis represent by double quotes and single quotes
-
-e.g. name = "python"
-
-        or
-
-    name ='java'
-
-===========================================================================================================
+       match expreations:
+           case values:
+                statement
+           case values:
+                statement
+           case values:
+                statement
+           case values:
+                statement
+           case _:
+                statement
+ case _: represent default statement there is no such keyword default in match statement when we want
+         to apply multi choice selection at that time we use match statement
 
 
+
+
+
+
+
+
+
+
+
+================================================================================================================================
+
+looping concept:
+~> when we want to reprint any value at that time we can use loop
+~> when we want to print any value multipul time we have to use loop 
+~> there are 2 types of loop
+(1) for loop
+(2) while loop
+
+end parameter: by default print function end with new line using of end parameter we can start new line 
+               with specific value wise
     
+---------------------------------------------------------------------
+
+(1) for loop: for loop is a sequence controled loop
+
+    syntax:
+        for <vairable> in sequence:
+            statement
+
+range(): range is a function which is used to represent sequence
+
+  -> range(start,end,step)  hear, start and step is optional by default range function start from 0 and
+     increment by step 1
+
+-> if we want to print values in single row we use end paramenter
+
+
+---------------------------------------------------------------------
+
+(2) while loop : whenwe dont know hove many time loop will run we use while loop 
+-> while loop is entry controled loop it check condistion at entry level if condistionis ture it 
+    will exiquet if condition gose false loop will tarminate
+
+    syntax:
+        initlization
+        while condition:
+            statement
+            updation (increment or dicrement)
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+~> jumping statement:
+    ther are 3 types of jumpibng statements
+    (1) break
+    (2) continue
+    (3) pass
+-----------------------
+
+(1) break
+-> break the loop
+    syntax:
+        break
+
+-----------------------
+(2) continue
+-> it's skip the statement but loop will continue
+    syntax:
+        continue
+    
+------------------------
+(3) pass
+-> nothing to display in python because of indentation
+{ye agar humko koi block bas khali rakhna ho tab iska use kar sakte hai}
+    syntax:
+        pass
+
+        =====================================================================================================
+
+string:
+~> string is a collection of charectors
+~> which is represent by double quotes or single quotes tripple quotes
+
+    e.g.
+        subject="python"
+            OR
+        subject='python'
+            OR
+        subject="""python"""
+
+~> string index always start from 0
+
+    e.g
+    name="python"
+    print(name[0])
+
+    outpu:p
+
+=================================================================================================================
+                                                ::COLLECTION::                             <<07-04-26>>
+~> collection is most power ful concept of python programing language
+~> which is like group which contain values at same lication
+~> the most power full concept of collection
+(1) list
+(2) tuple
+(3) set
+(4) dictionary
+=======================================================================================================
+(1) list:
+~> list is most power full type of colection
+~> list whitch is contain similer and dis-similer data type elements at single location
+~> list is an orderble,sequence,indexable,mutable(changeble),datatype
+~> list which is represent by [] braces
+    syntax:
+        li=[]
+
+
+
+modularity
+
+MODUAL IS A FILE WHICH is contain collectoin of logics or code 
+
+and we can import that file as per our requirments.
+
+there are mainely 3 types 
+
+1) built in
+2) user define
+3)third party modularity
+
+=========================================
+1) whenich is predefine  in by python
+ we just have to import it and  use it 
+
+
+ import modualname
+ or
+ from modualname import functionname
+ or
+ from modualname import 

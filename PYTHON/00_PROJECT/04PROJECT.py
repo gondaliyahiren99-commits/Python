@@ -66,6 +66,7 @@ match choice:
             print("Remaining Attempt :",attempt)
             if attempt==0:
                 print("===================Better luck Next time================")
+                break
           
     case 3:
         print("Welcome to Hard level")

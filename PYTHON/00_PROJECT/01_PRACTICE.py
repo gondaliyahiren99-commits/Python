@@ -60,15 +60,3 @@ while status:
     print("transaction id :",trans_id)
     print(balance)
  
-
-        
- 
-    
-    
-
-
-
-
-
-
-

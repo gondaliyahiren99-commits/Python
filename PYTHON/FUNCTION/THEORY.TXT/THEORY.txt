@@ -1,0 +1,64 @@
+function : function is a block of code.
+that code are usr again and again.
+
+using of function we can reduce our code.
+function is provide reusability
+
+using of function we can save our development time.
+
+syntax :
+
+def <FunctionName>():
+       statement
+
+def : def is keyword using of def keyword we can define function.
+
+
+
+
+
+
+
+
+
+
+
+
+
+there are two type of function
+1)built in function :
+ -which is predefinted inbuilt function
+ e.g. print()
+        len()
+        max()
+        input()
+
+ 2)user-defined function:
+ -which is defined by user as per requirment
+
+ e.g. def <functionname():>
+        statement
+
+
+categorries:
+
+1)with perameter and without return type
+
+2)with perameter and without return type
+
+3)without perameter and return type
+
+4)with perameter and return type
+
+
+
+map(): mao fun aply function on eacs iterartion value
+
+and return  singele object
+
+Syntax:
+
+       map(fun,iteration)
+
+using map we dont need to use loop 
+i t automatacly aply fun to each ele 

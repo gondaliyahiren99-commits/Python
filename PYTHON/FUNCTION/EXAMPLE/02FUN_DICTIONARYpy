@@ -1,0 +1,115 @@
+data = {}
+
+def regestration():
+    email=input("Enter Your Email:")
+    if email in data.keys():
+        return "alredy Exisist"
+
+    name=input("Enter Name :")
+    password=int(input("enter password :"))
+
+    data[email]={"name":name ,'password':password}
+    return "succefully registration"
+
+def login():
+    email=input("Enter Email :")
+    password=int(input("Enter Password :"))
+
+    if email in data.keys():
+        if password==data[email]['password']:
+            return f"Welcome {data[email]['name']}"
+        else:
+            return "password Not match"
+    else:
+        return "invalid email address"
+
+menu=   """
+
+    MENU
+1)registration
+2)Login
+3)Exit
+
+"""
+status=True
+while status:
+    print(menu)
+    ch=int(input("enter your choice :"))
+    if ch==1:
+        print(regestration())
+    elif ch==2:
+        print(login())
+    else:
+        status=False
+# #===================================================================================
+
+
+
+
+
+
+
+#     """
+# dic={}
+# def reg():
+#     email=input("Enter Email:")
+#     if email not in dic.keys():
+#         print("Welcome To New Registration")
+#         data={}
+#         username=input('Enter User_Name :')
+#         password=int(input("Enter password :"))
+
+#         data['USERNAME']=username
+#         data['PASWORD']=password
+#         dic[email]=data
+#     else:
+#         print("Exisist")
+
+# def show():
+#     print(dic)
+
+
+
+# MENU2=   """
+
+#             Menu
+#         1 FOR PASSWORD UPDATE 
+#         2 FOR USERNAME UPDATE
+#         3 FOE EXIT
+
+        
+#                 """
+# def ape():
+#     email=input("enter email")
+    
+#     if email in dic.keys():
+#         print(MENU2)
+#         ch=int(input("Enter your choice :"))
+#         if ch==1:
+#             new_pass=int(input("Eneter New password :"))
+#             dic[email][PASWORD]=new_pass
+#             print("SUCESSFULL")
+
+    
+Menu=  """
+
+    MENU
+1 FOR REGISTRATION
+2 FOR LOGIN
+3 FOR DELETE
+4 FOR EXIT
+
+"""
+   
+status=True
+while status:
+    print(Menu)
+    ch=int(input("Enter Choice :"))
+    if ch==1:
+        reg()
+    elif ch==2:
+        show()
+    elif ch==3:
+        ape()
+    elif ch==4:
+        status=False

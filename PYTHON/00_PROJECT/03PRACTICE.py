@@ -1,4 +1,3 @@
-from random import random
 import random
 
 status = True
@@ -6,9 +5,14 @@ user_count=0
 comp_count=0
 
 while status:
-    user_dice = random.randint(1,6)
+   
     comp_dice= random.randint(1,6)
+    choice =input("press r for rolling :").upper()
+    if choice=="R":
+         user_dice = random.randint(1,6)
 
+
+    
     print(f"user Dice ={user_dice} ")
     print(f"Computer Dice = {comp_dice} ")
 
@@ -17,15 +21,16 @@ while status:
     if user_dice+user_count<=100:
         user_count+=user_dice
     else:
-        print(f,"user need dice to rech 100=",100-user_count)
+        print(f"user need dice to rech 100=",100-user_count)
 
     if comp_dice+comp_count<=100:
         comp_count+=comp_dice
     else:
-        print(f,"computer need dice to rech 100=",100-comp_count)
+        print(f"computer need dice to rech 100=",100-comp_count)
 
 
 
+if user_count==1 :
     if user_count==17:
         user_count-=10
         print("Snack Bite! -10")
@@ -89,6 +94,7 @@ while status:
         user_count+=20
     elif comp_count==71:
         comp_count+=20
+
    
     
 
@@ -96,10 +102,6 @@ while status:
     print("user score............!",user_count)
     print("Do you wanrt to continue........!")
     cont_inue=input("if you enter y or Y so game will statarr.....:")
-    if cont_inue=="y" or "Y":
-        status=True
-    else:
-        pass
     
     if user_count==100 :
         print("You won.............")
