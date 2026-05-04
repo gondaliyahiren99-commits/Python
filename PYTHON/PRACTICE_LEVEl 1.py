@@ -7,7 +7,7 @@
 # num=int(input("Enter Number :"))
 # print(facto_rial(num))
 
-# #(2)check strig is palindrome 
+#(2)check strig is palindrome 
 # def palin_drome(str):
 #     if str==str[::-1]:
 #         return f"{str} is palindrome"
@@ -16,16 +16,16 @@
 # str=input("Enter string :")    
 # print(palin_drome(str))
 
+
 # #(3)sum of evev Number
-# l1=[12,45,78,54,21,34,51,23,26]
-# def Even_odd(num):
-#     sum=0
-#     for i in num:
-#         if i%2==0:
-#             sum+=i
-#     return sum
+# sum=0
+# def sumofeven(l): 
    
-# print(Even_odd(l1))
+#     return sum+=l
+# l1=[12,45,78,54,21,34,51,23,26]
+# filter(sumofeve)
+
+
 
 # #(4)find max number from list
 # l2=[15,24,87,9,24,51,36,27,84,21,51,34,97,23,48]
@@ -673,39 +673,544 @@
 # di=dict(map(lambda i : (l3.index(i),i),l3))
 # print(di)
 
-s1="hello my name is hiren".split()
-print(s1)
-s2=""
-for i in range(len(s1)):
-    for j in range(i+1,len(s1)):
-        if len(s1[i])>=len(s1[j]):
-            temp=s1[i]
-            s1[i]=s1[j]
-            s1[j]=temp
-    s2+=s1[i]+ " "
-print(s2)
+
+#(70)
+s1=['hello', 'my', 'name', 'is', 'hiren']
+# print(s1)
+# s2=""
+# for i in range(len(s1)):
+#     for j in range(i+1,len(s1)):
+#         if len(s1[i])>=len(s1[j]):
+#             temp=s1[i]
+#             s1[i]=s1[j]
+#             s1[j]=temp
+#     s2+=s1[i]+ " "
+# print(s2)
 
 
-#(111)
+#(71)
+# duct1={'name1': "hiren",'age1' : 25, 'Course1' : "python"}
+# dict2={'name': "Atul",'age':27,'course': 'java'}
+# for k,v in dict2.items():
+#     duct1[k]=v
+
+# print(duct1)
+
+# (72)
+# Q 73: Flatten a Nested List
+# Write a function flatten_list(nested_list) that accepts a nested list (list containing other lists)
+# and returns a flat list containing all the elements.
+
+#(74) Print Prime Numbers in a Range
+# Write a function print_primes_in_range(start, end) that accepts two numbers and prints all prime numbers between start and end (inclusive).
+# def findPrime(num):
+#     for i in range(2,num):
+#         flag=1
+#         for j in range(2,i):
+#             if i%j==0:
+#                 flag=0
+#                 break
+#         if flag==1:
+#             print(i)
+# n=int(input("Enter number :"))
+# findPrime(n)
+
+#(75)
+# Find the Longest Word in a Sentence
+# Write a function longest_word(sentence) that accepts a sentence and returns the longest word in the sentence.
+# def longword(s):
+#     lW=""
+#     s=s.split()
+#     for i in s:
+#         if len(i)>len(lW):
+#             lW=i
+#     print(lW)
+# sen="hello python , pytho high-level interpreted language"
+# longword(sen)
+
+#(76) Convert a String to Title Case
+# Write a function to_title_case(sentence) that accepts a string
+#  and returns the string in title case (the first letter of each word capitalized).
+# def TitleCase(sen):
+#     sen=sen.title()
+#     print(sen)
+# sentance="hello ! my name is hiren i am software engineer"
+# TitleCase(sentance)
+
+#(77)
+# Q 77: Count the Occurrence of Each Character
+# Write a function count_character_occurrences(string) that accepts a string and
+#  returns a dictionary with the count of each character in the string.
+# def count_character_occurrences(st):
+#     di={}
+#     for i in st:
+#         di[i]=st.count(i)
+#     return di
+
+# str="python high-level interpreted language"
+# print(count_character_occurrences(str))
+
+#(78)
+#Calculate Simple Interest
+# Write a function calculate_simple_interest(principal, rate, time) that accepts
+# the principal, rate of interest, and time, and returns the calculated simple interest.
+# def calculate_simple_interest(p,r,t):
+#     si=p*r*t//100
+#     return si
+# principle=int(input("Eneter a amount :"))
+# rate=int(input("Eneter a rate :"))
+# time=int(input("Eneter a time :"))
+# print(calculate_simple_interest(principle,rate,time))
+
+#(79)
+#Find Unique Elements in List
+# Write a function find_unique_elements(lst) that accepts a list 
+# and returns a new list containing only the unique elements from the original list.
+# def find_unique_elements(l):
+#     l2=[]
+#     for i in l:
+#         if l.count(i)<2:
+#             l2.append(i)
+#     return l2
+# l1=["python",'java','css','java','php','c','flutter','python','css','c','rectjs','js']
+# print(find_unique_elements(l1))
+
+# (80)Generate Multiplication Table
+# Write a function generate_multiplication_table(n) that accepts a number n10
+#and prints its multiplication table (from 1 to 10).
+# def generate_multiplication_table(n):
+#     for i in range(1,11):
+#         for j in range(1,n+1):
+#             tab=f"{i} * {j} = {i*j}"
+#             print(tab)
+#         print("\n",end="")
+# num=int(input("Enter Number :"))
+# print(generate_multiplication_table(num))
+
+#(81)reate a Dictionary from Two Lists
+# Write a function create_dict(keys, values) that accepts two lists, keys and values, and
+#  returns a dictionary where the keys are from the first list and the values are from the second list.
+# def create_dict(keys, values):
+#     di=dict(zip(keys,values))
+#     return di
+
+# l1=['name','course','marks','city','rollno']
+# l2=['hiren','python',93.75,'ahmedabad',37]
+# print(create_dict(l1,l2))
+
+#(82)
+# Check if Two Strings are Anagrams
+# Write a function is_anagram(str1, str2) that accepts two strings and
+#  checks if they are anagrams of each other (i.e., they contain the same characters in different orders).
+# def is_anagram(s1, s2):
+#     is_ana=1
+#     for i in s1:
+#         if s1.count(i)!=s2.count(i):
+#             is_ana=0
+#     if is_ana==1:
+#         print("yes")
+#     else:
+#         print("Not") 
+# str1=" i2 am hiren"
+# str2=" nai2 mher i"
+# is_anagram(str1,str2)
+
+#(83)
+# Count Occurrences of Words in a Sentence
+# Write a function count_word_occurrences(sentence) that accepts a sentence 
+# and returns a dictionary with the count of each word in the sentence.
+# def count_word_occurrences(s):
+#     s=s.split()
+#     di={}
+#     for i in s:
+#         di[i]=s.count(i)
+#     print(di)    
+# sentance="python java css java php c flutter python css c rectjs js"
+# count_word_occurrences(sentance)
+
+#(84)
+# Remove Duplicates from a List of Strings
+# Write a function remove_duplicates(lst) that accepts a list of strings
+#  and returns a new list with duplicate strings removed.
+# def remove_duplicates(li):
+#     new_lst=[]
+#     for i in li:
+#         if i not in new_lst:
+#             new_lst.append(i)
+#     print(new_lst)
+# lst=["python",'java','css','java','php','c','flutter','python','css','c','rectjs','js']
+# remove_duplicates(lst)
+
+#(85)
+
+
+#(85)
+#Find the Most Frequent Element in a List
+#Write a function find_most_frequent(lst) that accepts a list of elements and 
+# returns the most frequent element in the list. If there are multiple frequent elements, return any one of them.
+# def find_most_frequent(li):
+#     count=0
+#     for i in li:
+#         if li.count(i)>count:
+#             count=li.count(i)
+#             fre_ele=i
+#     print(fre_ele)
+
+# lst=[1,'java',3.14,'java','php','python','flutter','python','python',3.14,1,'rectjs','js']
+# find_most_frequent(lst)
+
+
+#(87)
+#Merge Two Dictionaries
+#Write a function merge_dicts(dict1, dict2) that accepts two dictionaries and merges them into one.
+#  If there are overlapping keys, the values from the second dictionary should overwrite the values from the first.d
+# def merge_dicts(di1, di2):
+#     for k,v in  di2.items():
+#         di1[k]=v
+#     return di1
+# dict1={'name':'hiren','city':'junagadh', 'course':'python'}
+# dict2={'city':'ahemdabad', 'year': 2025}
+# print(merge_dicts(dict1,dict2))
+
+
+#(88)
+#Count the Occurrence of Each Item in a List
+#Write a function count_items(lst) that accepts a list of items and returns a dictionary 
+# where the keys are the items from the list, and the values are the number of times each item appears.
+# def count_items(li):
+#     pass
+#     di={}
+#     for i in li:
+#         di[i]=li.count(i)
+#     return di
+# lst=[1,'java',3.14,'java','php','python','flutter','python','python',3.14,1,'rectjs','js']
+# print(count_items(lst))
+
+
+#(89)
+#Create a Dictionary from Two Lists
+#Write a function create_dict(keys, values) that accepts two lists: one containing keys and the other containing values. 
+# The function should return a dictionary with the keys from the first list and the corresponding values from the second list.
+# def create_dict(keys, values):
+#     di=dict(zip(keys,values))
+#     print(di)
+# lst1=['name','surname','roll_no', 'marks','course']
+# lst2=['hiren','gondaliya',132,87.32,'python']
+# create_dict(lst1,lst2)
+
+#(90)
+#Remove Duplicates from a List and Keep Order
+#Write a function remove_duplicates(lst) that accepts a list and removes any 
+# duplicate elements while keeping the original order of the elements.
+# def remove_duplicates(li):
+#     for i in li:
+#         if li.count(i)>1:
+#             i=li.index(i)
+#             li.pop(i+1)
+#     print(li)
+
+# lst=[1,5,7,8,5,4,1,8,9,3,7,5,2]
+# remove_duplicates(lst)
+
+
+#(91)
+#  Sort a Dictionary by Value
+# Write a function sort_dict_by_value(d) that accepts a dictionary 
+# and returns a new dictionary sorted by its values in ascending order.
+# def sort_dict_by_value(d):
+#     di2={}
+#     d{}
+# di={'hiren':5,'nisarg':1,'jenish':4,'mustved':2,'neel':3}
+# sort_dict_by_value(di)
+
+#(92)
+#Sum All Values in a Dictionary
+#Write a function sum_dict_values(d) that accepts a dictionary where the values are numbers. 
+#The function should return the sum of all values in the dictionary.
+# def sum_dict_values(d):
+#     sum=0
+#     for k,v in d.items():
+#         sum+=v
+#     print(sum)
+
+# di={'hiren':5,'nisarg':1,'jenish':4,'mustved':2,'neel':3}
+# sum_dict_values(di)
+
+#(92)
+#Find the Key with the Maximum Value in a Dictionary
+#Write a function find_max_key(d) that accepts a dictionary and returns 
+# the key that has the highest value. If there are multiple keys with the same maximum value, return any one of them.
+# def  find_max_key(d):
+#     max=0
+#     for k,v in d.items():
+#         if v>max:
+#             max=v
+#     print(max)
+    
+# di={'hiren':4,'nisarg':1,'jenish':5,'mustved':2,'neel':3}
+# find_max_key(di)
+
+#(93)
+#List of Keys with Minimum Value
+#Write a function min_value_keys(d) that accepts a dictionary and returns 
+# a list of keys that have the minimum value in the 
+# def min_value_keys(d):
+#     min_val=min(d.values())
+#     l1=[]
+#     for k,v in d.items():
+#         if min_val==v:
+#             l1.append(k)
+#     print(l1)
+
+# di={'hiren':4,'nisarg':1,'jenish':5,'mustved':2,'neel':3}
+# min_value_keys(di)
+
+
+#(94)
+#Combine Multiple Lists into a Dictionary
+# Write a function combine_lists_to_dict(keys, values) that accepts two lists, one containing keys and 
+# the other containing values. The function should combine them into a dictionary and return it. 
+# If there are more values than keys, ignore the extra values
+# def combine_lists_to_dict(keys, values):
+#     di=dict(zip(lst1,lst2))
+#     return di
+
+# lst1=['name','surname','roll_no' 'marks','f_name','course','f']
+# lst2=['hiren','gondaliya',132,92.32,'python','hiren']
+# print(combine_lists_to_dict(lst1,lst2))
+
+#(95)
+
+#Q 96: Check if a Dictionary Contains a Specific Key
+#Write a function contains_key(d, key) that accepts a dictionary and a key. 
+# It should return True if the key exists in the dictionary and False otherwise
+#
+
+#(97)
+#Flatten a List of Lists
+#Write a function flatten_list_of_lists(lst) that accepts a list of lists (a nested list) 
+#and returns a flat list containing all the elements of the inner lists.
+# def flatten_list_of_lists(lst):
+#     l2=[]
+#     for i in lst:
+#         for j in i:
+#             l2.append(j)
+            
+#     print(l2)
+# l1=[['python','java'],['c','c++'],['.net','flutter']]
+# flatten_list_of_lists(l1)
+
+
+
+#(98)
+#Find the Difference Between Two Lists
+#Write a function find_difference(lst1, lst2) that accepts two lists and returns 
+# a new list containing elements that are in the first list but not in the second.
+# def find_difference(l1, l2):
+#     l3=[]
+#     for i in l1:
+#         if i not in l2:
+#             l3.append(i)
+#     print(l3)
+# l1=[10,20,25,3,4]
+# l2=[5,4,2,1,2]
+# find_difference(l1,l2)
+
+#(99)
+#Group List Elements by Frequency
+#Write a function group_by_frequency(lst) that accepts a list and groups the elements based on their frequency.
+#The function should return a dictionary where the keys are the frequencies and the values are lists of elements that occur that many times.
+
+# def group_by_frequency(lst):
+#     di={}
+#     for i in lst:
+#         di[lst.count(i)]=I
+#         if lst.count(i) in di:
+#             d[
+            
+
+    
+
+# li=[1,5,4,7,4,4,7,8,2,6,6]
+# group_by_frequency(li)
+
+#(100)
+#Find the Common Keys in Two Dictionaries
+#Write a function find_common_keys(dict1, dict2) that accepts two dictionaries and returns 
+#a list of keys that appear in both dictionaries.
+
+
+#(101)
+#Update Dictionary Values Based on Another Dictionary
+#Write a function update_dict(d1, d2) that accepts two dictionaries. 
+#It should update the values of d1 with the values from d2 where the keys match. If a key from d2 does not exist in d1, it should be added.
+
+
+#(102)
+#Find the Longest Key in a Dictionary
+#Write a function longest_key(d) that accepts a dictionary and returns the key with the longest length.
+# di={'name':'hiren','course':'python','sub':'math'}
+# l_k=""
+# for k,v in di.items():
+#     print(k)
+#     if len(k)>len(l_k):
+#         l_k=k
+# print(l_k)
+
+
+#(103)
+#Check if a List Contains Only Unique Elements
+#Write a function is_unique(lst) that accepts a list and returns True
+# if all the elements are unique, and False if any element appears more than once.
+# l1=['python','c','java','php','c','c++']
+# is_unique=True
+# for i in l1:
+#     l1.remove(i)
+#     if i in l1:
+#         is_unique=False
+#         break
+#     l1.append(i)
+# if is_unique==True:
+#     print("uniqqu")
+# else:
+#     print("Not")
+
+
+    
+#(104)
+# Convert a Dictionary to a List of Tuples
+#Write a function dict_to_tuples(d) that accepts a dictionary and returns 
+#a list of tuples where each tuple contains a key-value pair from the dictionary.
+# di={'product':'waffer',
+#     'price':500,
+#     'disc': 120,
+#     'type': 'Masala'}
+# t=[]
+# for k,v in di.items():
+#     t.append((k,v))
+# print(t)
+
+
+#(105)
+#Find Missing Numbers in a List
+#Write a function find_missing_numbers(lst, n) that accepts a list of integers and a number n.
+# The list contains integers from 1 to n with some numbers missing. The function should return a list of the missing numbers.
+# l1=[1,2,3,4,5,6,8,9]
+# for i in range(1,len(l1)+1):
+#     if i not in l1:
+#         mis_num=i
+# print(mis_num)
+
+#(106)
+#Split a List into Two Lists
+#Write a function split_list(lst) that accepts a list and splits it into two lists. 
+# The first list should contain the first half of the elements, and the second list should contain the second half.
+# lst=['name','hiren','course','python','year',2025,'baranch','C G ROAD']
+# l1=[]
+# l2=[]
+# for i in range(len(lst)):
+#     if i<len(lst)//2:
+#         l1.append(lst[i])
+#     else:
+#         l2.append(lst[i])
+# print(l1)
+# print(l2)
+
+#(107)
+#Sum All Even Keys in a Dictionary
+#Write a function sum_even_keys(d) that accepts a dictionary with integers as keys and 
+# returns the sum of all keys that are even numbers.
+# di={1:'python',2:'java',3:'css',4:'php'}
+# s=0
+# for i in di:
+#     i=int(i)
+#     if i%2==0:
+#         s+=i
+# print(s)
+
+#(108)
+#: Create a Frequency Dictionary from a List
+#Write a function create_frequency_dict(lst) that accepts a list and returns a dictionary
+# where the keys are the elements of the list, and the values are the count of how often each element appears.
+# l1=[1,5,4,8,5,3,4,1,5,8,4,1,5,5]
 # di={}
-# if len(di)==0:
-#     print("Empty")
-# #110   
-# l1=[12,45,8,74,85,43,73,62,98,75,42,1,3]
+# for i in l1:
+#     di[i]=l1.count(i)
+# print(di)
+
+
+#(109)
+#Merge Two Lists into a Dictionary with List Indices as Keys
+#Write a function merge_lists_into_dict(list1, list2) that accepts two lists of equal length 
+# and merges them into a dictionary where the keys are the indices (0 to n-1) and the values are the elements from both lists.
+# l1=['name','course','year']
+# l2=['hiren','python',2026]
+# l3=list(zip(l1,l2))
+# sub={}
+# di={}
+# for i in range(len(l3)):
+#     sub={l1[i] :l2[i]}
+#     di[i]=sub
+# print(di)
+
+#(110)
 # e=0
 # o=0
+# l1=[12,42,1,78,13,31,52,21,33]
 # for i in l1:
 #     if i%2==0:
 #         e+=1
 #     else:
 #         o+=1
-# print(f"even is : {e}\nodd is : {o}")
-#112
+# print("even is {} and odd is {}".format(e,o))
+
+
+#(111)
+#Check if a Dictionary is Empty
+#Write a function is_empty(d) that accepts a dictionary and returns True 
+# if the dictionary is empty, otherwise False.
+# is_empty=False
+# di={}
+# if len(di)==0:
+#     is_empty=True
+
+# if is_empty:
+#     print("yes")
+# else:
+#     print("Not")
+
+#(112)
+#Remove Keys from Dictionary Based on a Condition
+#Write a function remove_keys_by_condition(d, condition) that accepts a dictionary and 
+#removes the keys where the corresponding values satisfy a condition. For example, removing all keys with values greater than a specific threshold.
+# di={'name':'hiren','course':'python','brnch':'TopsTech','language':'english'}
+# di2={}
+
+# for k,v in di.items():
+#     if len(v)<6:
+#         continue
+#     else:
+#         di2[k]=v
+# print(di2)
+
+
+
 #(113)
-# l1=[1,2,3]
-# l2=[3,4,5]
-# l3=set(l1+l2)
-# print(l3)
+#Find the Union of Two Lists
+#Write a function find_union(lst1, lst2) that accepts two lists and returns a new list 
+# that contains the union of both lists (all elements from both lists without duplicates).
+# l1=[1,2,3,4,5]
+# l2=[2,1,4,7,8]
+# l3=list(zip(l1,l2))
+# for i in l1:
+#     if i not in l3:
+#         l3.append(i)
+#     else:
+#         continue
+# for i in l2:
+#     if i  not in l3:
+#         l3.append(i)
+
 
 
 #(114)
@@ -722,6 +1227,4 @@ print(s2)
 # for i in range(len(l1)):
 #     di[i]=l1[i]
 # print(di)
-
-
 

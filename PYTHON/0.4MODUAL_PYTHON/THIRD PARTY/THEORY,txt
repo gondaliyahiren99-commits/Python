@@ -1,0 +1,11 @@
+(3) third party module:
+~> which is not provided by python but design and developed by 3rd person and we can import as per our need
+~> to use 3rd party modules we have to use pip command
+pip:
+~> stands for python index package and pip is a python package
+~> using of pip we can install and uninstall packages
+e.g.
+pip install <packagename> or <modulename> or <libraby>
+
+numpy: numpy is a most powerfull numerical library we can say that extented version of list
+# pip install numpy

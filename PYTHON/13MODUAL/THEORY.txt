@@ -1,0 +1,37 @@
+odularity
+
+MODUAL IS A FILE WHICH is contain collectoin of logics or code 
+
+and we can import that file as per our requirments.
+
+there are mainely 3 types 
+
+1) built in
+2) user define
+3)third party modularity
+
+=========================================
+1) when ich is predefine  in by python
+ we just have to import it and  use it 
+
+
+ import modualname
+ or
+ from modualname import functionname
+ or
+ from modualname import 
+
+ =========================================
+
+ package :
+  is a collection of modual and files 
+  we can use enewhere from the programmers
+
+        in a si,ple language we can use that package group of moduals.
+
+    creat onre folder and inside that folder creat one blank file.
+
+
+    __init__.pycharm
+
+    thus file dies not content any content but it is represent any folder as packages

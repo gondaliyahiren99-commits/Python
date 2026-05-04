@@ -144,16 +144,14 @@
 # print(num(-34))
 
 
-l1=["java","python","php","css"]
-
-l2=[]
-for i in range(len(l1)):
-    for j in range(len(l1[i])):
-       if l1.count(l1[i][j])>1:
-            l1.pop(i.index(j))
-print(l1)
-      
-print(l2)
+# l1=["java","python","php","css"]
+# l2=[]
+# for i in l1:
+#     for j in i:
+#         if 
+       
+#         if 
+# print(l2)
 # l1="i am hiren " 
 # l2=[]
 # for i in l1:
@@ -164,4 +162,16 @@ print(l2)
 # ['i', 2, 'a', 1, 'm', 1, 'h', 1, 'r', 1, 'e', 1, 'n', 1]
 # print(l2)
 
+# [12,15,[24,27,28,26],[27,26,32,[35,36,40,48]]]# to flatten list
+# di={'name':'hiren','course':'python','brnch':'TopsTech','language':'english'}
+# di2={}
 
+# for k,v in di.items():
+#     if len(v)<6:
+#         continue
+#     else:
+#         di2[k]=v
+# print(di2)   without new dic can posible
+
+
+  

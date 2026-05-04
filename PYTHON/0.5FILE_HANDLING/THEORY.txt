@@ -1,0 +1,24 @@
+when we want perform any oprations and wnt to store oprations in such kind of f
+ile at that time we have to understand fil..
+
+in python we can perform 
+
+open and close file handling
+
+ising of diffrent diffrent files modes
+
+
+modes :::
+
+
+"r" = read
+"w"  = write
+"a" = append
+
+"x" = create blank file
+"b" = binary mode (when we want to work with image kind of file)
+
+
+syntax ::
+
+file_obj = open("filename", "mode")
