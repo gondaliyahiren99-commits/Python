@@ -1,0 +1,12 @@
+ is a conceppt which is provide from outside the world 
+
+ abstrction which  is represent on;y a few information mot allocatted background information
+
+
+ abstrction which is achieve by abstract base class 
+
+ abstract class which is inheriting abstract base class
+
+ abstrction(ABC)
+
+ and abstract method means which contain only declaration not defination

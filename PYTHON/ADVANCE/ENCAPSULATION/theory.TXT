@@ -1,0 +1,22 @@
+
+Constructer :
+
+in python there is no such keyword like constructer.
+constructer which is invoke automaticallly whenever create obect of class.
+
+consrtructer which is represet by __init__ in python.
+
+
+ syntax : 
+    
+        class<classname> :
+            def __init__(self) :
+                code
+
+__init__() which  is indicate initial values
+
+
+Destructor : 
+
+there is no such destructor in python
+but there is one __del__() magic method which we can use

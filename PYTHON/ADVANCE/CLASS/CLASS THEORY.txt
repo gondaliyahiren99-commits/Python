@@ -1,0 +1,60 @@
+OOps : object oriented progrming system
+
+oops concept support below toopic 
+
+1)class 
+2)object
+3)inheritance
+4)polymorphisam
+5)aggertation
+6)encapsulation
+
+
+#=====================================================================================================
+1) class : class is an user defined data type which is create by <class> keyword
+
+class is an user defined data type which is contain similer and dis-similer data element.
+
+class member which is acess by object
+
+
+syntax : 
+     
+     class <classname> :
+        property
+
+
+2) object : object is instance of class or we can say that bluprint of class 
+
+using which is declare outside the class and one class can  have multiple object
+
+syntax : 
+
+        obj = classname
+
+function :
+
+    function is a block of code that code are used to again and again 
+    function are declaree with def keyword.
+    function independent 
+
+    syntax : 
+         
+        print() , input() , len() , sum()
+
+method : 
+     
+     method is a block o fcode that code are used to again and again 
+     method are declaree with def keyword.
+     method are dependent on object .
+
+     method only acess by object 
+
+     .upper() , .lower() , .append() , .extend()
+
+
+
+
+     #===================================
+
+        

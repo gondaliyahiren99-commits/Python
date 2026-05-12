@@ -1,0 +1,7 @@
+Aggeragation :
+
+Aggeragation is a most powerful concept which is represent 
+HAS -a relationship
+
+
+which is indicate one class object can use by another class.

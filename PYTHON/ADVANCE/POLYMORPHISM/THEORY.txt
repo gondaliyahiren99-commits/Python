@@ -1,0 +1,21 @@
+poly means many and morphism meaan forms
+
+one named method has different diffrent forms its called polymorphisam
+
+polymorphisam is derived form grrek world
+
+there are 2 method in polymorphisam
+
+1)overloading
+2)overriding
+
+
+
+1)overloading :
+when one class can contain same name method its called method overloading 
+but  in python this is not posible
+
+
+2)overriding :
+when parent and child both have same name methid  
+and same args its called method overridding

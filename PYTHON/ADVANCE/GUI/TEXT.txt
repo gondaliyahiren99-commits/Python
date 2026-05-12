@@ -1,0 +1,6 @@
+GUI : grphhical usr interface
+
+CLI : command line interface
+
+in pythin we hav elibry tkinter for GUI
+tkinter library provide multipe things for grphhical application
