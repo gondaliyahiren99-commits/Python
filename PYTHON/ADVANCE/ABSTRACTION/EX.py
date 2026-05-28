@@ -1,6 +1,7 @@
 from abc import ABC ,abstractmethod
 
 class Parent(ABC) :  #inherit ABC (abstract Base )Class
+    # @ek abstracmethod he jo rule banaya he ki sab me ye method honei chahiye 
     @abstractmethod
     def property(self) :
         pass
@@ -9,7 +10,6 @@ class Child1(Parent) :
     def property(self) :
         print("i have car" )
         return super().property()
-
 
 
 class Child2(Parent) :

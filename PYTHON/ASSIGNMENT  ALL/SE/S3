@@ -1,0 +1,37 @@
+Q1. write the full form and one-line use of: HTTP, 1.HTTPS, FTP, SMTP.
+~~> HTTP : HyperText transfer protocol
+            ye normal web pages ko browser or server ke bich transfer karta hai.
+~~> HTTPS : HyperText transfer protocol secure
+            HTTP jese work karta he lekin ye jayada secure he.
+~~> FTP : File transfer protocol
+            jo bhi file hoti he usko computer se server pr ya server se computer pe upload and download karne ke liye use hota hai.
+~~> SMTP : Simple mail transfer protocol
+            Ye Email send karne ke liye use hota he.jese hum gmail se kisi ko mail bhejte he.
+
+Q2. What is the difference between IPv4 and IPv6? Answer in 2 lines.
+~~>IPv4 ye  purana version he.ye ek address system he jo 32 bit use karta ha isliye isme address ki kami ho rahi he.
+IPv6 ye new version hai .ye bhi ek addess system he.jo 128 bit address use karta hai, isliye isme bahut zyada addresses hote he or securiy  jyada hote he.
+
+
+Q3.run nslookup google.com on your system and write down the IP address you get.
+~~> jab hum cmd me nslookup google.comgoogle.com command run karenge to wo IP adress bhejega 
+IP adress = 2404:6800:4000:100e::71 he.
+
+Q4. What do these HTTP status codes mean: 200, 301, 404, 500, 403?
+~~> 1. 200 :Success
+    page ya request succefully load hoga.
+    2. 301 : Moved prmentatly
+    Website ka address permanently change ho gaya hai. Browser ko naye address pe redirect kar deta hai.
+    3.404 : NOt Found 
+    jo bhi page find kar rahe he wo agar exists hi nahi karta to ye erro dega.
+    4.500 :internal server error
+    jab server me kuch interal problem ho user me nahi tab ye errror ata he. jisme wesite kuch foult hota he.
+    5.403 : Forbidden
+    website  ka agar koi private folder open karne jayenge to ye error show hogi.jiski user ko permission nahi hoti.
+
+Q5.Explain DNS hierarchy (root, TLD, domain, subdomain) with www.google.com as an example.
+~~> 1.Root (sabse top): ye DNS ka starting point hota he jisko hum (.) se represent karte he.
+    2.TLD (Top level domain): ye root ke bad likha jata he e.g. .com , .org , .net, etc...
+    3. Domain(second level domain) : ye tld ke sidS3me extra name hota he wo subdomain he.
+    e.g. www.google.com usme www  ye subdomain he.
+    

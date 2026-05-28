@@ -1,0 +1,20 @@
+Q1. What are the three main layers of software architecture? Write one line about each.
+~~> 1.presentaion : ye user ko jo interface karta he isme button screen,form sab hote he .
+~~>2.business logic : software ke logic 
+~~>3 data : databse related kamm jisme data save,upadate delete karna.
+
+
+Q2.Define client and server in your own words with one real-life example.
+~~>client jo request karta he
+server jo request accept karta he
+
+
+Q3.Write 2 differences each between desktop apps, web apps, and mobile app
+~~>deskstop : jo system me install ,ye mostlly offline bhi hoti he
+~~> webapp : jo browser me chalate he,internet ki required he
+~~>mobile app : mobile me chalte he toch screen aur mobile fetur ke liye
+
+Q4.ame any 3 databases and mention whether each is SQL or NoSQL.
+~~> MySQL : SQL databases
+MongoDB : NOSQL databases
+PostgreSQL : SQL databases

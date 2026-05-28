@@ -1,0 +1,47 @@
+"""
+pip :  python index packaage
+python -m venv myenev
+cd myenv
+
+Scripts\activate
+cd ..
+pip install django
+django-admin startproject myproject
+cd myproject (cd :change directory)
+
+python manage.py startapp myapp
+python manage.py startapp driveapp
+
+python manage.py runserver
+
+Reopen exisisting project
+
+========================================================================
+whenever we aply change in database
+perform below  comands'
+
+#python manage.py makemigrations
+
+#python manage.py migrate
+
+=====================================================
+now create admin panel
+
+#python manage.py createsuperuser
+usernaem = hiren
+pasword = 123456
+=========================================
+change password :
+
+python manage.py changepassword admin
+===================================
+admin panel open ke liye
+server pe jake \ ke bad admin  karenge to admin
+
+================================
+there are mulltiple  types of database are avilable 
+~~> sqllite3 = light weight database which is mainly use for small level of application
+
+~~>
+
+"""

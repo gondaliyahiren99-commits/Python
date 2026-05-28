@@ -5,7 +5,7 @@ BAT_BALL=['BAT','BALL']
 Toss_List=['HEAD','TAIL']
 USER_SCORE_BORD=[0,0,0,0]
 OP_SCORE_BOARD=[0,0,0,0]
-BAT_FIRST=[]2
+BAT_FIRST=[]
 print("\n\n\n\n                                                                    ::WELCOME IPL 2K26::                  ")
 print("\n\n\n\n","      ",end="")
 for i in Team_List:

@@ -1,5 +1,5 @@
 #nested quiz
-
+import random
 
 QUIZ={
     'a':{
@@ -17,18 +17,24 @@ QUIZ={
     }
 }
 
-score=0
-for ch in range(1,len(QUIZ)+1):
-     i=chr(ch+96)
-     print(i)
-     print(f"{QUIZ[i]['que']}")
-     print(f"op. {QUIZ[i]['op']}")
-     print(QUIZ[i]["ans"])
-     ans=input("Enter ans:")
-     if ans==QUIZ[i]["ans"]:
-        print("Correct")
-        score+=1
-     else:
-        print("incorrect")
-print(score)
+# score=0
+# for ch in range(1,len(QUIZ)+1):
+#      i=chr(ch+96)
+#      print(i)
+#      print(f"{QUIZ[i]['que']}")
+#      print(f"op. {QUIZ[i]['op']}")
+#      print(QUIZ[i]["ans"])
+#      ans=input("Enter ans:")
+#      if ans==QUIZ[i]["ans"]:
+#         print("Correct")
+#         score+=1
+#      else:
+#         print("incorrect")
+
+# l1 = ["Mansi","Kanar" ,"Hiren"  ,"Hetarth"]
+# l2 = ["Hiren","Kanar" , "Mansi" ,"Hetarth"]
+# if l1[2] is l2[0]:
+#     print("yes")
+# else: 
+#     print("Not")
 

@@ -1,0 +1,26 @@
+djamdo  is highlevel ,open source web framwork written in python. it is designed to help developer build robust,secure , and scalable web application quickly and efifcienttly. it follows the Model View Controlller (MVC) architecture pattern , though django reference to it as Model View Template(MVT)
+
+Key :
+Rapid Development : django provides ready to use componets for handling common web development task,speeding up the development
+
+Scalability : it is capablle of handling application with hevy trafic and complex requirement.
+
+Secutity : Django help developers avoid common Secutity issues  such as SQL injection ,cros-site scripting(XSS) ,and cross-site request forgery(CSRF).
+
+Vesatality : Suitable for various types of project,from small website to large-scale enterprise applicatiion.
+
+Extensibility : Offers a large ecosystem of reusable apps and plugins.
+
+
+Componets :
+1. Model : Represent the database schema and data structure, it provide an abstrction layer over the database.
+2. View : Contains the buisness logic and determines what data to present and how to handle user request.
+3.Template : Manages the presentation layer,  focusing on how the data is displayed to the user.
+4.URL Dispatcher : Maps URLs to view , enabing a clean and organized URL structure.
+5.ORM(Object-relation Mapping) : Django built in orm simpifies database intercation by allowing developers to interact with database using python 
+
+
+What is Virtualenv :
+virtualenv is a tool used to create isolated pu=ython envioments. in the  context of Django(or any other python project), it allowes ypu to create a seprate enviornment with its own python interpreter and dependencies ,independent of the system global pythonn envioments,.this is useful beacuse :
+manage project
+avoid conflict beetwe n project

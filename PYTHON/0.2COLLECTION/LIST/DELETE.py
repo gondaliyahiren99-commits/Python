@@ -3,3 +3,8 @@ print(l1)
 del l1
 print(l1)#nameerror because l1 ka variable exsist hi nahi karta
 
+
+
+l=[1,2,3,4]
+del l[2]
+print(l)   # [1 , 2 , 3]

@@ -11,5 +11,3 @@ l2=[]
 l2=[sub[::3] for sub in l1]    #agar hum dusri list print na karke wahi list me append karenege to wo automatic purani val remove karega
 print(l1)
 print(l2)
-
-

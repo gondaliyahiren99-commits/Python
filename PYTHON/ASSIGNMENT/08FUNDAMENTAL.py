@@ -46,8 +46,10 @@ for i in l1 :
 #Write a Python program to stop the loop once 'banana' is found using
 #the break statement.
 l1 =  ['apple', 'mango' , 'banana', 'grapes ' , 'cherry']
-for i in l1 :
-    if i == "banana":
-        break
-    else:
-        print(i , end = " ")
+l2 =sorted(l1)
+print(l2)
+# for i in l1 :
+#     if i == "banana":
+#         break
+#     else:
+#         print(i , end = " ")

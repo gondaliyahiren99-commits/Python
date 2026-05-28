@@ -24,6 +24,3 @@
 
 Name="hiren"
 print(list(filter(lambda a : a in "aeiou" ,Name)))
-
-
-    

@@ -4,12 +4,12 @@ multiple inheritance  :
 tgere are 2 parent and 1 child its called multiple inherotance 
 
 
-A                    b
-|                    |
-______________________
-        |
-        |
-        C
+                        A                    b
+                        |                    |
+                        |____________________|
+                                |
+                                |
+                                C
 """
 
 
@@ -30,5 +30,3 @@ obj =C()
 obj.displayA()
 obj.displayB()
 obj.displayC()
-
-        

@@ -26,6 +26,7 @@ print(li)
 li=[22,93,84,3,132,-1000,434,53,62,3,34,61,True,34,14,23,32,5,65,1,0,2,7]
 print(li)
 
+""" NOTE : sort() list ke alava kahi pr bhi work nahi karega even tupe and dictioner me bhi nahi"""
 li.sort()#ascending order me kare ga but agar string hui to erorr hogi
 
 print(li)

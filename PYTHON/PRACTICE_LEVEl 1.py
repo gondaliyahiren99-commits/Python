@@ -18,25 +18,19 @@
 
 
 # #(3)sum of evev Number
-# sum=0
-# def sumofeven(l): 
-   
-#     return sum+=l
 # l1=[12,45,78,54,21,34,51,23,26]
-# filter(sumofeve)
+# l2=list(i for i in l1 if i%2 ==0)
+# print(sum(l2))
 
 
 
 # #(4)find max number from list
 # l2=[15,24,87,9,24,51,36,27,84,21,51,34,97,23,48]
-# def Max_Find(num):
-#     Max_Num=0
-#     for i in num:
-#         if i>Max_Num:
-#             Max_Num=i
-#     return Max_Num
-# a=Max_Find(l2)
-# print(a)
+# l2.sort()
+# print(l2[-1])
+# print(l2[-2])
+
+
 
 # #(5)Check prime Number
 # def PrimeCheck(num):
@@ -56,80 +50,68 @@
 
 # #(6)string in character count
 # def StrCount(str,ch):
-#      count=0
-#      for i in range(len(str)):
-#         if str[i]==ch:
-#             count+=1
-#      return count
-
+#      return  str.count(ch)
 # str=input("Enter Str :")
 # ch=input("Enter ch :")
 # print(StrCount(str,ch))
+
+
 # l1=["hiren","mustved","jenish","Nisarg","Mahesh","dhrumil"]
-# l2=[]
-# def RevStr(str):
-#     for i in str:
-#       l2.append(i[::-1]) 
-#     return l2
-# RevStr(l1)
-# print(l2)
+# l1.reverse()
+# print(l1)
 
 
 # #(7)
 # #(8)average of number 
 # num_list=[15,24,87,9,24,51,36,27,84,21,51,34,97,23,48]
-# def Avg(li):
-#     sum=0
-#     for i in li:
-#         sum+=i
-#     avg=int(sum/len(num_list))
-#     return avg
+# avg = sum(num_list)//len(num_list)
+# print(avg)
 
-# print(Avg(num_list))
 
 
 # #(9)
-# l2=[]
-# def exp(li):
-#     for i in li:
-#         i+=10
-#         l2.append(i)
-#     return l2
-# print(exp(num_list))
+# l2 =[i+10 for i in num_list]
+# print(l2)
 
 
-# s1=input("enter string :")
-# if len(s1)>5:
-#     print(s1.upper())
-# else:
-#     print(s1.lower())
+# s= input("Enter string :")
+# print(s.upper() if len(s) >5 else s.lower())
 
-# #(10)
-# num=[15,14,12,17,18,21,25,26,27,51]
-# DivByThree=[]
+
 # def DivOfThree(li):
-#     for i in li:
-#         if i%3==0:
-#             DivByThree.append(i)
-#     return DivByThree
+#     new=list(filter(lambda a : a%3==0 ,li))
+#     return new
+# num=[15,14,12,17,18,21,25,26,27,51]
 # print(DivOfThree(num))
 
 
 # #(11)
-# n=[5,4,2,1,8,9,7,3]
-# Sq=[]
+
+
 # def SquareOfN(num):
-#     for i in num:
-#         Sq.append(i*i)  
-#     return Sq  
+#     sq=list(map(lambda a : a*a ,num))
+#     return sq  
+# n=[5,4,2,1,8,9,7,3]
 # print(SquareOfN(n))
+
+
+# def rt(n):
+#     r=int(n**0.5)
+#     if r*r ==n :
+#         return r
+        
+# n2 = [25,16,64,48,96,100,4,1,81,9,49]
+# n3= list(map(rt,n2))
+# print(n3)
+
+
 
 
 # #(12)
 # st=input("Enter Name :")
 # count=0
 # for i in st:
-#     if i=='a' or i=='e' or i=='i' or i=='u' or i=='o':
+#     if i in 'aeiou':
 #         count+=1
 # print(count)
 
@@ -144,14 +126,25 @@
 
 
 # #(14)
-# lis=['python','java','DatAnaalyst','flutter','php','DataScince']
+# intlis=['python','java','DatAnaalyst','flutter','php','DataScince']
 # def longString(l1):
 #     max_len=lis[0]
+#     l2= []
 #     for i in l1:
 #         if len(i)>len(max_len):
 #             max_len=i
+#             l2.append(max)
 #     return max_len
 # print(longString(lis))
+
+
+# di = {"Name" : "Hiren" ,"Subject" : "python"}
+# for i in di:
+#     name=i
+#     break
+# print()
+
+
 
 
 # #(15)
@@ -828,6 +821,8 @@ s1=['hello', 'my', 'name', 'is', 'hiren']
 # sentance="python java css java php c flutter python css c rectjs js"
 # count_word_occurrences(sentance)
 
+
+
 #(84)
 # Remove Duplicates from a List of Strings
 # Write a function remove_duplicates(lst) that accepts a list of strings
@@ -928,11 +923,7 @@ s1=['hello', 'my', 'name', 'is', 'hiren']
 #Write a function sum_dict_values(d) that accepts a dictionary where the values are numbers. 
 #The function should return the sum of all values in the dictionary.
 # def sum_dict_values(d):
-#     sum=0
-#     for k,v in d.items():
-#         sum+=v
-#     print(sum)
-
+#     s= sum(d.values())
 # di={'hiren':5,'nisarg':1,'jenish':4,'mustved':2,'neel':3}
 # sum_dict_values(di)
 
@@ -941,29 +932,23 @@ s1=['hello', 'my', 'name', 'is', 'hiren']
 #Write a function find_max_key(d) that accepts a dictionary and returns 
 # the key that has the highest value. If there are multiple keys with the same maximum value, return any one of them.
 # def  find_max_key(d):
-#     max=0
-#     for k,v in d.items():
-#         if v>max:
-#             max=v
-#     print(max)
-    
-# di={'hiren':4,'nisarg':1,'jenish':5,'mustved':2,'neel':3}
-# find_max_key(di)
+#     max=max(d.values())
+ 
+# di={'hiren':4,'nisarg':5,'jenish':5,'mustved':2,'neel':3}
+# print(find_max_key(di))
 
 #(93)
 #List of Keys with Minimum Value
 #Write a function min_value_keys(d) that accepts a dictionary and returns 
-# a list of keys that have the minimum value in the 
+# # a list of keys that have the minimum value in the 
 # def min_value_keys(d):
 #     min_val=min(d.values())
 #     l1=[]
 #     for k,v in d.items():
 #         if min_val==v:
-#             l1.append(k)
-#     print(l1)
-
+#           return k,v
 # di={'hiren':4,'nisarg':1,'jenish':5,'mustved':2,'neel':3}
-# min_value_keys(di)
+# print(min_value_keys(di))
 
 
 #(94)
@@ -971,33 +956,42 @@ s1=['hello', 'my', 'name', 'is', 'hiren']
 # Write a function combine_lists_to_dict(keys, values) that accepts two lists, one containing keys and 
 # the other containing values. The function should combine them into a dictionary and return it. 
 # If there are more values than keys, ignore the extra values
-# def combine_lists_to_dict(keys, values):
-#     di=dict(zip(lst1,lst2))
+# def combine_lists_to_dict(lst1, lst2,lst3):
+#     l3 =list(zip(lst2,lst3))
+#     di=dict(zip(lst1,l3))
 #     return di
-
 # lst1=['name','surname','roll_no' 'marks','f_name','course','f']
-# lst2=['hiren','gondaliya',132,92.32,'python','hiren']
-# print(combine_lists_to_dict(lst1,lst2))
+# lst2=['hiren','gondaliya',132,92.32,'hiren',"python","NO"]
+# lst3=["Vishal","Keshur", 133, 95.68 , "Manan" , "Python" ,"No"]
+# print(combine_lists_to_dict(lst1,lst2,lst3))
 
 #(95)
 
 #Q 96: Check if a Dictionary Contains a Specific Key
 #Write a function contains_key(d, key) that accepts a dictionary and a key. 
 # It should return True if the key exists in the dictionary and False otherwise
-#
 
+# d= {"Name" : "Hitren" ,"Course" : "pyton" ,"Language" : "English" , "Sub" : "Account" }
+# k = input("Enter Key :").capitalize()
+# if k in d.keys() :
+#     print("True")
+# else :
+#     print("False")
 #(97)
 #Flatten a List of Lists
 #Write a function flatten_list_of_lists(lst) that accepts a list of lists (a nested list) 
 #and returns a flat list containing all the elements of the inner lists.
 # def flatten_list_of_lists(lst):
 #     l2=[]
-#     for i in lst:
-#         for j in i:
-#             l2.append(j)
-            
+#     def flatten(l):
+#         for i in l:
+#             if isinstance(i, list):
+#                 flatten(i)
+#             else:
+#                 l2.append(i)
+#     flatten(lst)
 #     print(l2)
-# l1=[['python','java'],['c','c++'],['.net','flutter']]
+# l1=[['python','java',["Hello","worlsd"]],['c',["hello",["my","name"]],'c++'],['.net',["hiren"],'flutter']]
 # flatten_list_of_lists(l1)
 
 
@@ -1008,13 +1002,11 @@ s1=['hello', 'my', 'name', 'is', 'hiren']
 # a new list containing elements that are in the first list but not in the second.
 # def find_difference(l1, l2):
 #     l3=[]
-#     for i in l1:
-#         if i not in l2:
-#             l3.append(i)
+#     l3 = 
 #     print(l3)
 # l1=[10,20,25,3,4]
 # l2=[5,4,2,1,2]
-# find_difference(l1,l2)
+# find_difference(set(l1),set(l2))
 
 #(99)
 #Group List Elements by Frequency
@@ -1062,7 +1054,13 @@ s1=['hello', 'my', 'name', 'is', 'hiren']
 #Check if a List Contains Only Unique Elements
 #Write a function is_unique(lst) that accepts a list and returns True
 # if all the elements are unique, and False if any element appears more than once.
-# l1=['python','c','java','php','c','c++']
+# l1=['python','c','java','php','c++']
+"""l2=set(l1)
+if len(l1) ==len(l2) :
+    print("Unique")
+else:
+    print("Not")
+"""# if len
 # is_unique=True
 # for i in l1:
 #     l1.remove(i)
@@ -1081,40 +1079,33 @@ s1=['hello', 'my', 'name', 'is', 'hiren']
 # Convert a Dictionary to a List of Tuples
 #Write a function dict_to_tuples(d) that accepts a dictionary and returns 
 #a list of tuples where each tuple contains a key-value pair from the dictionary.
-# di={'product':'waffer',
-#     'price':500,
-#     'disc': 120,
-#     'type': 'Masala'}
-# t=[]
-# for k,v in di.items():
-#     t.append((k,v))
-# print(t)
-
+# di={'product':'waffer','price':500,'disc': 120,'type': 'Masala'}
+# s=list(di.items())
+# print(s)
 
 #(105)
 #Find Missing Numbers in a List
 #Write a function find_missing_numbers(lst, n) that accepts a list of integers and a number n.
 # The list contains integers from 1 to n with some numbers missing. The function should return a list of the missing numbers.
-# l1=[1,2,3,4,5,6,8,9]
-# for i in range(1,len(l1)+1):
-#     if i not in l1:
-#         mis_num=i
-# print(mis_num)
-
+# l1=[1,2,3,5,6,8,9]
+# l2=[]
+# for i in range(1,l1[-1]) :
+#     if i in l1 :
+#         continue
+#     else :
+#         l2.append(i)
+# print(l2)
 #(106)
 #Split a List into Two Lists
 #Write a function split_list(lst) that accepts a list and splits it into two lists. 
 # The first list should contain the first half of the elements, and the second list should contain the second half.
 # lst=['name','hiren','course','python','year',2025,'baranch','C G ROAD']
 # l1=[]
-# l2=[]
-# for i in range(len(lst)):
-#     if i<len(lst)//2:
-#         l1.append(lst[i])
-#     else:
-#         l2.append(lst[i])
+# l2=list(filter(lambda i : i if lst.index(i) >=len(lst)//2 else l1.append(i) ,lst))
 # print(l1)
-# print(l2)
+# l3=lst[:len(lst)//2]
+# l4=lst[len(lst)//2:]
+# print(f"{l3}\n{l4}")
 
 #(107)
 #Sum All Even Keys in a Dictionary
@@ -1122,6 +1113,7 @@ s1=['hello', 'my', 'name', 'is', 'hiren']
 # returns the sum of all keys that are even numbers.
 # di={1:'python',2:'java',3:'css',4:'php'}
 # s=0
+# print(di)
 # for i in di:
 #     i=int(i)
 #     if i%2==0:
@@ -1135,7 +1127,10 @@ s1=['hello', 'my', 'name', 'is', 'hiren']
 # l1=[1,5,4,8,5,3,4,1,5,8,4,1,5,5]
 # di={}
 # for i in l1:
-#     di[i]=l1.count(i)
+#     if i not  in di.keys() :
+#         di[i] = 1
+#     else : 
+#         di[i] +=1
 # print(di)
 
 
@@ -1145,7 +1140,8 @@ s1=['hello', 'my', 'name', 'is', 'hiren']
 # and merges them into a dictionary where the keys are the indices (0 to n-1) and the values are the elements from both lists.
 # l1=['name','course','year']
 # l2=['hiren','python',2026]
-# l3=list(zip(l1,l2))
+# l3=dict(zip(l1,l2))
+# print(l3)
 # sub={}
 # di={}
 # for i in range(len(l3)):
@@ -1153,22 +1149,18 @@ s1=['hello', 'my', 'name', 'is', 'hiren']
 #     di[i]=sub
 # print(di)
 
+
 #(110)
-# e=0
-# o=0
 # l1=[12,42,1,78,13,31,52,21,33]
-# for i in l1:
-#     if i%2==0:
-#         e+=1
-#     else:
-#         o+=1
-# print("even is {} and odd is {}".format(e,o))
+# o=[]
+# e=[]
+# l=[e.append(i) if i%2==0 else o.append(i) for i in l1]
+# print("even is {} and odd is {}".format(len(e),len(o)))
 
 
 #(111)
 #Check if a Dictionary is Empty
 #Write a function is_empty(d) that accepts a dictionary and returns True 
-# if the dictionary is empty, otherwise False.
 # is_empty=False
 # di={}
 # if len(di)==0:
@@ -1183,16 +1175,12 @@ s1=['hello', 'my', 'name', 'is', 'hiren']
 #Remove Keys from Dictionary Based on a Condition
 #Write a function remove_keys_by_condition(d, condition) that accepts a dictionary and 
 #removes the keys where the corresponding values satisfy a condition. For example, removing all keys with values greater than a specific threshold.
-# di={'name':'hiren','course':'python','brnch':'TopsTech','language':'english'}
-# di2={}
-
-# for k,v in di.items():
-#     if len(v)<6:
-#         continue
-#     else:
-#         di2[k]=v
+# di={'name':'hiren',"grade": "b",'course':'python','brnch':'TopsTech','language':'english'}
+# di2=dict(filter(lambda k :  len(k[1])>5,di.items()))
 # print(di2)
 
+# di={k : v for k ,v in di.items() if len(v) >5}
+# print(di2)
 
 
 #(113)
@@ -1203,10 +1191,11 @@ s1=['hello', 'my', 'name', 'is', 'hiren']
 # l2=[2,1,4,7,8]
 # l3=list(zip(l1,l2))
 # for i in l1:
-#     if i not in l3:
+#     if i not in l3[0]:
 #         l3.append(i)
 #     else:
 #         continue
+# print(l3)
 # for i in l2:
 #     if i  not in l3:
 #         l3.append(i)
@@ -1215,16 +1204,15 @@ s1=['hello', 'my', 'name', 'is', 'hiren']
 
 #(114)
 # l1=[1,4,5,7,8,6,2,3]
-# di={}
-# for i in range(len(l1)):
-#     di[l1[i]]=l1[i]**2
+# di =dict(map(lambda a : (a,a*a),l1))
 # print(di)
 
 
 # (115)
 # l1=['hiren',25,True,"python","programning",3.14]
-# di={}
-# for i in range(len(l1)):
-#     di[i]=l1[i]
+# di=dict(map(lambda a : (f"{l1.index(a)}",a) , l1))
 # print(di)
+# v=tuple(di.items())
+# v=list(v)#   [('0', 'hiren'), ('1', 25), ('2', True), ('3', 'python'), ('4', 'programning'), ('5', 3.14)]
+# print(v)
 
