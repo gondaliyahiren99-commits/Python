@@ -1,4 +1,4 @@
-"""Module 15)                                                  Advance Python Programming
+"""                                 >>>>>> Advance Python Programming<<<<<<<<<<<<
                                             1. Printing on Screen
 Theory:
 • Introduction to the print() function in Python.
@@ -10,7 +10,7 @@ Theory:
     agar hum fstirng ka use kar rahe hee to f"{<Varialbe}" likhenge or format(variable1 , var2 ....varN) likh sakte he.
 Lab:
 """
-#• Write a Python program to print a formatted string using print() and f-string. Practical Example:
+# Write a Python program to print a formatted string using print() and f-string. Practical Example:
 name = "Hiren"
 course = "python"
 branch = "C. G. TopsTech"
@@ -25,49 +25,9 @@ print("Hello")   # Hello
 """                                          2. Reading Data from Keyboard
 Theory:
 • Using the input() function to read user input from the keyboard.
-    User ke hisab se jab value pass karni ho to input() ka use karenge.jisme var ki value me input() denge or usme message print karenge.
+    User ke hisab se jab value pass karni ho to input() ka use karenge.jisme variable ki value asign me input() denge or usme message print karenge.
 • Converting user input into different data types (e.g., int, float, etc.).
-    User hum input lenge to vo bydefult vo string me hi lega. agar dusre datatype me value chahiye to jis datatype ki value chahiye uske 
-    function me input function pass karenge.
-
-Lab:
-# Write a Python program to read a name and age from the user and print a formatted output. 
-# Practical Example: 2) Write a Python program to read a string, an integer, and a float from the keyboard and display them."""
-Name = input("Enter Name :")
-Age =  int(input("Enter Age :"))
-Percentage = 89.25
-print("Name is {} and Age is {} or me {} percentage se pass hu 12th me ".format(Name , Age , Percentage) )
-"""Module 15)                                                  Advance Python Programming
-1. Printing on Screen
-Theory:
-• Introduction to the print() function in Python.
-    print ek function he jisse consol me output dekhne ke liye print function ka use karenge.print ke perameter me agar koi string de  wo message print kar
-    dega agar koi variable dege to vo variable ki valu print karega and function kuch return kar raha he to perameter me function call kare to to function ki
-    return value dega
-• Formatting outputs using f-strings and format().
-    Formating Outputs ke use se output ko atractive or readable dikhata he. jisme hum string me variable ki value  dikha sakte he.
-    agar hum fstirng ka use kar rahe hee to f"{<Varialbe}" likhenge or format(variable1 , var2 ....varN) likh sakte he.
-Lab:
-"""
-#• Write a Python program to print a formatted string using print() and f-string. Practical Example:
-name = "Hiren"
-course = "python"
-branch = "C. G. TopsTech"
-
-print(f"my name is{name} course{course} at {branch}")   #my name is Hiren course is python at C. G. TopsTech
-print("hello i am {} and my course is {}".format(name , course))
-
-#1. Write a Python program to print “Hello, World!” on the screen."""
-print("Hello")   # Hello
-
-
-"""                                           2. Reading Data from Keyboard
-Theory:
-• Using the input() function to read user input from the keyboard.
-    User ke hisab se jab value pass karni ho to input() ka use karenge.jisme var ki value me input() denge or usme message print karenge.
-• Converting user input into different data types (e.g., int, float, etc.).
-    User hum input lenge to vo bydefult vo string me hi lega. agar dusre datatype me value chahiye to jis datatype ki value chahiye uske 
-    function me input function pass karenge.
+    User hum input lenge to vo bydefult vo string me hi lega. agar dusre datatype me value chahiye to jis datatype ki value chahiye uske function me input function pass karenge.
 
 Lab:
 # Write a Python program to read a name and age from the user and print a formatted output. 
@@ -77,45 +37,6 @@ Age =  int(input("Enter Age :"))
 Percentage = 89.25
 print("Name is {} and Age is {} or me {} percentage se pass hu 12th me ".format(Name , Age , Percentage) )
 
-"""Module 15)                                                  Advance Python Programming
-1. Printing on Screen
-Theory:
-• Introduction to the print() function in Python.
-    print ek function he jisse consol me output dekhne ke liye print function ka use karenge.print ke perameter me agar koi string de  wo message print kar
-    dega agar koi variable dege to vo variable ki valu print karega and function kuch return kar raha he to perameter me function call kare to to function ki
-    return value dega
-• Formatting outputs using f-strings and format().
-    Formating Outputs ke use se output ko atractive or readable dikhata he. jisme hum string me variable ki value  dikha sakte he.
-    agar hum fstirng ka use kar rahe hee to f"{<Varialbe}" likhenge or format(variable1 , var2 ....varN) likh sakte he.
-Lab:
-"""
-#• Write a Python program to print a formatted string using print() and f-string. Practical Example:
-name = "Hiren"
-course = "python"
-branch = "C. G. TopsTech"
-
-print(f"my name is{name} course{course} at {branch}")   #my name is Hiren course is python at C. G. TopsTech
-print("hello i am {} and my course is {}".format(name , course))
-
-#1. Write a Python program to print “Hello, World!” on the screen."""
-print("Hello")   # Hello
-
-
-"""                                            2. Reading Data from Keyboard
-Theory:
-• Using the input() function to read user input from the keyboard.
-    User ke hisab se jab value pass karni ho to input() ka use karenge.jisme var ki value me input() denge or usme message print karenge.
-• Converting user input into different data types (e.g., int, float, etc.).
-    User hum input lenge to vo bydefult vo string me hi lega. agar dusre datatype me value chahiye to jis datatype ki value chahiye uske 
-    function me input function pass karenge.
-
-Lab:
-# Write a Python program to read a name and age from the user and print a formatted output. 
-# Practical Example: 2) Write a Python program to read a string, an integer, and a float from the keyboard and display them."""
-Name = input("Enter Name :")
-Age =  int(input("Enter Age :"))
-Percentage = 89.25
-print("Name is {} and Age is {} or me {} percentage se pass hu 12th me ".format(Name , Age , Percentage) )
 
 """                                            3. Opening and Closing Files
 Theory:
@@ -138,43 +59,71 @@ f.write("Hello, New file create  for example ")
 f= open("Newfile.txt","r") 
 data = f.read()
 print(data)
+f.close()
 
-"""4. Reading and Writing Files
+"""                                           4. Reading and Writing Files
 Theory:
 • Reading from a file using read(), readline(), readlines().
-
-• Writing to a file using write() and writelines().
-Lab:
-• Write a Python program to read the contents of a file and print them on the console.
-    jab file read mode me ho to read kar ne ke liya alag alag method he.
+jab file read mode me ho to read kar ne ke liya alag alag method he.
     -->read() method se puri file ko hi hum console screen pr dikha sakte he.agar read method ke perameter value dege to utne character return kar dega.
     -->readline() method se file ki single line raed kar sakte he barbar readeline karne se har bar wo file ki next line deta he.
     -->readlines() method se puri file ko har ek line ko index ki tarah save karega. jiske karana puri file list me saved hogi. agar hume index se line acess karni ho to readlines ka use kar sakte he.
-• Write a Python program to write multiple strings into a file.
-Practical Examples: 4) Write a Python program to create a file and print the string into the
-file. 5) Write a Python program to read a file and print the data on the console. 6) Write a
-Python program to check the current position of the file cursor using tell()."""
 
+• Writing to a file using write() and writelines().
+jab file 'w ' mode me ho to file me  write kar satkte he.agar file me kuch naya text write karna ho to write() ya writeline() ka use karenge.
+write() se hu file me ek single word ya single string file me likhne ke liye use hota he.
+agar ek se jyada string likhna ho to ye accept  nahi karega uske liye writeline() ka use se kar sakte he.jo multiple string ya word ko file me write karta he.
+Lab  :    """
+# L1.Write a Python program to read the contents of a file and print them on the console.
+# l2.Write a Python program to write multiple strings into a file.
+# L3.Write a Python program to check the current position of the file cursor using tell()
+    
 with open("sample.txt",'w') as f :
-    f.write("sample2.text",'w')
+    f.write("Hello My name is hiren")
+    print(f.tell()) # file ke cursor ki current position batata he.
   
 with open("sample.txt",'r') as f :
     data = f.read()
     print(data)
 
-# Write a Python program to check the current position of the file cursor using tell()
+
 """                                               5. Exception Handling
 Theory:
 • Introduction to exceptions and how to handle them using try, except, and finally.
+        Jab programer ko koi code ke part risky lage yani ki error ane ki posibility ho tab programer pura programe crash na ho agar error aye to ek mesage de or programe smoothly run ho uske liye exception handling jaroori he.
+        try ye exception handling ka wo part he jisme programer jo risky code ho usme likhta he. agar try vale part me error to wo execpt part me jayega. waha programer koi message deta he console me ki kya error he.finaly vale part me likha code always run karega. agar try or except me return statement he to bhi finale vala run karega,jab
+        koi simple stament return ke bad run nahi hota.  
 • Understanding multiple exceptions and custom exceptions.
+    programe me alag alag type ki error atit he.jab humne multiple except part diye ho or multiple error likhi ho to jis type ki error ho us hisab se except vala part execute hoga.
+    custom exception jab programer khudki error banata he.use custom exception kehte he.jisme class ka use karnge aur jab bhi error bulana ho to raise keyword se class ka name likhe to error raise hogi.
 Lab:
-• Write a Python program to handle exceptions in a simple calculator (division by zero, invalid
-input).
-• Write a Python program to demonstrate handling multiple exceptions.
 Practical Examples: 7) Write a Python program to handle exceptions in a calculator. 8)
 Write a Python program to handle multiple exceptions (e.g., file not found, division by zero).
 9) Write a Python program to handle file exceptions and use the finally block for closing
 the file. 10) Write a Python program to print custom exceptions."""
+
+try :
+    number1 = int(input("Enter Number :"))
+    number2 = int(input("Enter Number :"))
+
+    op = input("Enter Oprater :")
+    if op == "+":
+        print(number1+number2)
+    elif op=="-":
+        print(number1-number2)
+    elif op=="*":
+        print(number1*number2)
+    elif op=="/":
+        print(number1/number2)
+    else:
+        print("invalid....!")
+except ZeroDivisionError :
+    print("0 ke siva koi bhi value enter karo....")
+except ValueError :
+    print("Only Number can input.....")
+finally :
+    print("always run")
+
 
 
 """                                         6. Class and Object (OOP Concepts)
@@ -209,7 +158,7 @@ Theory:
      koi parent class ek se jyada child class ko acess deta he and child class uske child class ko acess dega
      
 • Using the super() function to access properties of the parent class.
-    parent class aur child class me same method use ho to parent class ka method access ke liye super() ka use kiya jata he.
+    parent class aur child class me same method use ho to parent class ka method access ke liye super() ka use kiya jata he.agar super() ka use na kare to child class parent claass ko acess nahi kar sakta.agar super() ka use na kare to parent class ka specific name likh ke acces karna padta he.
 Lab:
 • Write Python programs to demonstrate different types of inheritance (single, multiple,
 multilevel, etc.).
@@ -298,9 +247,6 @@ class D(B,C) :
 d = D("Hiren")
 d.displayB()
 
-        
-
-
 
 """                                                  8. Method Overloading and Overriding
 Theory:
@@ -341,20 +287,54 @@ b.display()
 """                                                    9. SQLite3 and PyMySQL (Database Connectors)
 Theory:
 • Introduction to SQLite3 and PyMySQL for database connectivity.
+SQLlite3 python ka inbuilt databse he . isme alaag se databse server uinstall karne ki jaroorat nahi he.isko easy use kar sakte he. ise lightweight database bhi kehte he. ye small application aur testing ke liye use hota he.
+PyMySQL python ka MySQL databae se conncet karne ke liye use hota he. ye MySQL ke srver ke sath kaam karta he.
 • Creating and executing SQL queries from Python using these connectors.
-Lab:
-• Write a Python program to connect to an SQLite3 database, create a table, insert data, and
-fetch data.
-Practical Examples: 21) Write a Python program to create a database and a table using
-SQLite3. 22) Write a Python program to insert data into an SQLite3 database and fetch it"""
+~~>  sabse pehle connection create karte he.concetion ke bad curser declare karte he . bad me SQL ki query likhte jisko cursor se execute karte he.agar naya data dala he to usko con ke use database me save kar dege.
+Lab:"""
+#Write a Python program to connect to an SQLite3 database, create a table, insert data, and
+# fetch data.
 
-"""10. Search and Match Functions
+import pymysql
+con =pymysql.connect(host="localhost",
+user ="root",
+password="root")
+cursor=con.cursor()
+cursor.execute(' create database if not exists my_dbms')
+print("succefully")
+con.commit()
+con.close()
+con =pymysql.connect(host="localhost",
+user ="root",
+password="root",
+database="my_dbms")
+c = con.cursor()
+c.execute("create table if not exists student(id int, name varchar(20),subject varchar(20))")
+con.commit()
+con.close()
+
+con =pymysql.connect(host="localhost",
+user ="root",
+password="root",
+database="my_dbms")
+c = con.cursor()
+q=("insert into student(id,name,subject) values(%s,%s,%s)")
+args =(101,"Jecob","python")
+c.execute(q,args)
+con.commit()
+con.close()
+"""                                 10. Search and Match Functions
 Theory:
 • Using re.search() and re.match() functions in Python’s re module for pattern
+re ek modual he . jo string me pattrn search karne lke liye use hota he. jisme seach() or match() do function he. jisse strtring me koi bhi word ko search kar sakte he.search() jo puri string me se word ko search karta he jab ki match() jo sirf string ki starting position me hi word ko searh karta he.e.g. 
+        import re
+        stringg= "python is programing language"
+        re.match(r"python",stringg)   #  match
+        re.match(r"language",stringg) # not match
+        re.search(r"language",stringg) #  match
+        re.search(r"programing",stringg) #  match
+    
 matching.
 • Difference between search and match.
-Lab:
-• Write a Python program to search for a word in a string using re.search().
-• Write a Python program to match a word in a string using re.match().
-Practical Examples: 23) Write a Python program to search for a word in a string using
-re.search(). 24) Write a Python program to match a word in a string using re.match()."""
+        re.search jo puri ki puri string me se me word find kar sakata he jab ki re.match() wo sirf starting position me word he ya nhi wahi check karega.
+"""
