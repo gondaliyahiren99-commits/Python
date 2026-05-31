@@ -1,7 +1,25 @@
                                                 *=*=*= Introduction to OOPS Programing *=*=*=
-                                            >>>>>1. Introduction to C<<<<<<<<<
+                                                         >>>>>1. Introduction to C<<<<<<<<<
     THEORY :
-    Q1. What are the main input/output operations in C++? Provide examples.
+    Q1.What are the key differences between Procedural Programming and Object-Oriented Programming (OOP)?
+    _______________POP__________________|___________________OOP______________
+    1.POP jo function me work hota he.  | 1. OOP jo class or object me work 
+                                        |    larta he.
+    ____________________________________|____________________________________
+    2. variable or function alag-alag   |2. OOP me function or variable dono 
+       hote he.                         |   ek hi class me hote he or acees 
+                                        |   bhi ek hi object se kar sakte he.
+    ____________________________________|____________________________________
+    3.POP top-down approch follow karta | 3. OOP jo botom-up approch follow 
+      he.jisme pehle function define    |    karta he.jism class tabhi ban-
+      karne ke last me call.            |     ge jab object create         
+                                        |    karege .
+    ____________________________________|___________________________________
+        
+    Q2.What are the main input/output operations in C++? Provide examples.
+        ~~> c++ me input or ouput  opration ka use karne ke liye #include<iostream> likhte he. or uski specific library using namespace std likhte he.
+        cin jo user se input lene ke liyee use hota he.jab cout console screen me output dikhane ke liye use hota he.
+        
         ~~>isostream se hum cout or cin jese function use kar sakte he.
         ~~>1) #include<ostream> preproccer directive he . jisme input aur output raltaed cheezen hoti heain. jiski help se cout aor cin use kar sakte he
 
@@ -11,7 +29,7 @@
 
         ~~>4) std::cout : ye console screen me output dekhne ke liye use hota he.
         std ka means c++ ki standerd <namespace> library ka use kar rahe ho
-    Q2.List and explain the main advantages of OOP over POP
+    Q3.List and explain the main advantages of OOP over POP
     ~~>Data Security : OOP me data ko encpsulation ki help se data hide rakh sakte he.jab POP me data global he ,isiliye easily chane hota he.
     ~~> Code Reusability :OOP me inheritance ki madad se code reuse kar sakte he.ek class ke feture dusre class use kar sakte he.POP me code reuse limited he.
     ~~> Easy Maintaenance : Large programe ko  class or object me dividede he isiliye debug karana asan he. jab POP me bade programe me work hota he jisse debug karna dificult he.
@@ -190,10 +208,10 @@
             return 0;
         }
 
-Q4. Explain the purpose and use of constants and literals in C++.
+    Q4. Explain the purpose and use of constants and literals in C++.
     ~~>constants variable means vo variable jiski value change nahi kar sakte. means declare ke time jo value dete he vo value me kuch bhi change nahi kar sakte. constants variable ko const se define kiya jata he.
 
-//////////literal ko samjavo
+
                                 >>>>>>>>3. CONTROL FLOW STATEMENT <<<<<<<<<
     LAB EXERCISE :
     L1. Grade Statements :
@@ -561,7 +579,13 @@ Q4. Explain the purpose and use of constants and literals in C++.
 
 
     Q3. How are arrays initialized in C++? Provide examples of both 1D and 2D arrays.
-    Q4. Explain string operations and functions in C++.
+        ~~> arraay ko intilize ke liye sabse pehle array ka variable define karna padta he jisme array ka size bhi define karna padta he.uske bad jo bhi value asign karni ho usko {}  me likh te he.
+        ye 1D array intlize he. 
+                    e.g. array1[4] = {1,2,3,4};
+                    # agar size nahi denge to vo value ke hisab se size le lega lekin jab empty array declare ke time size define zarrori he.
+        jab 2D array row or collum ke form me value store karta he.jisko declare ke  time usme size dena zaroori he.pehla bloce jo row or dusre block me collum ki size likhna hota he.
+                    e.g. array2[2][3]={{1,2,3},{4,5,6}};
+   
 
 
                         >>>>>>>6. Introduction to  Object-Oriented Programming <<<<<<<<<

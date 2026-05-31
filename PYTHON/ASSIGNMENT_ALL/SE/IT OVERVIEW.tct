@@ -1,0 +1,168 @@
+                             =*=*=*= 1.OVERVIEW OF IT INDUSTRY=*=*=*=
+Q1. What is a Program?
+~~> programne jo set of instruction hota he. jo computer ko batata he ki kya karna he or kese karna he.ye ek khane ki recipy ki tarah he jese usme likha hota he kya or kese banana he. wese hi isme problem ke instruction hote he.
+
+L1. "Hello World" program in two different programming language :
+~~> In C++ :
+                        # include<iostream>
+                        int main()
+                            {
+                                std :: cout<<"Hello World"<<endl;
+                                return 0;
+                            }
+    In Python :      
+                            print("Hello World")
+
+Q2. Explain in your own words what a program is and how it functions.
+~~> programe  me bahot sare instruction likhe jate he.ye instruction koi bhi programing languageme hote he. computer ko batata he ki kya work karna he.computer sare instruction ko execute karta he or usko machin code me convert karta he.kyunki computer ye language samaj nahi pata. bad me expression karke output genrate karke deta he.
+
+Q3. What is Programming?
+~~> computer jo human language nahi janta jese ki hindi,english...
+isiliye computer se task karvane ke liye instruction likhne ke liye jo bhi language use ho usko programing language kehte he.programming language  ko me likhe gaye instruction ko easily machin language me convert ho sakte he.
+
+Q4. What are the key steps involved in the programming process?
+~~> 1. problem ko samjana (karna kya he)
+    2. logic banana (Decide karna konse logic use hoge)
+    3. code likhna (instruction dena)
+    4. compile (program execute karke Machin code me convert)
+    5. Debugging (koi error aye to fix karna)
+    6. Run (programe run karvana)
+
+Q5. Types of Programming Languages.
+~~>Two types of programing language.1.High-level 2.Low-level.
+
+Q6. What are the main differences between high-level and low-level programming languages?
+~~> High-level jo easy to understand and learn he,speed slow,human friendly ,C ,C++,python.execute ke liye compiler ya interpreter ki jarrorat padti he.
+jab low level language hard he learn ke liye,speed fast or computer interface he.Machine language,Assembly language,execute directly Assembly ko assembler chahiye.
+
+Q6.World Wide Web & How Internet Works
+~~> World wide web jo internet pr available web pages or website ka collection he.
+    internet data exchange karta he.
+    Work : 1. user browser me website ka url dalta he.
+           2. browser request ko server ke pass bhejta he.
+           3. seever request pr process karta he.
+           4. uske bad clint ko responce bhejta he.
+           5. browser webpage display karta he.
+
+LAB 7 :  Research and create a diagram of how data is transmitted from a client to a server over the internet.
+~~>    USER -->BROWSER-->IP-->SERVER-->PROCESS-->RESPONCE
+     1. User brwser se request send karta he.(url se)
+     2. browser pehle DNS se uska IP address find karta he.
+     3. bad me request internet throgh sever ke pass jati he.
+     4. sever us request pr process karega 
+     5. server use request ke sathe responce bhejta he.
+     6. user ke brwser me responce display hota he.
+
+Q7. Describe the roles of the client and server in web communication.
+~~> clint jo request bhejta he kuch information mangta he.web browser,mobile app ,desktop app. jab server request ka responce bhejta he.
+
+LAB 2 :Design a simple HTTP client-server communication in any language.
+
+Q8.Explain the function of the TCP/IP model and its layers.
+~~>TCP/IP jo data ko ek computer se dusre computer tak bhejna aur receive karne ka rules define karta he.iske 4 layer he.
+1.application layer , 2.Transport layer , 3.Internet layer , 4.network acess layer.
+
+Q9. Explain Client Server Communication
+~~> Client request bhejta he server request receive karta he usme process karta he. bad me respomce bhejta he.
+
+Q10. Types of Internet Connections
+~~>Dial-up , DSL(Digital subcriber  line) ,Cable internet , Fiber Optical internet , WIFI , Mobile data
+
+Q11. How does broadband differ from fiber-optic internet?
+~~> broadband copper wire se pass jab fiber lighy se, jo broadband se fast he bahut costly he jab broadband sasta he.
+
+Q12.What are the differences between HTTP and HTTPS protocols?
+Application Security
+~~> HyperText Transfer Protocol jisme data normal text me jata he,jo SSL/TLS cretified nahi he.jo sensitive data ke liye suitable nahi.
+HyperText Transfer Protocol Secure jo SSL/TLS certified he ,.jo sensitive data ke liye suitable he.
+
+Q13. What is the role of encryption in securing applications?
+~~> Encryption ek process hai jo normal readable data ko unreadable form  me convert kiya jata hai.
+
+Q14. Software Applications and Its Types
+1.Word Processing , 2.spreadsheet , 3.presentaion , 4.web browser , 5.communication , 6. database he.
+
+Q15. What is the difference between system software and application software?
+~~> System software jo computer ko chalata he , jo background me chalta he dikhyi nahi deta. applicatio softwarre jo specific task ke liye use hote he.
+
+Q16.basic three-tiersoftware architecture diagram for a web application.
+~~> presentaion layer (Fronted) , Business Logic layer (Backend) , Data layer (Database).
+
+Q17. significance of modularity in software architecture?
+~~> code ko chhote chhote part me  devide karna , Easy maintain ,code reuse posible , faster development , easy debugging and testing.
+
+Q18. Why are layers important in software architecture?
+~~> Presentaion layer (user ko page dikhata he), Business logic layer(expressin karta he) , Database layer(Databse acess and save).
+
+Q19. Explain the importance of a development environment in software.
+~~> Development enviournment ek setup hota he jahan developer software ko banata,teat karta he ,debugging karta he aur run karta he.
+jisse easy coding ,testing or debugging,fater development.
+
+Q20. What is the difference between source code and machine code?
+~~> Machine code jo machine readable ,machine interface ,0 aur 1 ke form me , direct execute ,fast he
+Source code jo human readable he ,human interface he, c c+++ ...me,compiler ya interprete ki jaroorat ,slow hota he.
+
+Q21.Why is version control important in software development?
+~~> version control ek system he jo code ke modification ko track karta he,jo purane version ko save karta he.taki code me error aye to wapas back ja sake.error fix kar sake. isse code safe rehta he.
+
+Q22. What are the benefits of using Github for students?
+~~> Github ek platform he jaha student apne programe ko store,manage,aur share kar sakta he.
+
+Q23.What are the differences between open-source and proprietary software?
+GIT and GITHUB Training
+~~> Open source software ka codde public hota he , koi bhi usko dekh sakta he or use kar sakta he , jabki modify kar sakta.e.g. Linux . ye free hota he.
+proprietary code jo private hota he sirf compney use kar sakti he aur modify nahi kar sakta.e.g. Windows . ye paid bhi ho sakta he.
+
+Q24 How does GIT improve collaboration in a software development team?
+~~> GIT software development team me collaboration ko improve karta he jab multiple developer same project pr work karta he tab. har developer apna branch banakar alag programe me work ,code share kar sakte he , change track hote he taki pata rehta he ki kisene kya modify kiya,sab programe ko merge karke ke finle project teyar karna.
+
+Q25. What is the role of application software in businesses?
+~~> Application software se business data ko managment, communication ,accounting , productivity increse se time save karne me help karta he.
+
+Q26.What are the main stages of the software development process?
+~~> Requirment , Planing , Design ,Development ,Testing ,Deployment , maintainanc.
+
+
+Q27. Why is the requirement analysis phase critical in software development?
+~~>  requirement analysis  SDLC ka part he jisme client ko kya chahiye define hota he. jisse kya banana he wo define hoga ,bad me error fix karne ki jaroorat nahi,save time and cost , better system design , client statisfaction hota he.
+
+Q28.Why is software testing important?
+~~> Software testing ek process he jisme sofware ko check kiya jata he ki wo sahi kaam kar raha he ya nahi or usme koi error to nahi he.
+
+Q29.What types of software maintenance are there ?
+~~> Software maintainanc ka matlab he usko release ke bad update , improve or fix karna. jiske type Corective, Adaptive , Perfective ,Preventive .
+
+Q30.What are the key differences between web and desktop applications?
+~~> Web app jo Browser me run hoti he ,internet require , central se
+
+Q31. What are the advantages of using web applications over desktop applications?
+~~> Wb application jo sotware browser pr hi chale aur internet must require hoti he.
+jisko insatall karne ki jaroorat nahi , jo kisi bhi platform me work karta he ,update version hi server pr hota he to update ki jarrorat nahi , data cloud me store hota he to security high hoti he.
+
+Q32. what role does UI/UX design play in application development?
+~~>  Ui jo app ka look aur layout pr work krta he jese ki wo decoration , menu design , lighting etc pr work hota he.
+UX jo  user ko better feel deta he ki app use karne me kitna easy or smoothly he.
+like service , food  , experince , comfort..
+
+Q33. What are the differences between native and hybrid mobile apps?
+~~> Native jo specific platform ke liye banayi jati he Android ya ioS ke liye,
+specfic language use hoti he, Dvelopment cost jyada, UI/UX best hota he. e.g.
+chat apps
+Hybrid app Dono platforms ke liye banayi jati he, HTML ,CSS , JavaScript use hoti he , cost kam rehta he , UI/UX best thoda sa kam accha rehate he. e,g.iconic Framwork apps
+
+Q34. What is the significance of DFDs in system ?
+~~> DFD jo data flow Diagrame jo diagarame he jo batata he ki data system ke andar kese flow karta he.
+
+Q35. What are the pros and cons of desktop applications compared to web
+applications?
+~~> Deskto ke pros :
+        offline work kar sakte he.fast execution ,secure data.
+    Desktop cons :
+        insatall require ,manual update ,platform dependent.
+
+    Web App pros :
+        install karne ki jaroorat ,kisi bhi device se acess ho sakte he,auto update.
+    Web App cons :
+        internet require , performence slow , server down to app nahi chalta .
+        
+

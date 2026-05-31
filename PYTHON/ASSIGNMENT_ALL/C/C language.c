@@ -1,10 +1,18 @@
                                     *=*=*=*= Overview of C Programming  =*=*=*=*
-//pointer and string
+                              <<<<<<<<<<3. Overview of a C Program>>>>>>>>>>
+THEORY :
+    1. Write an essay covering the history and evolution of C programming. Explain its importance and why it is still used today.
+    ~~> c ek procedural programming lanaguage he.jo mother of programing language bhi kehte he kunki ye c++,java,c# me uska prabhav he.
+    c lanaguage ko Dennis Ritchie ke dwara 1972 me Bell Laboratories me develop kiya gaya.isse pehle B language use hoti thi.c ka main purpose os or system software ko develope karnata rtha. c ki help se UNIX os bnaya gaya.
+    EVOLUTE :
+        1. K&R C (1978) me Karnigahn or Ritchies ki book ki basis.
+        2. ANSI C(C89/C90) :pehla official standerd by ANSI
+        3. C99 : jisme naye datatype ke feture  (long,bool,double),inline function,array length
+        4. C11 : Multi-threading aur security improvements add kiye gaye.Unicode support
+        5. C18 : Bug fix kiye or performence improve.
 
-
-
-3. Basic Structure of a C Program
-    THEORY :
+                    <<<<<<<<<<3. Basic Structure of a C Program>>>>>>>>>>
+THEORY :
     Q1.Explain the basic structure of a C program, including headers, main function, comments, data types, and variables. Provide examples.
         c programe me kuch important part hota he.jo har programe me same hote he or comppulesery har programe me likhna padta he.
     jisme header file, main function, comment , data type , and variable.
@@ -33,7 +41,7 @@
     5) Variable : variable ek container ki tarah he jismi value store kar sakte he.jab value ko acces ya koi expression karna ho to variable se kar sakte he.
                 e.g. int age =20
 
-    Lab Exercise :
+Lab Exercise :
     #include<stdio.h>
     #include<string.h>
     int main()
@@ -53,8 +61,8 @@
             printf("Age is : %d \nName is :%s \nPercentage is : %d :\nGender : %c \nPassing Year : %i \n", Age,name,Percentage,Gender, Year);
             
         }
-4. OPERATER :
-    THEORY :
+                        <<<<<<<<<<4. OPERATER :>>>>>>>>>>
+THEORY :
     Write notes explaining each type of operator in C: arithmetic, relational,logical, assignment, increment/decrement, bitwise, and conditional operators.
     ~~>operater jo do value ke bich me koi specific oppration karne ke liye jo oprater use hota he us symbol ko operater  kehte . jis variable ya value ke bich opration hota he usko oprand kehte he.
             1)  Airthmetic Operator: ye number or value ke sath kuch basic calculation ke liye use hota he. ye koi value return  krata he
@@ -128,8 +136,8 @@
             ans =( not (a >= b )   |    !(10 > 5)       |    True
             +++++++++++++++++++++++|++++++++++++++++++++|++++++++
 
-5 CONTROL FLOW STATEMENT
-    THEORY :
+<                   <<<<<<<<<5 CONTROL FLOW STATEMENT>>>>>>>>>>
+THEORY :
     Explain decision-making statements in C (if, else, nested if-else,switch).Provide examples of each.
     ~~>Decision making statment jo condition ke hisab se decision lene me help karta he agar condition true hui to kam karega warna kuch or hoga.
 
@@ -227,7 +235,7 @@
                                 }
                            }
 
-    LAB EXERCISE :
+LAB EXERCISE :
     Write a C program to check if a number is even or odd using an if-elsestatement. Extend the program using a switch statement to display the //monthname based on the user’s input (1 for January, 2 for February, etc.).
                     #include<stdio.h>
                     int main()
@@ -301,230 +309,233 @@
                             
                         }
                 }
-6.LOOP  CONTROL STATEMENT
-Compare and contrast while loops, for loops, and do-while loops. Explain the scenarios in which each loop is most appropriate.
-• LAB EXERCISE:
-o Write a C program to print numbers from 1 to 10 using all three types of loops
-(while, for, do-while).
-1) While loop :
-    while(condition)
-        {
-            //code
-        }
-        jab pata na ho loop kitni bar chalega tab .while loop me pehle condition check hogi aur agar condition true hogi to block of code execute hoga varna ek bhi bar loop andar nahi jayega.
-        user jab exit dega tab hi loop stop hoga tab while loop use karte he.
-        e.g.
-       #include<stdio.h>
-        int main()
-            {
-                int i=1;
-                while(i<=10)
-                    {
-                        printf("%d\n",i);
-                        i++;
-                    }
-                return 0;
-            }
-2) For loop :
-        for(intilize; condition ; update)
+                <<<<<<<<<<<<6. LOOP CONTROL STATEMENT>>>>>>>>>>>>
+THEORY :
+    Q1.Compare and contrast while loops, for loops, and do-while loops. Explain the scenarios in which each loop is most appropriate.
+    ~~> while loop me pehle condoitiion check karte he. jab jhume pata na ho ki loop kitni bar chalana ho to hum while loop ka use karte he. while loop game develop me jyada useful he.
+    for loop ye one limer loop he jisme ek hi line me intilize , condition or updation dena hota he . for loop jab fix rehta he ki yaha tak loop chalana he to for loop ka use karte he.use table, pattern base question solve karne me.
+    do while loop me sabse pehle code ko execute karta he last me condion check karta he. do while at least one time chalega chahe condion false ho.
+
+LAB EXERCISE:
+    Q1.Write a C program to print numbers from 1 to 10 using all three types of loops (while, for, do-while).
+    1) While loop :
+        while(condition)
             {
                 //code
             }
-        sabse clean or structured loop . isme intilize ,condition aur update sa one line me likha jata he . jab pata ho loop kitne times chalana ho tab for loop ka use hoga.
+            jab pata na ho loop kitni bar chalega tab .while loop me pehle condition check hogi aur agar condition true hogi to block of code execute hoga varna ek bhi bar loop andar nahi jayega.
+            user jab exit dega tab hi loop stop hoga tab while loop use karte he.
+            e.g.
         #include<stdio.h>
-        int main()
-            {
-                for(int i=1; i<=10; i++)
-                    {
-                        printf("%d\n",i);
-                    }
-            }
-        
-3) Do While loop :
-            do{
-                //code
-            }
-            while(condition);
-            isme sabse pehle code likha jata he jiske karan block of code execute hoga or last me condition check hoga.
-            jiske karan condition false ho to bhi one time pe code run hoga
+            int main()
+                {
+                    int i=1;
+                    while(i<=10)
+                        {
+                            printf("%d\n",i);
+                            i++;
+                        }
+                    return 0;
+                }
+    2) For loop :
+            for(intilize; condition ; update)
+                {
+                    //code
+                }
+            sabse clean or structured loop . isme intilize ,condition aur update sa one line me likha jata he . jab pata ho loop kitne times chalana ho tab for loop ka use hoga.
             #include<stdio.h>
             int main()
                 {
-                    int i =1 ;
-                    do
-                    {
-                        printf("%d\n",i); //1
-                        i++;
-                    }while(i<=10);
-                }
-// Explain the use of break, continue, and goto statements in C. Provide
-// examples of each.
-// • LAB EXERCISE:
-// o Write a C program that uses the break statement to stop printing numbers
-// when it reaches 5. Modify the program to skip printing the number 3 using the
-// continue statem
-1)Break : loop ko condition ke hisab se jab termnainate karna ho tab break keyword use hota he. break se loop pura terminate ho jayega chahe kitne bhi cases ho age nahi jayega. yeh switch case me use hota he jiske karan next case ma nahi jayega agar break nahi lagaya to age ke case me jayega nahi.
-                e.g. int a = 2;
-                    #include<stdio.h>
-                    int main()
+                    for(int i=1; i<=10; i++)
                         {
-                            for(int i= 1 ; i<=10;i++)
-                                {
-                                    if(i==5)
-                                        {
-                                            break; // 5 pr stop kr dega
-                                        }
-                                    else
-                                        {
-                                            printf("%d ", i);// 1 2 3 4 
-                                        }
-                                }
+                            printf("%d\n",i);
                         }
-                        //OUTPUT--> Two (break pr hi ruk jayega)
-
-2) Continue : continue keyword he jiska use loop me use hota he. agar loop me current itrator ko skip karke loop ko age move karvana ke liye useful he.
+                }
+            
+    3) Do While loop :
+                do{
+                    //code
+                }
+                while(condition);
+                isme sabse pehle code likha jata he jiske karan block of code execute hoga or last me condition check hoga.
+                jiske karan condition false ho to bhi one time pe code run hoga
+                #include<stdio.h>
+                int main()
+                    {
+                        int i =1 ;
+                        do
+                        {
+                            printf("%d\n",i); //1
+                            i++;
+                        }while(i<=10);
+                    }
+                        <<<<<<<<<<<<12. FUNCTION IN C>>>>>>>>>>>>
+THEORY :
+    Q1.Explain the use of break, continue, and goto statements in C. Provide
+    examples of each.
+    ~~> berak continue or goto  jo jumping statment jo programe me ek jagah se dusri jagah jane me help karta he.
+    1)Break : loop ko condition ke hisab se jab termnainate karna ho tab break keyword use hota he. break se loop pura terminate ho jayega chahe kitne bhi cases ho age nahi jayega. yeh switch case me use hota he jiske karan next case ma nahi jayega agar break nahi lagaya to age ke case me jayega nahi.
+                    e.g. int a = 2;
                         #include<stdio.h>
                         int main()
                             {
-                                for(int i= 1;i<=5;i++)
+                                for(int i= 1 ; i<=10;i++)
                                     {
-                                        if(i==3) // skip 3 
+                                        if(i==5)
                                             {
-                                                printf("%d ",i);//1 2 4 5
+                                                break; // 5 pr stop kr dega
+                                            }
+                                        else
+                                            {
+                                                printf("%d ", i);// 1 2 3 4 
                                             }
                                     }
                             }
+                            //OUTPUT--> Two (break pr hi ruk jayega)
 
-3) goto : goto jump keyword he jo programe  ke control ko unconditionaly kisi aur jagah le jata he. 
+    2) Continue : continue keyword he jiska use loop me use hota he. agar loop me current itrator ko skip karke loop ko age move karvana ke liye useful he.
                             #include<stdio.h>
                             int main()
                                 {
-                                    for(int i= 1 ; i<=10; i++)
+                                    for(int i= 1;i<=5;i++)
                                         {
-                                            if(i==7)
+                                            if(i==3) // skip 3 
                                                 {
-                                                    goto found;
+                                                    printf("%d ",i);//1 2 4 5
                                                 }
                                         }
-                                    found :
-                                        printf("7 found");
                                 }
 
-THEORY EXERCISE:
-o What are functions in C? Explain function declaration, definition, and how to
-call a function. Provide examples.
-• LAB EXERCISE:
-o Write a C program that calculates the factorial of a number using a function.
-Include function declaration, definition, and call   
-function ek block of code he. jisko specific  task ke liye banaya jata he. jo ek bar likhne ke bad bar bar use kar sakta he. reusability badhata he.programe ko organize or redable banata he.
-1) Declaration : function declare me compiler ko batata he ki function ka datatype kya he,function ka name kya he aur perameter kya rahenge. programe ki starting me likha jata he main function se pehle.body nahi hoti,sirf semicolon lagta he.
+    3) goto : goto jump keyword he jo programe  ke control ko unconditionaly kisi aur jagah le jata he. 
+                                #include<stdio.h>
+                                int main()
+                                    {
+                                        for(int i= 1 ; i<=10; i++)
+                                            {
+                                                if(i==7)
+                                                    {
+                                                        goto found;
+                                                    }
+                                            }
+                                        found :
+                                            printf("7 found");
+                                    }
 
-2) Defination : function defination me body hoti he jisme function ka task rahega aur kya logic lagega define kiya jata he.main function ke bahar kiya jata he.
+                        <<<<<<<<<<<<8. FUNCTION IN C>>>>>>>>>>>>
+THEORY :
+    Q1.What are functions in C? Explain function declaration, definition, and how to call a function. Provide examples.
+    Include function declaration, definition, and call   
+    function ek block of code he. jisko specific  task ke liye banaya jata he. jo ek bar likhne ke bad bar bar use kar sakta he. reusability badhata he.programe ko organize or redable banata he.
+    1) Declaration : function declare me compiler ko batata he ki function ka datatype kya he,function ka name kya he aur perameter kya rahenge. programe ki starting me likha jata he main function se pehle.body nahi hoti,sirf semicolon lagta he.
 
-3) Call : function  ko call karne se function defination me likha block of code execute hoga. function call me function Name likh ke perantheses lagaya jata he.jo main function me kiya jata he.
-                    #include<stdio.h>
-                    int factorial(int a); //Declare
-                    int fact=1;
-                    int factorial(int a) //Defination
-                        {
-                        while(a>0)
-                                {
-                                    fact*=a;
-                                    a--;
-                                }
-                                printf("%d",fact);
-                        }
-                    int main()
-                        { 
-                            factorial(5);//call
-                            return 0;
-                        }
- Explain the concept of arrays in C. Differentiate between one-dimensional and
-multi-dimensional arrays with examples.
-array ek same datatype ke multiple value store karta he. ek hi name me multiple value store kar sakta he.har value ki index hoti he . array ki index 0 se start hoti he.
-1) One dimensional :sabse simple array he. jisme ek hi line me bahot sari same datatype ki value store.
-                    #include<stdio.h>
-                    int main()
-                        {
-                            int array[5]={1,2,3,4,5};
-                            for(int i=0 ; i<5 ; i++)
-                                {
-                                    printf("%d ",array[i]);
-                                }
-                        }
-2) Two dimensional : arraay ke inside another array ho usko 2d array kaha jata he. jo raw or collum base hota he. 
-            #include<stdio.h>
-            int main()
-                {
-                    int array[3][3]={ {1,2,3} , {4,5,6} , {7,8,9} };
-                    int total_sum = 0;
-                    for(int i=0 ; i<=2 ; i++)
-                        {
-                            for(int j = 0;j<=2;j++)
-                                {
-                                    total_sum+=array[i][j];
-                                }
-                        }    printf("%d ",total_sum);
-                }
-Explain string handling functions like strlen(), strcpy(), strcat(),strcmp(), and strchr(). Provide examples of when these functions are useful.
-C me string ek character array he. jisme ek se jyada chracter store hote he.sab chracter ka index hota he.jo '\0' (null) se end hota he . jo count nahi hota. 
-e.g. char name[5]="Hiren";
-                H i r e n '\0'
-                0 1 2 3 4
-string ke sare function string.h file me store hote he. ye sab predefined function kaha jata he.
-1) strlen() : string ki length kitni he means string me kitne character  he dekhne ke liye strlen ka use hota he. e.g. strlen(name);  // 5
-2)strcmp() :Ek string ko dusri string me copy karne ke liye. isme lef vale variable ki value right side vale variable me pass hogi.
-e.g. nickname[20];
-        strcpy(name , nickname); // nickname = "Hiren"
-3)strcat() : ye jab do string ko jodne ke liye use hota he. iske perameter me do string variable dete he. jisme pehle variable me 
-store hui sting first me concat ho jati he.
-            e.g. name[30] = "Hiren", surname[10]= " Gondaliya" , 
-            strcat(name,surname); // name = "Hiren Gondaliya"
-4) strcmp(): string compare karne ka kaam karta he
+    2) Defination : function defination me body hoti he jisme function ka task rahega aur kya logic lagega define kiya jata he.main function ke bahar kiya jata he.
+
+    3) Call : function  ko call karne se function defination me likha block of code execute hoga. function call me function Name likh ke perantheses lagaya jata he.jo main function me kiya jata he.
+
+LAB EXERCISE:
+    Q1. Write a C program that calculates the factorial of a number using a function.
+                        #include<stdio.h>
+                        int factorial(int a); //Declare
+                        int fact=1;
+                        int factorial(int a) //Defination
+                            {
+                            while(a>0)
+                                    {
+                                        fact*=a;
+                                        a--;
+                                    }
+                                    printf("%d",fact);
+                            }
+                        int main()
+                            { 
+                                factorial(5);//call
+                                return 0;
+                            }
+                    <<<<<<<<<<<<12. ARRAYS IN C>>>>>>>>>>>>
+THEORY :              
+    Q1. Explain the concept of arrays in C. Differentiate between one-dimensional and multi-dimensional arrays with examples.
+    ~~>array ek same datatype ke multiple value store karta he. ek hi name me multiple value store kar sakta he.har value ki index hoti he . array ki index 0 se start hoti he.
+    1) One dimensional :sabse simple array he. jisme ek hi line me bahot sari same datatype ki value store.
+                        #include<stdio.h>
+                        int main()
+                            {
+                                int array[5]={1,2,3,4,5};
+                                for(int i=0 ; i<5 ; i++)
+                                    {
+                                        printf("%d ",array[i]);
+                                    }
+                            }
+    2) Two dimensional : arraay ke inside another array ho usko 2d array kaha jata he. jo raw or collum base hota he. 
+                #include<stdio.h>
+                int main()
+                    {
+                        int array[3][3]={ {1,2,3} , {4,5,6} , {7,8,9} };
+                        int total_sum = 0;
+                        for(int i=0 ; i<=2 ; i++)
+                            {
+                                for(int j = 0;j<=2;j++)
+                                    {
+                                        total_sum+=array[i][j];
+                                    }
+                            }    printf("%d ",total_sum);
+                    }
+
+                 <<<<<<<<<<<<12. STRING IN C>>>>>>>>>>>>
+THEORY :         
+    Q1. Explain string handling functions like strlen(), strcpy(), strcat(),strcmp(), and strchr(). Provide examples of when these functions are useful.
+    ~~>  C me string ek character array he. jisme ek se jyada chracter store hote he.sab chracter ka index hota he.jo '\0' (null) se end hota he . jo count nahi hota. 
+        e.g. char name[5]="Hiren";
+                        H i r e n '\0'
+                        0 1 2 3 4
+    string ke sare function string.h file me store hote he. ye sab predefined function kaha jata he.
+    1) strlen() : string ki length kitni he means string me kitne character  he dekhne ke liye strlen ka use hota he. e.g. strlen(name);  // 5
+    2)strcmp() :Ek string ko dusri string me copy karne ke liye. isme lef vale variable ki value right side vale variable me pass hogi.
+    e.g. nickname[20];
+            strcpy(name , nickname); // nickname = "Hiren"
+    3)strcat() : ye jab do string ko jodne ke liye use hota he. iske perameter me do string variable dete he. jisme pehle variable me 
+    store hui sting first me concat ho jati he.
+                e.g. name[30] = "Hiren", surname[10]= " Gondaliya" , 
+                strcat(name,surname); // name = "Hiren Gondaliya"
+    4) strcmp(): string compare karne ka kaam karta he
 
     
 
 
+                            <<<<<<<<<<<<12. STRUCTURE IN C>>>>>>>>>>>>
 
-
-
-// Explain the concept of structures in C. Describe how to declare, initialize, and
-// access structure members.
-// • LAB EXERCISE:
-// o Write a C program that defines a structure to store a student's details (name,
-// roll number, and marks). Use an array of structures to store details of 3
-// students and print them.
-structure ek datatype he jo multiple datatype ki multiple value eksath ek group me store karta he. jise struct keyword se define kiya jata he. jisme declare member se structer ke variable se usko acces or value assign kar sakte he.
-1)structure Declaration : usme struct keyword or structure ka name likha jata he bad me {} braces me multiple datatype ki multiple value store kar sakte he.{} ke bad semicolon jaroori he.
-Declare sirf ek bluprint he . jisko abhi tak memory allocat nahi hui  jab tak vaiable nahi banate.
-2) structer variable declaration : structure variable declare jo bhi structure me member declare kiye he usme acess kar ke value asign karne ke liye kar sakte he.structure variable declare hum multiple type se kiya jata he. structer ke bad , multiple variable eksath,structure declare time.
-3)intilize structure Member : memeber me value asign karana. member ko structure ke variable se acess karke usme value assign kar sakte he.
-4)Accesiing Structure Member : Member acess karne ke liye hum (.) ka use karte he . jisme structure variable.Member se kiya jata he.
+THEORY :
+    Q1. Explain the concept of structures in C. Describe how to declare, initialize, and accesing.
+    ~~>  structure ek datatype he jo multiple datatype ki multiple value eksath ek group me store karta he. jise struct keyword se define kiya jata he. jisme declare member se structer ke variable se usko acces or value assign kar sakte he.
+    1)structure Declaration : usme struct keyword or structure ka name likha jata he bad me {} braces me multiple datatype ki multiple value store kar sakte he.{} ke bad semicolon jaroori he.
+    Declare sirf ek bluprint he . jisko abhi tak memory allocat nahi hui  jab tak vaiable nahi banate.
+    2) structer variable declaration : structure variable declare jo bhi structure me member declare kiye he usme acess kar ke value asign karne ke liye kar sakte he.structure variable declare hum multiple type se kiya jata he. structer ke bad , multiple variable eksath,structure declare time.
+    3)intilize structure Member : memeber me value asign karana. member ko structure ke variable se acess karke usme value assign kar sakte he.
+    4)Accesiing Structure Member : Member acess karne ke liye hum (.) ka use karte he . jisme structure variable.Member se kiya jata he.
 
 
 
 
 
+                    <<<<<<<<<<<<13. FILE HANDLING>>>>>>>>>>>>
+THEORY :
+    Q1. Explain the importance of file handling in C. Discuss how to perform file operations like opening, closing, reading, and writing files.
+    ~~>jab programer programe se hi file ko control kar sake use file handling kaha jata he.jisse data permanently save kar sakte .
+    1) File Opening : file ko open fopen() se kar sakte he. sabse pehle FILE ka pointer  banaya jat he . us  pointer se file ko open karte he phiir usme jo act karna he read, write or appendn kar sakte he.
+                    FILE *filepointer;
+                    filepointer = fopen("filename.txt",'mode');
 
-Explain the importance of file handling in C. Discuss how to perform file
-operations like opening, closing, reading, and writing files.
-jab programer programe se hi file ko control kar sake use file handling kaha jata he.jisse data permanently save kar sakte .
-1) File Opening : file ko open fopen() se kar sakte he. sabse pehle FILE ka pointer  banaya jat he . us  pointer se file ko open karte he phiir usme jo act karna he read, write or appendn kar sakte he.
-                FILE *filepointer;
-                filepointer = fopen("filename.txt",'mode');
+    2) File Closing : file ko jab bhi open kare use karne ke bad close karna jaroori he.agar close na kare to file leak ho jati he. isiliye file close karna jaroori he. jo close() se hota he.jisko pointer se filename.close() karte he.
+                    FILE *filepointer;
+                    filepointer = fopen("filename.txt",'mode');
+                    filepointer.close()
 
-2) File Closing : file ko jab bhi open kare use karne ke bad close karna jaroori he.agar close na kare to file leak ho jati he. isiliye file close karna jaroori he. jo close() se hota he.jisko pointer se filename.close() karte he.
-                FILE *filepointer;
-                filepointer = fopen("filename.txt",'mode');
-                filepointer.close()
+    3) File Reading : file ko read karke usko console screen pr dikha sakte he.read karne ke liye 'r' mode ka use karte he.file me jo bhi text karna ho to usko data ko acess karke dusre variable me store kar sakte he.agar file exsists na ho to error dega.
+                    FILE *filepointer;
+                    filepointer = fopen("filename.txt",'r');  
+                    filepointer.close()
 
-3) File Reading : file ko read karke usko console screen pr dikha sakte he.read karne ke liye 'r' mode ka use karte he.file me jo bhi text karna ho to usko data ko acess karke dusre variable me store kar sakte he.agar file exsists na ho to error dega.
-                FILE *filepointer;
-                filepointer = fopen("filename.txt",'r');  
-                filepointer.close()
-
-4) Writing files : jab file me data insert karna ho tab file ko writing mode ka use kar sakte he.jisko 'w' mode me likh sakte he.isme agar file exist na ho to new file create hokar usme data insert hoga.agra file exist na ho to usme data overwrite hoga.
-                FILE *filepointer;
-                filepointer = fopen("filename.txt",'w');  
-                filepointer.close()
+    4) Writing files : jab file me data insert karna ho tab file ko writing mode ka use kar sakte he.jisko 'w' mode me likh sakte he.isme agar file exist na ho to new file create hokar usme data insert hoga.agra file exist na ho to usme data overwrite hoga.
+                    FILE *filepointer;
+                    filepointer = fopen("filename.txt",'w');  
+                    filepointer.close()
 
