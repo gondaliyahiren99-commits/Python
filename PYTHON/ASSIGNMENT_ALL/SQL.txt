@@ -1,0 +1,404 @@
+THEORY Question :
+                               *=*=*= 1.INTRODUCTION TO SQL *=*=*=
+    # THEORY :
+    Q1. What is SQL, and why is it essential in database management?
+    !~~>SQl (structure query language) ek programing language he jo database ke sathe kaam karne ke liye use  hota he. means database me data store ,fetch,update,delete aur manage kar sakte he.
+
+    Q2. Difference beween DBMS Aur RDBMS ?
+    ---------------------DBMS---------|--------------------RDBMAS--------------
+    1. Database managementsystem      |  1.relational database managment system.
+    ----------------------------------|-------------------------------------------
+    2. Relationship support kam       |  2.Relationship supprt ka jyada 
+    hota he                        |    use hota he
+    ----------------------------------|-----------------------------------------
+    3. Foreign key supprt nahi hota   |  3.Foreign key supprt hota he.
+    ----------------------------------|------------------------------------------
+    4. Small application ke liye use  |  4.Large application ke liye
+                                    |    usefull
+    ----------------------------------|------------------------------------------
+    5. Security kam hoti he.          |  5. Security zayada hoti he.
+    ----------------------------------|------------------------------------------
+    6.  Data ko file ya table  me     |  6. Data ko related table me store me
+        store karta he.               |      store hota he.     
+    -----------------------------------------------------------------------------
+
+    Q3.Describe the role of SQL in managing relational databases.
+    ~~>SQL(structure query language) ye Relational Database ka main language he. jese hum insan se bat karne ke liye Hindi ya English ka use karte  he wese hi SQL database ko manage aur use kar sakte he.SQL ke bina dbms  khali ek structure ban jata he.
+    SQL se table create,delete,upadet ,select kar sakte he.
+
+    Q4.What are the key features of SQL?
+    ~~>SQL ke syntax easy,Data ko fetch ,Data ko insert Update ya Delete,Security high jisme use karne ke liye user se permissions,Fast Processing,Portable jo har ek OS pr chalta he.
+
+    # LAB EXERCISE :
+    1.Create a new database named school_db and a table called students with the
+    following columns: student_id, student_name, age, class, and address.
+        # Database Create : 
+        create database school_db ;
+        # Table Create : 
+        use school_db ;
+        create table students(student_id int primery key ,varchar(20),age int check(age>0),class varchar(20),address varchar(50));
+        desc student;
+        ---------------+-------------+------+-----+---------+-------+
+        | Field        | Type        | Null | Key | Default | Extra |
+        +--------------+-------------+------+-----+---------+-------+
+        | student_id   | int         | YES  |     | NULL    |       |
+        | student_name | varchar(20) | YES  |     | NULL    |       |
+        | age          | int         | YES  |     | NULL    |       |
+        | class        | varchar(20) | YES  |     | NULL    |       |
+        | address      | varchar(50) | YES  |     | NULL    |       |
+        +--------------+-------------+------+-----+---------+-------+
+
+        # Data Insert :
+        insert into student(student_id,age,class,address)
+        vlaues
+        (101,24,Jayant,10A,Jamnagar),
+        (102,27,Karan,9C,Baroda),
+        (103,29,Hemant,11B,Mumbai),
+        (104,22,Vishal,10B,Ahemdabad);
+
+        # Data Fetch :
+        select * from student;
+        +------------+---------------+------+-------+-----------+
+        | student_id | student_name  | age  | class | address   |
+        +------------+---------------+------+-------+-----------+
+        |  101       | Jayant        |   24 | 10A   | Jamnagar  |
+        |  102       | Karan         |   27 | 9C    | Baroda    |
+        |  104       | Viral         |   29 | 11B   | Mumbai    |
+        |  105       | Vishal        |   22 | 10B   | Ahmedabad |
+        +------------+---------------+------+-------+-----------+
+
+
+                                     *=*=*= 2.SQL SYNTAX *=*=*=
+# THEORY :
+    Q1.What are the basic components of SQL syntax?
+    ~~>1.keyword ,2.Identifeirs,3.expressin,4.Clasuse,5.Operaters,6.function
+
+    Q2.Write the general structure of an SQL SELECT statement.
+    ~~?selct column_name FROM table_name where condition;
+
+    Q3.Explain the role of clauses in SQL statements.
+    ~~>SQL me clauses ka use query ko organizwe or controle karne ke liye likhte he.agar clause na likhe to jo data ki need na ho wo  na mile or  ya error se sakta he. ye batata he ji data kaha se lena he,kaunsa data chahiye,kis condition pe chahiye,data kese chahiye eksathe group me ya srte.
+    SQL me select,order by group by ,where,from,having,insert into,update, set,delete sab clause he.
+
+#LAB EXERCISE :
+    L1.Write SQL queries to retrieve specific columns (student_name and age) from the students table.
+     ANS :       QUERTY : select student_name ,age from student;
+
+    L2.Write SQL queries to retrieve all students whose age is greater than 10
+    ANS : QUERTY : select student_name ,age from student where age > 10;
+
+                                        *=*=*= 3.SQL CONSTRAINT *=*=*=
+# THEORY :
+    Q1.What are constraints in SQL? List and explain the different types of constraint.
+    ~~>SQL me constant rules he jo table ke apply pr kuch restriction lagata he.jo pure table me data add karene pr kuch limit rahegi.
+        1) NOT NULL : Jis collum me NOT NULL likha he us collume ko hum empty nahi chhod sakte. agar empty chhoa to eror show karega.
+        2) UNIQUE : Jis collum ko unique kiya hua he wo duplicate value allowed nahi karega.agar duplicate dala to error dega.
+        3) PRIMERY KEY : Ye har table pe ek collum ko de sakte he.agar koi collum ko primery key di he to wo unique value or Not Null value hi accept kar skta he.
+        4) DEFAULT : Koi collum ko default kiya hua he agar value insert ke time jab nalue add na ki ho tab wo automaticaly default me jo value add kiya he wo store ho jayegi.
+        5) CHECK : koi collum ko check condition di he to value insert ke time wo dekhega ki condition ke hisab se value di gayi he to insert hogi nahi to error ayegi.
+        6) AUTO INCREMENT : isse collum me insert ke time numeric value dene kei jaroorat nahi wo automaticaly har next value deta jayega.
+        7) FOREIGN KEY : Ek dable ko dusre table se combie karne ke liye use hota he.
+
+    Q2.How do PRIMARY KEY and FOREIGN KEY constraints differ?
+    ~~>PRIMERY KEY :  Ye per table pe ek collum ko de sakte he.agar koi collum ko primery key di he to wo unique value or Not Null value hi accept kar skta he.
+    FOREIGN KEY : ye ek table ki primery key ko dusre table ki jo foreign key banayo usko combine karke table ko jodne ke liye use hota he.
+
+    Q3.What is the role of NOT NULL and UNIQUE constraints?
+    ~~>Jis collum me NOT NULL likha he us collume ko hum empty nahi chhod sakte. agar empty chhoa to eror show karega.
+    Jis collum ko unique kiya hua he wo duplicate value allowed nahi karega.agar duplicate dala to error dega. agar unique me value na de to wo null ho sakti he.
+# LAB EXERCISE :
+    L1.Create a table teachers with the following columns: teacher_id (Primary Key),teacher_name (NOT NULL), subject (NOT NULL), and email (UNIQUE)
+        QUERY :  create table teacher(teacher_id int(primery key,teacher_name varchar(20),subject varchar(20),email varchar(20),student_id int));
+
+    L2.Implement a FOREIGN KEY constraint to relate the teacher_id from the
+    teachers table with the students table.
+        QUERY : FOREIGN KEY (id) REFERENCES teacher(student_id)
+
+                                        *=*=*= 4.DATA DEFINATION LANGUAGE*=*=*= 
+# THEORY :
+    Q1.Define the SQL Data Definition Language (DDL).
+    ~~> DDL  SQL ka wo part jise databse ke steructer ko define karne ke liye use hota he. jisme database or table craete ,table me collum creat ,change,datatype change,size change,collum ko delele,database or table ko delete kar sakte he.
+
+    Q2. Explain the CREATE command and its syntax.
+    ~~> create command se hum database or table kar sakte he.
+        QUERY  DATABASE : create databse database_name;
+        QUERY  TABLE    : create table table_name(collum_name datatype(size),collum_name datatype(size)); 
+        
+    Q3.What is the purpose of specifying data types and constraints during table creation?
+    ~~> jab hum table creata karte he tab usme datatype or constraint batana jaroori he.datatype batane se pata chalega ki collum me kis type ka data rahega. agar dusre datatype ka data dalenge to error ayegi.
+    constraint jo data add kare ke rule follw karvata he. us collum me kuch restrictionlagata he ki is tarah ka hi data add kar sakte ho.
+
+# LAB EXERCISE :
+    L1.Create a table courses with columns: course_id, course_name, and course_credits. Set the course_id as the primary key..
+        QUERY : create table school(course_id int primery,course_name varchar(20),course_credits varchar(20));
+
+    L2.Use the CREATE command to create a database university_db.
+        QUERY : create database university_db;
+
+
+                                        *=*=*= 5.ALTER COMMAND *=*=*= 
+# THEORY :
+    Q1.What is the use of the ALTER command in SQL?
+    ~~>alter command se table me kuch bhi modify kar sakte he.alter ke sath hum add,modify,drop,rename ka use se data me change kar sakte he .
+    Q2.How can you add, modify, and drop columns from a table using ALTER? 
+    ~~> ADD : alter table table_name add collum collum_name datatype(size);
+        MODIFY : alter table table_name modify collum new_datatype (new_size);
+        DROP : deop table table_name ;
+
+# LAB EXERCISE :
+    L1.Modify the courses table by adding a column course_duration using the ALTER command. 
+    2.Drop the course_credits column from the courses table. 
+        Add collumn :
+        alter table student add column course_duration varchar(20),course_credits varchar(20);
+        Drop Collumn :
+        alter table student drop collum course_credits ;
+
+                                             *=*=*= 6.DROP COMMAND *=*=*= 
+# THEORY :
+    Q1.What is the function of the DROP command in SQL?
+    ~~>drop command se hum kisi bhi database or table permanently delete kar sakte he.
+    Q2.What are the implications of dropping a table from a database? 
+    ~~>Drop se hum data ko permenetly deleta kar sakte he.jiske karan hum usko rallback nahi kar sakte.isse structer hi pura delete ho jata he.
+
+
+# LAB EXERCISE :
+    Q1. Drop the teachers table from the school_db database. 
+        use school_db ;
+        drop table teachers;
+        ye table delete nahi hoga ye error dega kyunki teacher table ko dusri table (student) use kar raha he though FOREIGN KEY
+        
+    Q2.Drop the students table from the school_db database and verify that the table has been removed. 
+        Table Remove : drop table student;
+        Check : show tables ;
+        agar delete hoga to is table ki list me dikhega nahi.
+
+                                         *=*=*= 7.DATA MANIPULATION LANGUAGE *=*=*= 
+# THEORY :
+    Q1. Define the INSERT, UPDATE, and DELETE commands in SQL.
+    ~~>insert hum jo table pehle se hi exsist karta he usme aur naya data add karne ke liye use hota he.
+    update se hum table me exsist data me kuch change kar sakte he.
+    delete delele se hum table ki koi soecific row ko delete kar sakte he.
+
+# LAB EXERCISE:
+    1. Insert three records into the courses table using the INSERT command
+    ~~>insert into student(student_id,age,class,address)
+        vlaues
+        (105,31,Mayank,10A,Delhi),
+        (106,32,Virat,9C,Bhopal),
+        (107,33,Rohit,11B,Lacknow);
+
+    2.Update the course_duration of a specific course using the UPDATE command. 
+    ~~>  update table student set course = "java" where course_id = 103;
+
+    3.Delete a course with a specific course_id from the courses table using the DELETE command. 
+    ~~>   delete from student where course_id=103 ;
+
+                            *=*=*= 8. DATA QUERY LANGUAGE *=*=*= 
+# THEORY :
+    Q1.What is the SELECT statement, and how is it used to query data?
+    ~~>selcet ka use  table me se pura data ya koi specific data fetch karne ke liye use hota he.
+
+    Q2.Explain the use of the ORDER BY and WHERE clauses in SQL queries. 
+    ~~>ORDER BY ke use se data ko uski value ke hisab se accending ya decending order me kar saakte he.
+    WHERE se hum data ko condition ke hisba filter kar sakte he.
+
+
+# LAB :
+    1. Retrieve all courses from the courses table using the SELECT statement. 
+     ~~> QUERY : select courses from courses_table ;
+
+    2.Sort the courses based on course_duration in descending order using ORDER BY.
+    ~~> QUERY : select courses from courses_table order by course desc;
+
+    3.Limit the results of the SELECT query to show only the top two courses using LIMIT.
+     ~~>QUERY : select*from courses limit 2;
+
+
+                                      *=*=*=  9.DATA CONTROL LANGUAGE *=*=*= 
+# THEORY :
+    Q1.What is the purpose of GRANT and REVOKE in SQL? 
+    ~~>GRANT se user ko agar table kuch bhi insert,update ya delete ki permissions deta he.
+    REVOKE se user ko di permissions insert,update ya delete vo vapas le leta he.
+
+# LAB :
+    L1.Create two new users user1 and user2 and grant user1 permission to  ~~>SELECT from the courses table.
+    create user "user1"@"localhost" identified by "1234";
+    create user "user2"@"localhost" identified by "1234";
+
+
+    L2.Revoke the INSERT permission from user1 and give it to user2
+     ~~>GRANT QUERY :
+        grant select ,insert on school_db.courses to "user2"@"localhost";
+
+        REVOKE QUERY :
+        revoke insert on school_db.courses from "user2"@"localhost";
+
+                                     *=*=*=  10. TRANSACTION CONTROL LANGUAGE *=*=*= 
+# THEORY :
+    Q1.What is the purpose of the COMMIT and ROLLBACK commands in SQL? 
+    ~~>SQL me COMMIT ka use jab hi=um table kuch changes karte he tab usko permenetly save karne ke liye use karte he.e.g. jab  hum koi form submition karte jisme login page,presonal information,education detail and payament ho.agar bich me se bahar nikal gaye to jaha tak humne save kiya hoga vahi se vaps ayega.starting se jaroorat nahi he.
+    aur ROLLBACK ko jo bhi changes kiye he usko vapas purani form me lane ke liye use hota he.agar humne koi upi se dure account me paise transfer karne gaye or pin dalte time vapas back huye ta vaha paisa deduct nahi hoga.
+
+# LAB :
+    L1.Insert a few rows into the courses table and use COMMIT to save the changes. 
+        1 FOR COMMIT QUERY :
+            start transection;
+
+            insert into courses
+            values(6,"python","3 month"),(7,"php","2 month");
+            commit;
+    L2.Insert additional rows, then use ROLLBACK to undo the last insert operation. 
+    SWL
+        FOR ROLLBACK QUERY:
+            start transection;
+
+            insert into courses
+            values (8,"sql","1 month");
+            select*from courses;
+            rollback ;
+
+    L3.Create a SAVEPOINT before updating the courses table, and use it to roll back 
+    specific changes.
+        start transection;
+        delete from school_db where student_id = 104 ;
+        savepoint s1 ;
+        select * from school_db ;
+        rollback to savepoint s1 ;
+
+
+                                        *=*=*=  11.SQL JOIN *=*=*=    
+# THEORY :                     
+    Q1.Explain the concept of JOIN in SQL. What is the difference between INNER JOIN, LEFT JOIN, RIGHT JOIN, and FULL OUTER JOIN? 
+    ~~>SQL me join do ya do sejyada tables ko combine karne ka tarika he,jaiese ek table me employee ka table aur dusre table me department ka data he. join use karke aap dono tables ko link karke ek sathe dekh sakte.
+    inner join : dono table ki same value 
+    left join : lef vale ya 1st table ka pura data jisme 2md ya right vale table ke sath common data bhi aceess hoga.
+    right join : right join me right ya 2nd table me likha pura data ke sath 1st table ke sath common data bhi acess hoga.
+    full join : isme right side ke table kapura data aur left side table vale ka pura data fetch hoga.
+
+    Q2.How are joins used to combine data from multiple tables?
+    ~~>ab do table ko combie karna ho to 1st table ki kisi collum jo unique aur null na ho usko primery key banate he. bad me 2nd table me koi ek collum ko foreign key tarah use kar ke primery key ko reference deta he.
+
+# LAB :
+    L1.Create two tables: departments and employees. Perform an INNER JOIN to display employees along with their respective departments.
+    create table departments(d_id int ptimary key,d_name varchar(20)); insert into departments values
+            (1,"HR diparment"),
+            (2,"Accounting diparment"),
+            (3,"marketing diparment"),
+            (4,"sales diparment");
+
+    create table employees(e_id int,e_name varchar(20),e_city varchar(30));
+    insert into employees valuse
+            (1,"zzzz","ahmedabad"),
+            (2,"aaaa","surat"),
+            (1,"bbbb","mumbai"),
+            (4,"cccc","ahmedabad"),
+            (4,"dddd","goa");
+
+    select employees.e_name as Name,departments.d_name as 'Department name' from employees
+        inner join departments
+        on employees.e_id=departments.d_id;
+            +---------+----------------------+
+            | Name    | Department name      |
+            +---------+----------------------+
+            | zzzz    | HR diparment         |
+            | aaaa    | Accounting diparment |
+            | bbbb    | HR diparment         |
+            | cccc    | sales diparment      |
+            | dddd    | sales diparment      |
+            +---------+----------------------+
+        
+    select departments.d_name as 'Department name',employees.e_name as name from departments
+        left join employees
+        on employees.e_id=departments.d_id;
+            +----------------------+---------+
+            | Department name      | name    |
+            +----------------------+---------+
+            | HR diparment         | bbbb    |
+            | HR diparment         | mustved |
+            | Accounting diparment | aaaa    |
+            | marketing diparment  | NULL    | 
+            | sales diparment      | dddd    |
+            | sales diparment      | cccc    |
+            +----------------------+---------+
+
+
+                                                *=*=*= 12 SQL GROUP BY *=*=*=  
+# THEORY :
+    Q1.what is the GROUP BY clause in SQL? How is it used with aggregate functions?
+   ~~> GROUP BY jab koi specific collum ki value jo eke se jyada bar use ho rahi value ko group by se wo jo coomon value se group banate he.group by aggregate function se hota he . matlab group me hume common value ka sum chahiye,minimum,max,avg value me se kiska group banaa he.
+
+   Q2.Explain the difference between GROUP BY and ORDER BY.
+        ______GROUP BY______________________ORDER BY_________________
+        1.ye data ko group      |   1.ye data ko accending ye 
+            me banate he.       |      decendin ya oreder me karta he.
+                                |
+        2.Isme hum having ka    |   2. isme having ka use nahi kar 
+        use kar sakte he        |      sakte.
+                                |
+        3.aggregate function mu-|   3. without aggergate function
+         st use.                |      ka posible he.
+
+# LAB : 
+    L2.Group employees by department and count the number of employees in each 
+    department using GROUP BY. 
+    ~>QUERY : select departments.d_name as 'Department name',count(*) as employees from employees
+        inner join departments
+        on employees.e_id=departments.d_id
+        group by d_name;
+
+
+    L2: Use the AVG aggregate function to find the average salary of employees in each 
+    department. 
+    ~~>QUERY : select departments.d_name as Dipartment,count(*) as employe,avg(salary) as 'avg salary' from departments
+        inner join employees
+        on departments.d_id=employees.e_id
+        group by d_name;
+
+                                         *=*=*=  13.SQL STORED PROCEDURE *=*=*=  
+# THEORY :
+    Q1. What is a stored procedure in SQL, and how does it differ from a standard SQL query?
+    ~~>Procedural ek saved group hota he jisko ek-bar likhne pr bar bar use kar sakte he.jese function ki tarah. ye reusability badhata he. jab bhi query execute karni ho tab procedural ka jo name hota he usko call karna hota he.
+
+    Q2.Explain the advantages of using stored procedures.
+    ~~>Reusability,fast execution,security high,loop condition transection sab ka use kar sakte he,Easy changes.
+
+
+# LAB :
+    L1.Write a stored procedure to retrieve all employees from the employees table based on department.
+            create procedural GetEmployeesByDepartment
+            BEGIN
+                SELECT *
+                FROM employees
+                WHERE department = @dept_name;
+            END;
+
+                                                     *=*=*=  14. SQL VIEW *=*=*=  
+# THEORY :
+    1.What is a view in SQL, and how is it different from a table?
+    Ye ek virtal table hoti he . jo data save d nahi karta baki sirf query saved karega.ye sirf sql query ka result show karta he.jab disre user se kuch data hide karna ho tab usefull he.
+
+    2.Explain the advantages of using views in SQL databases.
+    views ka use jab dusre user ko permission dete he tab vo sab data ko show kar sakta he or usme kuch update kar sakta he agar kuch data  dusre user se chhupana ho to views ka use kar sakte he.
+
+
+                                                     *=*=*=  15. SQL TRIGGER *=*=*=  
+# THEORY :
+    Q1.What is a trigger in SQL? Describe its types and when they are used
+    trigger ek stored procedure hoti he jo data me kuch add,change aur delete karenge to usko dusre table me uska record rakhega.
+
+    Q2.Explain the difference between INSERT, UPDATE, and DELETE triggers.
+    insert trigger jab data me kuch naya data add kare tab agar data add kare uske pehle ya data add karne ke bad ka record triger table me record rakhega.
+
+    Update Trigger hum puarane me data me kuch change karna chahe tab wo jo change karte he uska record trigger table rakhta he.
+
+    Delete Triger data me hum ne delete ke liye triger banaya ho or hum ne kuch delete kiya ho to jo bhi delete kiya ho uska pura record trigger table me store hoga.
+
+
+                                                *=*=*=  19.ROLLBACK AND COMIT SAVEPOINT *=*=*=  
+# THEORY :
+    Q1. Explain the concept of SAVEPOINT in transaction management. How do ROLLBACK and COMMIT interact with savepoints?
+    SAVEPOINT transaction me jab data ki eksath bahot sari qwery chalate he tab kuch point add karte he jisse point tak hi data rollback ho. point ke bad ki qwery commit nahi hogi.
+
+    Q2.When is it useful to use savepoints in a database transaction?
+    real world e.g. jese koi student from fill up kr raha he jisme form presonal informaton,eduction detail,and lat me payment ho agar payement me problem ho to vapas  jab dusri bar form fill karenge to  presonal informaton,eduction detail ka data wese hi save rahega wapas add nahi karna padega.
+
