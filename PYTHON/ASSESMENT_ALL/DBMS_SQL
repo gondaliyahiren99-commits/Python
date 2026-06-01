@@ -1,0 +1,222 @@
+Q1. You are asked to design a program that calculates employee salary with
+multiple conditions (bonus, tax, overtime). Which programming constructs
+would you combine to solve this efficiently?
+~~> Compiler Jo poora code ko ko ek bar me execute karke ek hi bar me machine code me convert karta he.
+jab interpreter line by line code execute karke line by line code ko machine code me convert karta he.
+Development ke hisab se interpreter jyada prefer karana chahiye.
+~~> Execution Speed : 
+    ke hisab se Jab hum programe me code likhta he to code sahi work kar raha he ya nahi check karne ke liye bar-bar compile karna padega uske bad run karna padega.jo time consuminh he.
+~~> Error : 
+    Jab interprete me code likhte hi run karwate he.
+    compiler me pure programe ki eksath error milti he jiske karan error find karna mushkil he jab interprter line by line error deta he.
+~~> e.g. code me koi codition change karo turant hu result dikhega.
+
+
+Deployment me compiler prefer karna chahiye.
+~~> Execution Speed : 
+    Agar koi customer order kar raha he to har ek line ko line by line read karega or usko code samjega or bad me machine code me convert karega.jo cusomer ke liye irritate he.jab compiler me pehele se hi code ready hota he sirf execute hi karna hota he.
+~~> Error : 
+    interpreter me error tab aye jab wo specific line chalegi tab pata chlega ki isme error he jab compiler wo pehle hi bata deta he.
+
+Q2.You are asked to design a program that calculates employee salary with
+multiple conditions (bonus, tax, overtime). Which programming constructs
+would you combine to solve this efficiently?
+~~> isme hum sabse pjle sabke alag alga variable declare karne padega.jisme salary , bonus , tax , overtime ,hour_rate .ab Salary me Overtime or hour_rate ko multiple kar ke salary me plus karenge. salary ke hisab se sb ke upar conditions lagayenge ki kisko kitna bonus milega. bonus ko salary me increment kar denge.
+ab jo salary aayi us par tax count karenge. tax ko salary me se deduct karenge.
+esa sab employee ke upar karne ke liye ek function banayenge jisme sab employee ke uparr loop chalayenge.
+
+
+Q3. While developing a menu-driven console application, why are loops
+preferred over conditional repetition? Explain which loop you would choose
+and why?
+~~~> Agar hum condition ka use karenge to bar-bar humara code likhna padega jiske karan wo time consuming ho jayega or bahot lengthy ho jayega.
+loop me code bar-bar repeat hoga jisse code bar-bar likhne ki jaroorat nahi or short me likh ajata he.
+hum loop me while loop prefer karenge kyunki hume pata nahi ki user kya choice karega or kitni bar karega isko hum infinite banayenge jisse user ko jab exit karna ho to wo apni choice ke hisab se exit ho sake.
+
+
+Q4. A student writes a program to calculate average marks using int variables
+and gets incorrect output. Identify the probable cause and explain how
+choosing the correct data type solves the issue.
+~~> Agar koi student average claculate kar raha he agar usne sab int me liya he to result bhi int me ayega jo hume koi chhokkas value nahi deha. hume sahi value ke liye sab variable ko float me karna padega taki jab final ans mile wo float me or ekadam sahi mile.
+
+Q5. You are debugging a program that complies successfully but crashes at
+runtime. Which category of error is this? Mention two debugging practices
+you would follow to resolve it.
+~~> ye runtime error he. ye janne ke liye ki kaha error aa raahi he uske liye hum program kaha tak work kar raha he ye janne ke liye console scrren pr message dikhakar find kar sakte he , or hum dusra debugging tool use kar sakte he.IDE ka debugging jo step by step code run karta he or error wali line find karta he.
+
+Q6.You need to store student records with name, marks, and grade.Why would you choose a structure over multiple arrays in this scenario?
+~~> Array jo same datatype ki value store karta he. Hume multiple student ke record store karne he jo multiple datatype me ho sakte he jo array me posible he lekin sabke alag-alg array banana padega jese name ke liye char arrye, marks int array,grade ke liye char array jo bahot lengthy he.jab ki structure bahot sare datatype value store kar sakta he.
+
+                   <<<<<<<<<<<<<<< SECTION:B >>>>>>>>>>>>>>
+PRACTICAL CODING TASK:
+B1.Conditional Logic Implementation Design a “Study Mood Assistant” that:
+● Takes user input: hours studied today
+● Displays motivation messages based on conditions
+● Uses if-else ladder or switch c               
+#include<iostream>
+using namespace std;
+int main()
+    {
+        cout<<"Study Mood Assistant "<<endl;
+        int study_hour ;
+        if (study_hour==0)
+            {
+                cout<<"Bad performence !"<<endl;
+            }
+        else if(study_hour<2)
+            {
+                cout<<"good you go on right way"<<endl;
+            }
+        else if(study_hour<4)
+            {
+                cout<<"Nice ! you much better"<<endl;
+            }
+        else if(study_hour<6)
+            {
+                cout<<"Excellent !"<<endl;
+            }
+        else{
+            cout<<"You genius !<<endl;
+        }
+
+
+    }
+
+B2.Loops + Arrays
+Create a program that:
+● Accepts 7 days of screen time data
+● Calculates and prints:
+➔ Total screen time
+➔ Average screen time
+● Displays a warning if average exceeds healthy limit
+
+#include<iostream>
+using namespace std;
+int main()
+    {
+        int screen_time[7] , total_time=0 ;
+        float average ;
+        for(int i=0;i<=6;i++)
+            {   
+                int time = 0;
+                cout<<"Enter Screen time"<<endl;
+                cin>>time;
+                screen_time[i]=time;
+                total_time+=time;
+            }
+        average = total_time/7.0;
+        cout<<"your total time scrren of week is : "<<total_time<<endl;
+        cout<<"your Average time scrren of week is : "<<average<<endl;
+        if(average>3)
+            {
+                cout<<"Warning ! high screen time "<<endl;
+            }
+        else{
+            cout<<"good you are under of average scrren time.... !";
+        }
+    }
+
+B3.3. Functions & Pointers
+Write a program to:
+● Swap two numbers using a user-defined function
+● Implement swapping using pointers
+● Explain why pass-by-reference is necessary here
+#include<iostream>
+using namespace std;
+#Swap two numbers using a user-defined function
+void swap(int x ,int y)
+    {
+        int temp=0;
+        temp=x;
+        x=y;
+        y=temp;
+        cout<<"After Swap"<<"a="<<a<<" "<<"b="<<b<<endl;
+    }
+int main()
+    {
+        int a=10, b=5;
+        swap(a,b);
+        cout<<"After Swap"<<"a="<<a<<" "<<"b="<<b<<endl;
+        return 0;
+    }
+
+#Implement swapping using pointers
+void swap(int *x ,int *y)
+    {
+        int temp=0;
+        temp=x;
+        x=y;
+        y=temp;
+        cout<<"After Swap"<<"a="<<a<<" "<<"b="<<b<<endl;
+    }
+int main()
+    {
+        int a=10, b=5;
+        swap(&a,&b);
+        cout<<"After Swap"<<"a="<<a<<" "<<"b="<<b<<endl;
+         return 0;
+    }
+
+~~> number pass kar rahe usme perameter jo variable he wo duplicate nahi balki naye variable declare he jo main value pr koi affect nahi karega,jab ki address pass karte he wo variable ki copy pass hoti he wo perameter me bhi naye variable declare nahi karega reference pass hoga jo original value ko chane karega.
+
+Q4.4. File handling
+Build a program that:
+● Writes daily goals to a file
+● Reads and displays them on program restart
+● Uses correct file modes
+#include<stdio.h>
+void add()
+    {   
+        FILE *p;
+        char str[100];
+        printf("Enter Goal :");
+        fgets(str,sizeof(str),stdin);
+        p=fopen("Daily_Goal,txt","a");
+        fprintf(p,"%s",str);
+        fclose(p);
+        
+    }
+void view()
+    {
+        char data[100];
+        FILE *p;
+        p=fopen("Daily_Goal.txt","r");
+        if(p==NULL)
+            {
+                printf("Not found");
+            }
+        while(fgets(data,100,p)!=NULL)
+            {
+                printf("%s",data);
+            }
+        fclose(p);
+    }
+int main()
+    {
+        while(1)
+            {
+                int choice;
+                printf("\n---------Menu---------\n");
+                printf("1.Add Goal\n");
+                printf("2.View Goal\n");
+                printf("3.Remove Goal\n");
+                printf("4.Exit\n");
+                printf("Enter choice :");
+                scanf("%d",&choice);
+                if(choice==1)
+                    {
+                        add();
+                    }
+                else if(choice==2)
+                    {
+                        view();
+                    }
+                else if(choice==4)
+                    {
+                        break;
+                    }
+                else{
+                    printf("Invalid");
+                }
+            }
+    }

@@ -1,0 +1,92 @@
+Q1. 1. Explain how relational databases help maintain accuracy in expense records.
+~~> Realational database jo sab table alag alga banatta he. aur sab table ek-dusre ke relational database ke sathe conneced hote he.
+    (a) sab data alag -alag table me store me hota he aur conected hone ke karan jab change karnanho to sab table me alag alag change karne ki jarrorat nahi ek table se sab me affected.
+    (b) table me unique key or primery key dene se har ek value unique hogi duplicate save nahi hogi.
+    (c)unique ke ke karan data empty nahi chhod sakte.
+
+
+Q2.Why are constraints important in personal finance data?
+~~> constrint jo rules banata he ki kya data rahega or uski limit kya rahegi.jese ki check jo condion lagata he ki value itni honi hi chahiye.e.g.saving ka plan he per month minimum 5000 to check condition lagayenge saving>4999 karehga agar usse kam he to data add nahi hoga.
+
+Q3. How does GROUP BY help analyze spending patterns?
+~~>  agar humare pass multiple expense ke multipke record he to sab ke group banakar hum dekh sakte he ki kis me expemse jyda hua he. agar jyada he to hum usme next month se kam karenge.
+
+Q4.Explain a scenario where rollback is required during expense entry?
+~~> Expense me rollback ka use se agar bih me se kahi transaction ruk kata he or jis account me jana chahiye usme jaye nahi or humare account me se deduct bhi ho jaye to rallback jaroori he.
+
+Q5.How do views help users track monthly expenses efficiently?
+~~> View jo ek virtual tablehe jo actual data store karta hee.vo ek saved   qwery hoti he jo run hone par fresh data dikhata he.e.g. expense he usme hume sirf 1000 se zyada vale expenses chahiye to hum uska view banayenge or uska name rakh denge jab hume 1000 se zyada vale expenses chahiye to hum select us view ko karenge.
+Q6.Why use triggers for automatic category or balance updates?
+
+
+SECTION B : SQL HAND-on
+
+
+create table users (
+user_id INT PRIMARY KEY,
+name VARCHAR(50),
+email VARCHAR(100),
+created_at DATE
+);
+create table categories (
+category_id INT PRIMARY KEY,
+category_name VARCHAR(50)
+)
+
+create table expenses (
+expense_id INT PRIMARY KEY,
+user_id INT,
+category_id INT,
+amount DECIMAL(10,2),
+expense_date DATE,
+FOREIGN KEY (user_id) REFERENCES users(user_id),
+FOREIGN KEY (category_id) REFERENCES categories(category_id)
+);
+
+
+1.DDL Understanding :
+#why foreign keys are use : foreign key use karne se expence table me jo user_id he wo actully user wale table ko REFERENCES kar rahi he.jo dono table ko jodne ka kam kar rahi he.
+
+# if foreign keys were removed: foreign key hata dene se agar hum expence table me se data remove karenge to bhi main data me uski entry rahegi isiliye foreign key se REFERENCES dena jarrori he.
+
+2.DML Oprations :
+# insert 5 user :
+insert into user(user_id,name,email,created_at) values
+(1,"a","a@gmail.com",2026-06-11),
+(2,"b","b@gmail.com",2026-06-14),
+(3,"c","c@gmail.com",2026-06-21),
+(4,"d","d@gmail.com",2026-06-22),
+(5,"d","d@gmail.com",2026-06-29);
+
+#insert 3 categories :
+insert into categories (category_id,category_name) values
+(1,"food"),
+(2,"rent"),
+(3,"travel");
+
+# insert 10 Expense record :
+insert into expenses(expense_id,category_id,amount,expense_date) values
+(101,1,1,300,'2024-06-12'),
+(101,1,2,300,'2024-06-13'),
+(101,2,1,300,'2024-06-14'),
+(101,2,3,300,'2024-06-15'),
+(101,3,2,300,'2024-06-16'),
+(101,3,1,300,'2024-06-17'),
+(101,4,3,300,'2024-06-18'),
+(101,4,1,300,'2024-06-19'),
+(101,5,2,300,'2024-06-20'),
+(101,5,3,300,'2024-06-21');
+
+
+# update expense
+update expenses set amount =800;
+where expence_id =103;
+
+# verify
+select * from expenses where xpence_id =103;
+
+# delete 
+delete from expenses where amount<200;
+
+
+
