@@ -1,0 +1,45 @@
+Q1.Create a new Django app named 'playlists' inside your existing Django project and confirm that a playlists folder with the standard files (views.py, models.py, etc.) is generated.
+~~>  Create App : Apne project ke ke folder ke location pr jakar waha terminal open karo auske bad command chalao
+        python manage.py statrapp playlists
+    Aur check karne ke liye loChange Directory(cd ) se folder me jakar terminal me dir commnad chalyaenge to 
+    
+    C:\Users\Hiren\OneDrive\Documents\GitHub\Python\job_portal\skillbridge\playlist\dir
+    Directory: C:\Users\Hiren\OneDrive\Documents\GitHub\Python\job_portal\skillbridge\playlist
+
+Q2.Add 'playlists' to the INSTALLED_APPS list in your project's settings.py file so that Django recognizes it
+~~> Project ke seting.py vali file open karenge. Jisme Inastalled App vala part me playlist vail app Add karenge.
+
+Q3.In playlists/views.py, write a function home(request) that returns an HttpResponse displaying 'Welcome to My Spotify Playlists!'.
+~~> Project ke url file me playlist ka url add karo 
+        path('playlist/',include('playlist.urls'))
+
+   playlist ke app ke url file me view import karke path add karo
+        path('', views.home, name='home')
+
+  View mwe import karo httpResponse aur jo bhi url ke name ka function banao aur return karega wo "Welcome to My Spotify Playlists!"
+
+Q4.Configure your project's urls.py to map the URL path 'music/' to the home view you created in playlists/views.py, so visiting http://localhost:8000/music/ shows your welcome message.
+~~> Project ke url me        
+        path('music/',include('playlist.urls'))
+
+    playlist ke app ke url file me view import karke path add karo
+        path('', views.home, name='home')
+
+    View me jakar jo bhi message HttpResponse . 
+        def home(request):
+                return HttpResponse(" Melodis For U")
+    Aur python manage.py runserver.
+
+Q5.Change the welcome message in your playlists/views.py home view to include your name, then restart the server and verify the update appears at http://localhost:8000/music.This helps you see how Django reloads views and how URL mapping works in real time.
+~~>   View me jakar jo bhi message HttpResponse me diya he waha change karo. 
+        def home(request):
+                return HttpResponse("Bas Bajna Chahiye Ganaa -Hiren Gondaliya ")
+
+        server ko close kare ctrl+C or command Documents
+                python manage.py runserver 
+
+        
+        
+        
+
+  

@@ -1,0 +1,49 @@
+Q1.Create a Django model called Restaurant with fields name (CharField), cuisine (CharField), and rating (FloatField), then generate a ModelForm named RestaurantForm for it.
+~~> Apne project Restaurant jo pehle se bana he ab forms.py me class banao:
+   
+    from django import forms
+    from .models import Restaurant
+
+    class RestaurantForm(forms.ModelForm):
+        class Meta:
+            model = Restaurant
+            fields = ['name', 'cuisine', 'rating']
+
+    jab html ke template me sirf {{form.as_p}} karenge to wo temlate ke andara autotomaticaly sari field ko p(paragraph) tag me convert karega.
+
+Q2.Use RestaurantForm to build a simple Django view that displays the form and saves new restaurant entries to the database when submitted.
+~~> Jo hamne form banaya tha uske bad jab view me pehle user ko form show hoga uske bad wo submit karega to usj=ki request post me ayegi usko python ke object me save karenge uske bad check karenge ki form jo data mila valid he ya nahi agar valid he to save karega nahito vapas form me bhejega
+        
+Q3.Customize the RestaurantForm to add a placeholder for the name field and set the minimum value for the rating field to 1 and maximum to 5. Use the widgets attribute inside the ModelForm's Meta class.
+~~>  Hum jab class nbanate he Model.Form ka tab field ke bad widget likhte he jo har ek field ko customize karta he.attrs mein styling aur extra properties daal sakte hain means ke field ka input type,uski length set karni ho , placeholder , class kya rahega agar date pick karna he to type date karke kar sakt he.id set karni ho,require ho to require equal true karenge 
+
+
+Q4.Add validation to RestaurantForm so that the name must be at least 3 characters and the rating must be between 1 and 5. Show appropriate error messages on the form.
+~~>
+      from django import forms
+      from django.core.validators import MinValueValidator, MaxValueValidator
+      from .models import Restaurant
+
+      class RestaurantForm(forms.ModelForm):
+         class Meta:
+            model = Restaurant
+            fields = '__all__'
+            widgets = {
+                  'name': forms.TextInput(attrs={'placeholder': 'Enter restaurant name'}),
+                  'rating': forms.NumberInput(attrs={'min': 1, 'max': 5}),
+            }
+
+         def clean_name(self):
+            name = self.cleaned_data.get('name')
+            if len(name) < 3:
+                  raise forms.ValidationError("Name must be at least 3 characters long.")
+            return name
+
+         def clean_rating(self):
+            rating = self.cleaned_data.get('rating')
+            if rating < 1 or rating > 5:
+                  raise forms.ValidationError("Rating must be between 1 and 5.")
+            return rating
+
+Jab Hum view me is_valid() call karenge to validation automatically run hoga.
+

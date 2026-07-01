@@ -1,0 +1,69 @@
+Q1.Create a Django view for a 'My Orders' page (like Zomato) and use the @login_required decorator to ensure only logged-in users can access it.
+~~~> 
+from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
+@login_required
+def my_orders(request):
+    return render(request,"my_orders.html")
+
+
+Q2.Implement two custom user roles in your Django project: 'Seller' and 'Buyer' (inspired by Flipkart). Restrict access to a 'Post Product' page so only users with the 'Seller' role can access it, using Django's permissions system.
+~~~>
+        Admin Panel me User Ke Group me Seller or Buyer add and save Karo
+
+Q3.Create two groups in the Django admin panel: 'MovieCritic' and 'MovieFan' (think BookMyShow). Assign different permissions to each group: 'MovieCritic' can add and edit movie reviews, while 'MovieFan' can only view reviews.
+~~~> 
+from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import permission_required
+
+@login_required
+@permission_required(
+    "myapp.add_product",
+    raise_exception=True
+)
+def post_product(request):
+    return render(request,"post_product.html")
+
+@login_required : User login he ya nahi
+@permission_required user ko add_proddeuct karne ki permition he ya nahi
+
+Q4.Build a role-based dashboard view: when a user logs in, redirect them to a different dashboard based on their group ('Seller' sees a product management dashboard, 'Buyer' sees an order history dashboard). Use Django's group membership to determine which dashboard to show after login.
+~~~>
+seting.py me LOGIN_REDIRECT_URL = "/dashboard/"
+from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
+@login_required
+def dashboard(request):
+    if request.user.groups.filter(name="Seller").exists():
+        return redirect("seller_dashboard")
+    elif request.user.groups.filter(name="Buyer").exists():
+        return redirect("buyer_dashboard")
+    return redirect("login")
+
+
+@login_required
+def seller_dashboard(request):
+    return render(request, "seller_dashboard.html")
+
+
+@login_required
+def buyer_dashboard(request):
+    return render(request,"buyer_dashboard.html")
+
+Q5.Restrict access to the Django admin page for a custom model (like 'Playlist' for a Spotify-style app) so that only users in the 'Admin' group can view or edit it, while others get a permission denied message.
+Admin me ek Group banao.
+~~>Admin PAnel me Authentication and Authorization ke Groups me Add Group me groupe create karo.h=jisme Admin name do or jis user ko acess dena he us user ko Adnin group me add karo.
+
+from django.contrib import admin
+from .models import Playlist
+class PlaylistAdmin(admin.ModelAdmin):
+
+    def has_view_permission(self, request, obj=None):
+        return request.user.groups.filter(name="Admin ).exists()
+
+    def has_change_permission(self, request, obj=None):
+        return request.user.groups.filter(name="Admin").exists()
+
+admin.py me :
+admin.site.register(Playlist,PlaylistAdmin)

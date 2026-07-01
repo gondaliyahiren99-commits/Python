@@ -1,0 +1,33 @@
+# TASK
+Q1. Install Django using pip in your local Python environment and verify the installation by running 'django-admin --version' in the terminal.
+~~> Enviournment ko  create krane ke liye virtualenv ho =na jaroori he
+    step 1 : Virual Enviournment  Install :
+                pip install virtualenv
+
+    step 2 : Enviournment create
+                python -m venv myvenv
+
+~~> Django Install karn e ke liye
+        Jo bhi Enviournment banaya he usko location me jakar usko scripts\activate command se Enviournment ko activate karenge or close kr denge waha django insatall ke liye 
+                pip install django
+
+        Chekck Karne ke liye
+                python -m django --version
+
+
+Q2.Create a new Django project named 'foodiehub_project' using the django-admin startproject command, then run the development server and open http://127.0.0.1:8000/ to confirm it's working.
+~~> django-admin startproject foodiehub_project
+    cd foodiehub_project
+    python manage.py runserver
+
+Q3.Explore the folder structure of your 'foodiehub_project' and write down the purpose of each key file: manage.py, settings.py, urls.py, wsgi.py, and asgi.py. Check the official Django documentation or use ChatGPT to help you describe each file's role.
+~~> Hum project create karte he tab inbuit file milti he jisme manage.py, settings.py, urls.py, wsgi.py, and asgi.py
+jisme 
+        manage.py : Ye Django ka command line tool he jo app create ,migrationn,migrate,superusercreate,shell open,runserver karta he.
+        setting.py :  isme pure project ki seting hoti he ye batata he ki kon-kon si app create he,kon sa database use horaha he ,middleware,html page kaha se milega,static file kese serve honge uska configuration h=jesi chije usme define kiya jata he
+        urls.py : browser se aane vali request ko usko sahi view ke pass bhejna.
+        wsgi.py : project deploy ke bad wo direct project app se communicate nahi karta jab wsgi middleware banke kaam karti he.
+
+
+Q4. Write a short comparison (3-4 lines) between Django and Flask, focusing on features and use cases for each. Use an example app you use daily (like Instagram or Zomato) to explain which framework would be better and why.
+~~> Django full-stack framework he  Admin Panel ,Authentication , Migration , E-mail send jese Buit-In feture milte he. Aur Flask Ek lightweght Databse he. jo sirf Routing,request handling, Jinja template rendering wese simple feture provide karta he.Jo baki ke feture ko extension se add karna padta he.isliye Instagram and Zomato jesi web app banane ke liye Django Frameworok Hume Admin Panel, Database , Security, jese features zyada inbuilt milte he.

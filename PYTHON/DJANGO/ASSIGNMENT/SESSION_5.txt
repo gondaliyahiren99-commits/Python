@@ -1,0 +1,42 @@
+Q1.Enable the Django admin interface in your project and create a superuser account so you can log in to the admin dashboard.
+~~~>  superuser Create Ke liye project ke location me jakar Usko migrate karo. python manage.py migrate. ab migrate hone ke bad python manage.py createsuperuser ka command dete hi wo User ka name puchhega uske bad name enter karen ke bad user ki Email Enter karni hoti he.
+and last me User ko apni admin panel login ke liye Password Aur Confirm password enter karna Hota he. Ab User Admin panel me login kar sakta he.
+
+Q2.Create a new model called Restaurant with fields name, cuisine, and rating, then register it with the Django admin so it appears in the admin panel.
+~~> from django.contrib import admin se admin ko import karo.Ab  Model create karo jisme ad,im.ModelAdmin inherit karo.ab Hume Admin Panel me jo chij Show karni he usko django ki inbuilt method list_display ka use karke jo field dikhane he wo likhenge.Uske Bad admin,py  file me register karenge. admin.site.register(Resturant,Resturant_admin) isme konsa model ke data ko table ki tarah show karna he or kya show karna he.
+ jo Sab Data ko Table ki tarah show karega.
+searh se Filter ke liye django ki inbuilt method searh_field ka use karenge.jisme jobhi fields se search karana chaho wo field add karo.
+search_fields=('name','location') ab admin name ya location search kar sakta he.
+
+
+Q3.Customize the Restaurant admin by displaying name, cuisine, and rating in the list view using the list_display option in admin.py.
+~~>
+    from django.contrib import admin
+    from .models import Restaurant
+    class RestaurantAdmin(admin.ModelAdmin):
+        list_display = ('name', 'cuisine', 'rating')
+
+    admin.site.register(Restaurant, RestaurantAdmin)
+
+Q4.Add search functionality in the Restaurant admin so you can search restaurants by name or cuisine using the search_fields option.
+ ~~>  
+    from django.contrib import admin
+    from .models import Restaurant
+
+    class RestaurantAdmin(admin.ModelAdmin):
+        list_display = ('name', 'cuisine', 'rating')
+        search_fields = ('name', 'cuisine')
+
+    admin.site.register(Restaurant, RestaurantAdmin)
+
+Q5.Add a filter in the Restaurant admin panel to filter restaurants by cuisine using the list_filter option.Use list_filter = ['cuisine'] in your RestaurantAdmin class
+ ~~>
+    from django.contrib import admin
+    from .models import Restaurant
+
+    class RestaurantAdmin(admin.ModelAdmin):
+        list_display = ('name', 'cuisine', 'rating')
+        search_fields = ('name', 'cuisine')
+        list_filter = ['cuisine']
+
+    admin.site.register(Restaurant, RestaurantAdmin)

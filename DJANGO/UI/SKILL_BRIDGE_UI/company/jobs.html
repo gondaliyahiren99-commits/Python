@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Jobs - SkillBridge Admin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <style>
+        :root {
+            --primary-color: #2563EB;
+            --bg-main: #F8FAFC;
+        }
+        body { padding-top: 0; background-color: var(--bg-main); }
+        .sidebar { /* Reusing sidebar inline */
+            width: 250px; height: 100vh; position: fixed; top: 0; left: 0;
+            background: #1E293B; color: #fff; z-index: 1000; overflow-y: auto;
+        }
+        .main-content { margin-left: 250px; padding: 2rem; min-height: 100vh; }
+        .nav-link-sidebar {
+            color: #94A3B8; padding: 0.75rem 1.25rem; border-radius: var(--border-radius-sm);
+            margin: 0.25rem 1rem; display: flex; align-items: center; gap: 0.75rem; font-weight: 500; text-decoration: none;
+        }
+        .nav-link-sidebar:hover, .nav-link-sidebar.active { background-color: #334155; color: #fff; }
+        @media (max-width: 992px) {
+            .sidebar { display: none; }
+            .main-content { margin-left: 0; padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar placeholder -->
+    <div class="sidebar d-none d-lg-flex flex-column" id="sidebar">
+        <div class="p-4 d-flex align-items-center justify-content-between mb-2">
+            <a class="navbar-brand fs-4 mb-0 fw-bold d-flex align-items-center gap-2 text-white" href="../index.html">
+                <i class="bi bi-briefcase-fill text-primary"></i> SkillBridge
+            </a>
+        </div>
+        <div class="flex-grow-1">
+            <a href="dashboard.html" class="nav-link-sidebar"><i class="bi bi-pie-chart-fill"></i> Overview</a>
+            <a href="jobs.html" class="nav-link-sidebar active"><i class="bi bi-briefcase-fill"></i> Job Postings</a>
+            <a href="applications.html" class="nav-link-sidebar"><i class="bi bi-ui-checks"></i> Applications</a>
+            <a href="candidates.html" class="nav-link-sidebar"><i class="bi bi-person-lines-fill"></i> Candidate Database</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Header -->
+        <div class="d-flex justify-content-between align-items-center mb-4 slide-up">
+            <div>
+                <h3 class="fw-bold mb-1">Manage Jobs</h3>
+                <p class="text-muted mb-0">Create, edit, and track job postings.</p>
+            </div>
+            <button class="btn btn-primary shadow-sm fw-medium d-flex align-items-center gap-2 px-4" data-bs-toggle="modal" data-bs-target="#createJobModal">
+                <i class="bi bi-plus-lg"></i> Post New Job
+            </button>
+        </div>
+
+        <div class="card border-0 shadow-sm slide-up delay-100">
+            <!-- Filter Bar -->
+            <div class="card-header bg-white p-4 border-bottom d-flex flex-column flex-md-row justify-content-between gap-3">
+                <div class="d-flex border rounded px-3 py-2 bg-light w-100" style="max-width: 350px;">
+                    <i class="bi bi-search text-muted mt-1 me-2"></i>
+                    <input type="text" class="border-0 bg-transparent w-100 shadow-none outline-none" placeholder="Search jobs...">
+                </div>
+                <div class="d-flex gap-2">
+                    <select class="form-select border text-muted fw-medium">
+                        <option>Status: All</option>
+                        <option>Active</option>
+                        <option>Paused</option>
+                        <option>Closed</option>
+                    </select>
+                    <select class="form-select border text-muted fw-medium">
+                        <option>Date: Newest</option>
+                        <option>Date: Oldest</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Jobs Table -->
+            <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                    <thead class="table-light text-muted">
+                        <tr>
+                            <th class="fw-semibold py-3 ps-4" scope="col">Job Title</th>
+                            <th class="fw-semibold py-3" scope="col">Status</th>
+                            <th class="fw-semibold py-3" scope="col">Location</th>
+                            <th class="fw-semibold py-3" scope="col">Applicants</th>
+                            <th class="fw-semibold py-3" scope="col">Posted Date</th>
+                            <th class="fw-semibold py-3 pe-4 text-end" scope="col">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Row 1 -->
+                        <tr>
+                            <td class="ps-4">
+                                <div class="fw-bold text-dark">Frontend Architect</div>
+                                <div class="text-muted text-sm d-flex align-items-center gap-2 mt-1">
+                                    <i class="bi bi-briefcase"></i> Full-time 
+                                    <i class="bi bi-dot"></i> Engineering
+                                </div>
+                            </td>
+                            <td>
+                                <span class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 py-2 px-3 rounded-pill fw-medium">Active</span>
+                            </td>
+                            <td class="text-muted text-sm">Seattle, WA (Remote)</td>
+                            <td>
+                                <div class="d-flex align-items-center gap-2">
+                                    <div class="fw-bold fs-6">145</div>
+                                    <span class="text-success text-sm fw-medium align-items-center d-flex"><i class="bi bi-arrow-up-short"></i>12 new</span>
+                                </div>
+                            </td>
+                            <td class="text-muted text-sm">Oct 24, 2024</td>
+                            <td class="pe-4 text-end">
+                                <div class="dropdown">
+                                    <button class="btn btn-light border rounded-circle p-2" type="button" data-bs-toggle="dropdown">
+                                        <i class="bi bi-three-dots-vertical"></i>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-end shadow border-0">
+                                        <li><a class="dropdown-item" href="applications.html"><i class="bi bi-people me-2 text-muted"></i> View Candidates</a></li>
+                                        <li><a class="dropdown-item" href="#"><i class="bi bi-pencil me-2 text-muted"></i> Edit Job</a></li>
+                                        <li><a class="dropdown-item" href="#"><i class="bi bi-pause-circle me-2 text-muted"></i> Pause</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item text-danger" href="#"><i class="bi bi-trash me-2"></i> Delete</a></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <!-- Row 2 -->
+                        <tr>
+                            <td class="ps-4">
+                                <div class="fw-bold text-dark">Senior Product Manager</div>
+                                <div class="text-muted text-sm d-flex align-items-center gap-2 mt-1">
+                                    <i class="bi bi-briefcase"></i> Full-time 
+                                    <i class="bi bi-dot"></i> Product
+                                </div>
+                            </td>
+                            <td>
+                                <span class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 py-2 px-3 rounded-pill fw-medium">Active</span>
+                            </td>
+                            <td class="text-muted text-sm">San Francisco, CA</td>
+                            <td>
+                                <div class="d-flex align-items-center gap-2">
+                                    <div class="fw-bold fs-6">82</div>
+                                    <span class="text-muted text-sm fw-medium align-items-center d-flex">No new</span>
+                                </div>
+                            </td>
+                            <td class="text-muted text-sm">Oct 20, 2024</td>
+                            <td class="pe-4 text-end">
+                                <div class="dropdown">
+                                    <button class="btn btn-light border rounded-circle p-2" type="button" data-bs-toggle="dropdown">
+                                        <i class="bi bi-three-dots-vertical"></i>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-end shadow border-0">
+                                        <li><a class="dropdown-item" href="applications.html"><i class="bi bi-people me-2 text-muted"></i> View Candidates</a></li>
+                                        <li><a class="dropdown-item" href="#"><i class="bi bi-pencil me-2 text-muted"></i> Edit Job</a></li>
+                                        <li><a class="dropdown-item" href="#"><i class="bi bi-pause-circle me-2 text-muted"></i> Pause</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item text-danger" href="#"><i class="bi bi-trash me-2"></i> Delete</a></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <!-- Row 3 -->
+                        <tr>
+                            <td class="ps-4">
+                                <div class="fw-bold text-dark">Data Analyst Intern</div>
+                                <div class="text-muted text-sm d-flex align-items-center gap-2 mt-1">
+                                    <i class="bi bi-briefcase"></i> Internship 
+                                    <i class="bi bi-dot"></i> Data
+                                </div>
+                            </td>
+                            <td>
+                                <span class="badge bg-secondary bg-opacity-10 text-secondary border border-secondary border-opacity-25 py-2 px-3 rounded-pill fw-medium">Closed</span>
+                            </td>
+                            <td class="text-muted text-sm">Austin, TX</td>
+                            <td>
+                                <div class="d-flex align-items-center gap-2">
+                                    <div class="fw-bold fs-6 text-muted">450</div>
+                                </div>
+                            </td>
+                            <td class="text-muted text-sm">Sep 15, 2024</td>
+                            <td class="pe-4 text-end">
+                                <div class="dropdown">
+                                    <button class="btn btn-light border rounded-circle p-2" type="button" data-bs-toggle="dropdown">
+                                        <i class="bi bi-three-dots-vertical"></i>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-end shadow border-0">
+                                        <li><a class="dropdown-item" href="#"><i class="bi bi-files me-2 text-muted"></i> Duplicate</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item text-danger" href="#"><i class="bi bi-trash me-2"></i> Delete</a></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Pagination -->
+            <div class="card-footer bg-white p-4 border-top">
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="text-muted text-sm">Showing 1 to 3 of 12 entries</span>
+                    <ul class="pagination pagination-sm mb-0">
+                        <li class="page-item disabled"><a class="page-link text-muted" href="#">Previous</a></li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link text-dark" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link text-dark" href="#">Next</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create Job Modal -->
+    <div class="modal fade" id="createJobModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow-lg">
+                <div class="modal-header bg-light border-bottom p-4">
+                    <h5 class="modal-title fw-bold">Post New Job</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <form>
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-8">
+                                <label class="form-label fw-semibold">Job Title <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" placeholder="e.g. Software Engineer" required>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label fw-semibold">Department <span class="text-danger">*</span></label>
+                                <select class="form-select">
+                                    <option>Engineering</option>
+                                    <option>Marketing</option>
+                                    <option>Sales</option>
+                                    <option>Product</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">Location <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" placeholder="e.g. New York, NY">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">Workplace Type</label>
+                                <select class="form-select">
+                                    <option>On-site</option>
+                                    <option>Hybrid</option>
+                                    <option>Remote</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-4">
+                                <label class="form-label fw-semibold">Job Type</label>
+                                <select class="form-select">
+                                    <option>Full-time</option>
+                                    <option>Part-time</option>
+                                    <option>Contract</option>
+                                    <option>Internship</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label fw-semibold">Min Salary</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">$</span>
+                                    <input type="number" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label fw-semibold">Max Salary</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">$</span>
+                                    <input type="number" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold">Description</label>
+                            <textarea class="form-control" rows="5" placeholder="Write the job description here..."></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer bg-light border-top p-4 d-flex justify-content-between">
+                    <button type="button" class="btn btn-outline-secondary px-4 fw-medium" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary px-4 fw-bold">Publish Job</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/company.js"></script>
+</body>
+</html>

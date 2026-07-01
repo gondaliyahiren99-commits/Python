@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Jobs - SkillBridge</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/components.css">
+</head>
+<body class="bg-main pb-5">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-glass">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <i class="bi bi-briefcase-fill"></i> SkillBridge
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarMain">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center gap-2">
+                    <li class="nav-item"><a class="nav-link" href="../index.html"><i class="bi bi-house-door"></i>Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="browse-jobs.html"><i class="bi bi-search"></i>Jobs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="companies.html"><i class="bi bi-building"></i>Companies</a></li>
+                    <li class="nav-item d-none d-lg-block"><div class="vr h-100 mx-2 text-muted"></div></li>
+                    <li class="nav-item mt-2 mt-lg-0"><a class="btn btn-outline-primary" href="login.html">Sign In</a></li>
+                    <li class="nav-item mt-2 mt-lg-0"><a class="btn btn-primary" href="register.html">Join Now</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Search Header -->
+    <div class="bg-white border-bottom pt-4 pb-4">
+        <div class="container mt-2">
+            <form class="hero-search-wrapper p-2 bg-white rounded-pill border d-flex flex-column flex-md-row gap-2">
+                <div class="d-flex align-items-center flex-grow-1 px-3">
+                    <i class="bi bi-search text-muted"></i>
+                    <input type="text" class="form-control border-0 shadow-none bg-transparent" placeholder="Job title, skills, or company" value="Frontend Developer">
+                </div>
+                <div class="divider d-none d-md-block"></div>
+                <div class="d-flex align-items-center flex-grow-1 px-3">
+                    <i class="bi bi-geo-alt text-muted"></i>
+                    <input type="text" class="form-control border-0 shadow-none bg-transparent" placeholder="City, state, or zip code" value="San Francisco, CA">
+                </div>
+                <button type="submit" class="btn btn-primary rounded-pill px-4 py-2 mt-2 mt-md-0 d-flex align-items-center gap-2 m-1">
+                    Search
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+        <div class="row g-4">
+            <!-- Sidebar Filters -->
+            <div class="col-lg-3 d-none d-lg-block slide-up delay-100">
+                <div class="card border-0 shadow-sm sticky-top" style="top: 100px;">
+                    <div class="card-header bg-white d-flex justify-content-between align-items-center py-3">
+                        <h6 class="fw-bold mb-0">Filters</h6>
+                        <a href="#" class="text-sm text-decoration-none">Clear All</a>
+                    </div>
+                    <div class="card-body">
+                        <!-- Date Filter -->
+                        <div class="mb-4">
+                            <h6 class="fw-semibold mb-3">Date Posted</h6>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="radio" name="datePost" id="date1" checked>
+                                <label class="form-check-label text-muted" for="date1">Any Time</label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="radio" name="datePost" id="date2">
+                                <label class="form-check-label text-muted" for="date2">Past 24 hours</label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="radio" name="datePost" id="date3">
+                                <label class="form-check-label text-muted" for="date3">Past Week</label>
+                            </div>
+                        </div>
+
+                        <!-- Job Type -->
+                        <div class="mb-4">
+                            <h6 class="fw-semibold mb-3">Job Type</h6>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="type1">
+                                <label class="form-check-label text-muted" for="type1">Full-time <span class="text-sm">(340)</span></label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="type2">
+                                <label class="form-check-label text-muted" for="type2">Part-time <span class="text-sm">(12)</span></label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="type3">
+                                <label class="form-check-label text-muted" for="type3">Contract <span class="text-sm">(45)</span></label>
+                            </div>
+                        </div>
+                        
+                        <!-- Experience Level -->
+                        <div class="mb-4">
+                            <h6 class="fw-semibold mb-3">Experience Level</h6>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="exp1">
+                                <label class="form-check-label text-muted" for="exp1">Internship</label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="exp2">
+                                <label class="form-check-label text-muted" for="exp2">Entry level</label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="exp3">
+                                <label class="form-check-label text-muted" for="exp3">Mid-Senior level</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Job Feed -->
+            <div class="col-lg-5 col-md-6 slide-up delay-200">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h5 class="fw-bold mb-0">Showing 397 results</h5>
+                    <div class="dropdown">
+                        <button class="btn btn-sm btn-light border dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                            Sort by: Relevancy
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end shadow">
+                            <li><a class="dropdown-item" href="#">Relevancy</a></li>
+                            <li><a class="dropdown-item" href="#">Date Posted</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Job List -->
+                <div class="d-flex flex-column gap-3">
+                    <!-- Iterated Job Card 1 -->
+                    <div class="card card-hover border-0 shadow-sm">
+                        <div class="job-card cursor-pointer" onclick="window.location.href='job-details.html'">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Company Logo" class="job-company-logo bg-light p-2">
+                            <div class="flex-grow-1">
+                                <a href="job-details.html" class="job-title d-block">Senior React Native Engineer</a>
+                                <div class="text-muted mb-2">Microsoft • San Francisco, CA (Hybrid)</div>
+                                <div class="job-meta">
+                                    <span><i class="bi bi-briefcase"></i> Full-time</span>
+                                    <span><i class="bi bi-cash"></i> $150k - $200k</span>
+                                    <span><i class="bi bi-clock"></i> 2 hours ago</span>
+                                </div>
+                                <div class="job-tags d-flex gap-2">
+                                    <span class="badge">React</span>
+                                    <span class="badge">TypeScript</span>
+                                    <span class="badge">Mobile</span>
+                                </div>
+                            </div>
+                            <button class="bookmark-btn"><i class="bi bi-bookmark"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Iterated Job Card 2 -->
+                    <div class="card card-hover border-0 shadow-sm border-start border-4 border-primary"> <!-- Active state preview -->
+                        <div class="job-card cursor-pointer" onclick="window.location.href='job-details.html'">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Company Logo" class="job-company-logo bg-light p-2">
+                            <div class="flex-grow-1">
+                                <a href="job-details.html" class="job-title d-block">Frontend Architect</a>
+                                <div class="text-muted mb-2">Amazon • Seattle, WA (Remote)</div>
+                                <div class="job-meta">
+                                    <span><i class="bi bi-briefcase"></i> Full-time</span>
+                                    <span><i class="bi bi-cash"></i> $180k - $250k</span>
+                                    <span><i class="bi bi-clock"></i> 1 day ago</span>
+                                </div>
+                                <div class="text-success text-sm fw-medium align-items-center d-flex mt-2">
+                                    <i class="bi bi-lightning-charge-fill me-1"></i> Actively Recruiting
+                                </div>
+                            </div>
+                            <button class="bookmark-btn"><i class="bi bi-bookmark-fill text-primary"></i></button>
+                        </div>
+                    </div>
+                    
+                    <!-- Iterated Job Card 3 -->
+                    <div class="card card-hover border-0 shadow-sm">
+                        <div class="job-card cursor-pointer" onclick="window.location.href='job-details.html'">
+                            <div class="job-company-logo bg-primary text-white d-flex align-items-center justify-content-center fw-bold fs-4">N</div>
+                            <div class="flex-grow-1">
+                                <a href="job-details.html" class="job-title d-block">UI Engineer</a>
+                                <div class="text-muted mb-2">Netflix • Los Gatos, CA (On-site)</div>
+                                <div class="job-meta">
+                                    <span><i class="bi bi-briefcase"></i> Full-time</span>
+                                    <span><i class="bi bi-clock"></i> 3 days ago</span>
+                                </div>
+                                <div class="job-tags d-flex gap-2">
+                                    <span class="badge">JavaScript</span>
+                                    <span class="badge">CSS</span>
+                                </div>
+                            </div>
+                            <button class="bookmark-btn"><i class="bi bi-bookmark"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <nav class="mt-4 d-flex justify-content-center">
+                    <ul class="pagination pagination-sm shadow-sm rounded-pill bg-white mb-0 overflow-hidden">
+                        <li class="page-item disabled"><a class="page-link border-0 text-muted border-end" href="#">Previous</a></li>
+                        <li class="page-item"><a class="page-link border-0 text-dark fw-medium" href="#">1</a></li>
+                        <li class="page-item active"><a class="page-link border-0 bg-primary text-white fw-bold" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link border-0 text-dark fw-medium" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link border-0 text-dark border-start" href="#">Next</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Job Detailed Preview (Right Panel for Desktop) -->
+            <div class="col-lg-4 col-md-6 d-none d-md-block slide-up delay-300">
+                <div class="card border-0 shadow-sm sticky-top h-100 overflow-auto" style="top: 100px; max-height: calc(100vh - 120px);">
+                    <!-- Header -->
+                    <div class="position-relative">
+                        <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=800" class="w-100 object-fit-cover" style="height: 120px;" alt="Office">
+                        <div class="position-absolute bg-white rounded shadow-sm d-flex align-items-center justify-content-center" style="width: 80px; height: 80px; left: 20px; bottom: -40px;">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Company Logo" class="w-75">
+                        </div>
+                    </div>
+                    <div class="px-4 py-4 pt-5 mt-3 border-bottom">
+                        <h4 class="fw-bold mb-1">Frontend Architect</h4>
+                        <div class="text-muted d-flex align-items-center gap-2 mb-3">
+                            <a href="company-profile.html" class="text-decoration-none fw-medium">Amazon</a>
+                            <i class="bi bi-dot"></i>
+                            Seattle, WA (Remote)
+                            <i class="bi bi-dot"></i>
+                            <span class="text-success">Actively Recruiting</span>
+                        </div>
+                        <div class="d-flex flex-wrap gap-2 mb-4">
+                            <span class="badge bg-light text-dark border"><i class="bi bi-briefcase me-1"></i> Full-time</span>
+                            <span class="badge bg-light text-dark border"><i class="bi bi-building me-1"></i> 10,001+ employees</span>
+                            <span class="badge bg-light text-dark border"><i class="bi bi-lightbulb me-1"></i> Tech</span>
+                        </div>
+                        <div class="d-flex gap-2">
+                            <button class="btn btn-primary rounded-pill px-4" onclick="window.location.href='job-details.html'">Apply Now</button>
+                            <button class="btn btn-outline-secondary rounded-pill px-4">Save</button>
+                        </div>
+                    </div>
+                    <div class="px-4 py-4">
+                        <h6 class="fw-bold mb-3">About the job</h6>
+                        <p class="text-muted text-sm" style="line-height: 1.7;">
+                            We are seeking an experienced Frontend Architect to lead the technical direction of our core e-commerce platforms. You will be responsible for designing scalable component systems, defining best practices, and mentoring senior engineers across the organization.
+                        </p>
+                        <ul class="text-muted text-sm ps-3" style="line-height: 1.7;">
+                            <li>Architect and develop high-performance React applications</li>
+                            <li>Collaborate closely with product and design leadership</li>
+                            <li>Establish web performance budgeting and monitoring</li>
+                        </ul>
+                        <div class="text-center mt-4">
+                            <a href="job-details.html" class="text-decoration-none fw-medium text-primary">View Full Description <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

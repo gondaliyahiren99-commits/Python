@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillBridge - Professional Networking & Recruitment</title>
+    
+    <!-- Google Fonts (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+    <!-- Default Guest Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-glass">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="bi bi-briefcase-fill"></i> SkillBridge
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarMain">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center gap-2">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">
+                            <i class="bi bi-house-door"></i>
+                            Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="guest/browse-jobs.html">
+                            <i class="bi bi-search"></i>
+                            Jobs
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="guest/companies.html">
+                            <i class="bi bi-building"></i>
+                            Companies
+                        </a>
+                    </li>
+                    <li class="nav-item d-none d-lg-block">
+                        <div class="vr h-100 mx-2 text-muted"></div>
+                    </li>
+                    <li class="nav-item mt-2 mt-lg-0">
+                        <a class="btn btn-outline-primary" href="guest/login.html">Sign In</a>
+                    </li>
+                    <li class="nav-item mt-2 mt-lg-0">
+                        <a class="btn btn-primary" href="guest/register.html">Join Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section py-5 vh-100 d-flex align-items-center position-relative" style="background: var(--bg-main); overflow: hidden;">
+        <!-- Background Decorations -->
+        <div class="position-absolute top-0 start-0 w-100 h-100" style="background: radial-gradient(circle at 10% 20%, rgba(10, 102, 194, 0.05) 0%, transparent 40%); pointer-events: none;"></div>
+        <div class="position-absolute bottom-0 end-0 w-100 h-100" style="background: radial-gradient(circle at 90% 80%, rgba(16, 185, 129, 0.05) 0%, transparent 40%); pointer-events: none;"></div>
+
+        <div class="container position-relative">
+            <div class="row align-items-center">
+                <div class="col-lg-7 text-center text-lg-start slide-up">
+                    <span class="badge bg-primary bg-opacity-10 text-primary mb-3 py-2 px-3 fw-medium rounded-pill">
+                        <i class="bi bi-star-fill me-1 text-warning"></i> 
+                        The Premium Professional Network
+                    </span>
+                    <h1 class="display-3 fw-bold mb-4 line-height-tight">
+                        Find your <span class="text-gradient">Dream Job</span> &<br> Network with Leaders
+                    </h1>
+                    <p class="lead text-muted mb-5 pe-lg-5">
+                        SkillBridge helps professionals like you find top opportunities, connect with industry experts, and build a rewarding career.
+                    </p>
+                    
+                    <!-- Search Widget -->
+                    <form class="hero-search-wrapper p-2 bg-white rounded-pill shadow-lg d-flex flex-column flex-md-row gap-2 mb-4">
+                        <div class="d-flex align-items-center flex-grow-1 px-3">
+                            <i class="bi bi-search text-muted"></i>
+                            <input type="text" class="form-control border-0 shadow-none bg-transparent" placeholder="Job title, skills, or company">
+                        </div>
+                        <div class="divider d-none d-md-block"></div>
+                        <div class="d-flex align-items-center flex-grow-1 px-3">
+                            <i class="bi bi-geo-alt text-muted"></i>
+                            <input type="text" class="form-control border-0 shadow-none bg-transparent" placeholder="City, state, or zip code">
+                        </div>
+                        <button type="submit" class="btn btn-primary rounded-pill px-4 py-2 mt-2 mt-md-0 d-flex align-items-center gap-2 m-1" style="height: 48px;">
+                            Search <i class="bi bi-arrow-right"></i>
+                        </button>
+                    </form>
+
+                    <div class="d-flex flex-wrap gap-2 justify-content-center justify-content-lg-start align-items-center text-muted fw-medium text-sm">
+                        <span>Trending:</span>
+                        <a href="#" class="badge bg-light text-dark text-decoration-none border px-3 py-2 rounded-pill">Frontend Developer</a>
+                        <a href="#" class="badge bg-light text-dark text-decoration-none border px-3 py-2 rounded-pill">Product Manager</a>
+                        <a href="#" class="badge bg-light text-dark text-decoration-none border px-3 py-2 rounded-pill">Data Scientist</a>
+                    </div>
+                </div>
+                
+                <!-- Hero Image Grid (Placeholder abstract shapes and images in CSS but using UI components here) -->
+                <div class="col-lg-5 d-none d-lg-block position-relative slide-up delay-200">
+                    <div class="position-absolute end-0 top-50 translate-middle-y me-4" style="z-index: 2; width: 300px;">
+                        <!-- Floating Glass Card 1 -->
+                        <div class="glass-panel p-4 rounded-4 mb-4 shadow-lg" style="transform: rotate(5deg) translateX(20px);">
+                            <div class="d-flex gap-3 align-items-center">
+                                <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 48px; height: 48px;">
+                                    <i class="bi bi-google fs-4"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-0 fw-bold">Senior Engineer</h6>
+                                    <small class="text-muted">Google • 1h ago</small>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Floating Glass Card 2 -->
+                        <div class="glass-panel p-4 rounded-4 shadow-lg text-end" style="transform: rotate(-3deg) translateX(-40px);">
+                            <h4 class="fw-bold text-success mb-0">+340%</h4>
+                            <small class="text-muted fw-medium">Profile Views This Week</small>
+                        </div>
+                    </div>
+                    <!-- Large Circle Decor -->
+                    <div class="rounded-circle bg-primary bg-opacity-10 position-absolute end-0 top-50 translate-middle-y" style="width: 450px; height: 450px; z-index: 1;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platform Statistics -->
+    <section class="py-5 bg-white border-bottom">
+        <div class="container">
+            <div class="row text-center g-4">
+                <div class="col-6 col-md-3 slide-up">
+                    <h2 class="display-5 fw-bold text-gradient mb-1">5M+</h2>
+                    <p class="text-muted fw-medium py-1">Active Users</p>
+                </div>
+                <div class="col-6 col-md-3 slide-up delay-100">
+                    <h2 class="display-5 fw-bold text-gradient mb-1">120K</h2>
+                    <p class="text-muted fw-medium">Companies Hiring</p>
+                </div>
+                <div class="col-6 col-md-3 slide-up delay-200">
+                    <h2 class="display-5 fw-bold text-gradient mb-1">2M+</h2>
+                    <p class="text-muted fw-medium">Available Jobs</p>
+                </div>
+                <div class="col-6 col-md-3 slide-up delay-300">
+                    <h2 class="display-5 fw-bold text-gradient mb-1">98%</h2>
+                    <p class="text-muted fw-medium">Success Rate</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Companies section -->
+    <section class="py-5 bg-light">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Top Companies Hiring on SkillBridge</h2>
+                <p class="text-muted">Discover roles at the world's most innovative companies</p>
+            </div>
+            <div class="row row-cols-2 row-cols-md-4 row-cols-lg-6 justify-content-center g-3 align-items-center opacity-75">
+                <div class="col text-center">
+                    <i class="bi bi-microsoft fs-1 text-muted"></i>
+                </div>
+                <div class="col text-center">
+                    <i class="bi bi-apple fs-1 text-muted"></i>
+                </div>
+                <div class="col text-center">
+                    <i class="bi bi-meta fs-1 text-muted"></i>
+                </div>
+                <div class="col text-center">
+                    <i class="bi bi-amazon fs-1 text-muted"></i>
+                </div>
+                <div class="col text-center">
+                    <i class="bi bi-spotify fs-1 text-muted"></i>
+                </div>
+                <div class="col text-center">
+                    <i class="bi bi-paypal fs-1 text-muted"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Core (Can be componentized) -->
+    <footer class="bg-white border-top pt-5 pb-4 mt-auto">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <a class="navbar-brand fs-4 mb-3 d-inline-block" href="#">
+                        <i class="bi bi-briefcase-fill text-primary"></i> SkillBridge
+                    </a>
+                    <p class="text-muted small w-75">
+                        Your professional network to connect, find career opportunities, and grow your skillset in the modern era.
+                    </p>
+                    <div class="d-flex gap-3 mt-3">
+                        <a href="#" class="text-muted text-primary-hover"><i class="bi bi-linkedin fs-5"></i></a>
+                        <a href="#" class="text-muted text-primary-hover"><i class="bi bi-twitter-x fs-5"></i></a>
+                        <a href="#" class="text-muted text-primary-hover"><i class="bi bi-github fs-5"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-6">
+                    <h6 class="fw-bold mb-3">SkillBridge</h6>
+                    <ul class="list-unstyled d-flex flex-column gap-2 text-sm">
+                        <li><a href="guest/about.html" class="text-muted text-decoration-none">About</a></li>
+                        <li><a href="guest/careers.html" class="text-muted text-decoration-none">Careers</a></li>
+                        <li><a href="guest/contact.html" class="text-muted text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-3 col-6">
+                    <h6 class="fw-bold mb-3">Explore</h6>
+                    <ul class="list-unstyled d-flex flex-column gap-2 text-sm">
+                        <li><a href="guest/browse-jobs.html" class="text-muted text-decoration-none">Jobs</a></li>
+                        <li><a href="guest/companies.html" class="text-muted text-decoration-none">Companies</a></li>
+                        <li><a href="guest/salary.html" class="text-muted text-decoration-none">Salaries</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-12 text-lg-end">
+                    <h6 class="fw-bold mb-3">Install App</h6>
+                    <div class="d-flex gap-2 justify-content-lg-end">
+                        <button class="btn btn-outline-dark d-flex align-items-center gap-2">
+                            <i class="bi bi-apple fs-5"></i> App Store
+                        </button>
+                        <button class="btn btn-outline-dark d-flex align-items-center gap-2">
+                            <i class="bi bi-google-play fs-5"></i> Google Play
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <hr class="mt-5 mb-4 border-secondary opacity-25">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+                <small class="text-muted">&copy; 2024 SkillBridge. All rights reserved.</small>
+                <div class="d-flex gap-3 text-sm mt-3 mt-md-0">
+                    <a href="guest/privacy.html" class="text-muted text-decoration-none">Privacy Policy</a>
+                    <a href="guest/terms.html" class="text-muted text-decoration-none">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

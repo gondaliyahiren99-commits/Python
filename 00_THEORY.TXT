@@ -162,6 +162,7 @@ solusion:
     print("type of True =",type(True)) # output: type of True = <class 'bool'>
 
 ==============================================
+
 ~> accept dynamic values :
     input(): using of input function we can accept dynamic value from user at run time
 
@@ -488,25 +489,3 @@ string:
 
 
 
-modularity
-
-MODUAL IS A FILE WHICH is contain collectoin of logics or code 
-
-and we can import that file as per our requirments.
-
-there are mainely 3 types 
-
-1) built in
-2) user define
-3)third party modularity
-
-=========================================
-1) whenich is predefine  in by python
- we just have to import it and  use it 
-
-
- import modualname
- or
- from modualname import functionname
- or
- from modualname import 

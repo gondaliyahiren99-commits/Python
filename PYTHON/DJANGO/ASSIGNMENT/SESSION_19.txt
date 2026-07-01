@@ -1,0 +1,92 @@
+Q1.Create a new GitHub repository named 'MyPlaylistApp', initialize a local Django project (not Doctor Finder), and push the full project code to the new repository.
+~~~>
+1. Create a new Django project
+django-admin startproject MyPlaylistApp
+2. Go inside the project folder
+cd MyPlaylistApp
+3. Initialize Git
+git init
+4. Add all project files
+git add .
+5. Create the first commit
+git commit -m "Initial Django project"
+6. Connect your local project to the GitHub repository
+(Replace YourUsername with your actual GitHub username)
+git remote add origin https://github.com/YourUsername/MyPlaylistApp.git
+7. Rename the default branch to main
+git branch -M main
+8. Push the project to GitHub
+git push -u origin main
+
+1. PythonAnywhere (https://www.pythonanywhere.com) par account bana kar login karo.
+2. Dashboard → Web → Add a new web app par click karo.
+3. Manual Configuration select karo.
+4. Python version (e.g., Python 3.12) select karo.
+5. Bash Console open karo.
+6. GitHub se project clone karo:
+   git clone https://github.com/YourUsername/MyPlaylistApp.git
+7. Project folder me jao:
+   cd MyPlaylistApp
+8. Virtual environment banao:
+   python -m venv myenv
+9. Virtual environment activate karo:
+   source myenv/bin/activate
+10. Django install karo:
+    pip install django
+11. Agar requirements.txt hai to:
+    pip install -r requirements.txt
+12. Migrations run karo:
+    python manage.py migrate
+13. Web tab me jaakar WSGI configuration file open karo.
+14. Project path aur virtual environment ka path configure karo.
+15. settings.py me:
+    ALLOWED_HOSTS = ['YourUsername.pythonanywhere.com']
+16. Static files ka path configure karo.
+17. Web app ko Reload karo.
+18. Browser me open karo:
+    https://YourUsername.pythonanywhere.com
+19. Agar Django home page open ho jaye, to deployment successful hai.
+
+
+Q3.Configure your Django project's static and media files on PythonAnywhere so that uploaded images (for example, playlist cover photos) display correctly on the live site.You may need to adjust STATIC_ROOT, MEDIA_ROOT, and update the PythonAnywhere web app settings for static and media mappings.
+~~~>
+Route 1:
+   URL: https://YOUR_USERNAME.pythonanywhere.com/
+   status: working
+   result: Home/Playlist list page opened successfully.
+
+   route 2:
+   URL: https://YOUR_USERNAME.pythonanywhere.com/playlist/1/
+   status: working
+   result: Playlist detail page displayed correctly.
+
+   Issue Encountered:
+   Static files (CSS) were not loading.
+
+   Resolution:
+   configured the Static URL (/static/) and Static Directory in PythonAnywhere, then reloaded the web app.
+
+   Final status:
+    Both routes tested successfully and the application is working correctly.
+Q4.Run Django's 'makemigrations' and 'migrate' commands on PythonAnywhere to create the database tables for your 'MyPlaylistApp' models, then verify that you can add a new playlist entry using the Django admin on the live site.
+Run Django's `makemigrations` and `migrate` commands on PythonAnywhere to create the database tables for the `MyPlaylistApp` models.
+~~~>
+1. Log in to your PythonAnywhere account.
+2. Open **Consoles** and start a new **Bash Console**.
+3. cd /MyPlaylistProject
+4.source virtualenv/bin/activate
+5. Create the migration files: python manage.py makemigrations
+6. python manage.py migrate
+
+7.
+from django.contrib import admin
+from .models import Playlist
+admin.site.register(Playlist)
+8.python manage.py createsuperuser
+9. Reload your web application from the **Web** tab in PythonAnywhere.
+10. Open the Django Admin by visiting:
+11. Log in using the superuser credentials.
+12. Click **Playlists** under **MyPlaylistApp**.
+13. Click **Add Playlist**, enter the playlist details, and click **Save**.
+14. Verify that the new playlist appears in the Playlist list, confirming that the database tables were created successfully and the application is 
+

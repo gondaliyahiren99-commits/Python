@@ -1,0 +1,8 @@
+1.
+Create a simple HTML page with a list of songs (like a Spotify playlist) and add a 'Delete' button next to each song; use fetch() to send an AJAX DELETE request to a dummy endpoint when a button is clicked.
+2.
+Build a mini Flipkart-style product list using Python (Flask or Django) and JavaScript, where clicking the 'Remove from Wishlist' button sends an AJAX request to delete a product and removes it from the UI without reloading the page.<br><br><em><strong>Hint:</strong> Use fetch() with method 'DELETE' and update the DOM on success.</em>
+3.
+Implement a feature for a BookMyShow-like movie booking page where deleting a movie from your 'Watch Later' list uses AJAX (fetch API) to send a JSON request and displays a dynamic success message when the deletion is complete.
+4.
+Debug this scenario: You have a function that sends a fetch() DELETE request to remove a playlist from a music app, but the playlist is not disappearing from the page after deletion. Identify and fix the issue so the UI updates correctly.<br><br><em><strong>Hint:</strong> Check if your code is removing the DOM element after a successful response.</em>

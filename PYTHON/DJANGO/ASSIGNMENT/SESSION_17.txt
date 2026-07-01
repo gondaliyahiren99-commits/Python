@@ -1,0 +1,84 @@
+Q1.Create a Django Form class named AddRestaurantForm with fields for restaurant name, cuisine type, and contact email, then render it in a template using the GET method.
+~~~>
+from django import forms
+class AddRestaurantForm(forms.Form):
+    restaurant_name = forms.CharField(max_length=100,label="Restaurant Name")
+    cuisine_type = forms.CharField(max_length=100,label="Cuisine Type")
+    contact_email = forms.EmailField(label="Contact Email")
+
+
+from django.shortcuts import render
+from .forms import AddRestaurantForm
+def add_restaurant(request):
+    form = AddRestaurantForm()
+    return render(request, "add_restaurant.html", {"form": form})
+
+Q2.Modify your AddRestaurantForm to handle form submission using the POST method and display the submitted data on a new page after the user submits the form.
+~~~>
+from django.shortcuts import render
+from .forms import AddRestaurantForm
+def add_restaurant(request):
+    if request.method == "POST":
+        form = AddRestaurantForm(request.POST)
+
+        if form.is_valid():
+            restaurant_name = form.cleaned_data["restaurant_name"]
+            cuisine_type = form.cleaned_data["cuisine_type"]
+            contact_email = form.cleaned_data["contact_email"]
+            return render(request, "result.html", {"restaurant_name": restaurant_name,"cuisine_type": cuisine_type,"contact_email": contact_email,})
+    else:
+        form = AddRestaurantForm()
+    return render(request, "add_restaurant.html", {"form": form})
+
+Q3.Add validation to your AddRestaurantForm so that the restaurant name must be at least 3 characters and the contact email must be a valid email address. Display any validation errors directly above the form fields in your template.<br><br><em><strong>Hint:</strong> Use Django's built-in validators and {{ form.errors }} in your template.
+~~~>
+from django import forms
+from django.core.validators import MinLengthValidator
+
+class AddRestaurantForm(forms.Form):
+    restaurant_name = forms.CharField(max_length=100,validators=[MinLengthValidator(3)],label="Restaurant Name")
+    cuisine_type = forms.CharField(max_length=100,label="Cuisine Type")
+    contact_email = forms.EmailField(label="Contact Email")
+
+from django.shortcuts import render
+from .forms import AddRestaurantForm
+
+def add_restaurant(request):
+    if request.method == "POST":
+        form = AddRestaurantForm(request.POST)
+        if form.is_valid():
+            return render(request, "result.html", {"data": form.cleaned_data})
+    else:
+        form = AddRestaurantForm()
+    return render(request, "add_restaurant.html", {"form": form})
+
+
+Q4.Implement CSRF protection in your form template and verify that submitting the form without the CSRF token results in a forbidden error.
+Use {% csrf_token %} inside your form tags.
+~~~>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Restaurant Form</title>
+    </head>
+    <body>
+        <h2>Restaurant Form</h2>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Submit</button>
+        </form>
+    </body>
+</html>
+
+
+from django.shortcuts import render
+from .forms import RestaurantForm
+def restaurant_form(request):
+    if request.method == "POST":
+        form = RestaurantForm(request.POST)
+        if form.is_valid():
+            return render(request, "success.html")
+    else:
+        form = RestaurantForm()
+    return render(request, "restaurant.html", {"form": form})

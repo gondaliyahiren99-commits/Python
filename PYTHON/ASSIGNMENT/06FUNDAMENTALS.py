@@ -56,7 +56,6 @@ print(next(obj))
 
 
 #• Write a Python program that uses a custom iterator to iterate over a list of integers
-
 l1 = [15,16,24,18,19]
 
 obj = iter(l1)

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - SkillBridge Job Seeker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <style>
+        body { padding-top: 0; background-color: var(--bg-main); }
+        .sidebar {
+            width: 280px;
+            height: 100vh;
+            position: fixed;
+            top: 0; left: 0;
+            background: #fff;
+            border-right: 1px solid var(--border-color);
+            z-index: 1000;
+            overflow-y: auto;
+            transition: var(--transition-fast);
+        }
+        .main-content {
+            margin-left: 280px;
+            padding: 2rem;
+            min-height: 100vh;
+            transition: var(--transition-fast);
+        }
+        .nav-link-sidebar {
+            color: var(--text-muted);
+            padding: 0.75rem 1.25rem;
+            border-radius: var(--border-radius-md);
+            margin-bottom: 0.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 500;
+            transition: var(--transition-fast);
+            text-decoration: none;
+        }
+        .nav-link-sidebar:hover {
+            background-color: var(--bg-main);
+            color: var(--primary-color);
+        }
+        .nav-link-sidebar.active {
+            background-color: rgba(10, 102, 194, 0.1);
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        .stat-card {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-lg);
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            box-shadow: var(--shadow-sm);
+        }
+        .stat-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: var(--border-radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+        @media (max-width: 992px) {
+            .sidebar { transform: translateX(-100%); }
+            .sidebar.show { transform: translateX(0); }
+            .main-content { margin-left: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar d-flex flex-column" id="sidebar">
+        <div class="p-4 d-flex align-items-center justify-content-between border-bottom">
+            <a class="navbar-brand fs-4 mb-0 fw-bold d-flex align-items-center gap-2" href="../index.html">
+                <i class="bi bi-briefcase-fill text-primary"></i> SkillBridge
+            </a>
+            <button class="btn btn-close d-lg-none" id="closeSidebar"></button>
+        </div>
+        
+        <div class="p-3 flex-grow-1">
+            <small class="text-uppercase text-muted fw-bold px-3 mb-2 d-block" style="font-size: 0.75rem; letter-spacing: 0.5px;">Menu</small>
+            <a href="dashboard.html" class="nav-link-sidebar active"><i class="bi bi-grid-1x2"></i> Dashboard</a>
+            <a href="profile.html" class="nav-link-sidebar"><i class="bi bi-person-badge"></i> My Profile</a>
+            <a href="resume.html" class="nav-link-sidebar"><i class="bi bi-file-earmark-text"></i> Resume Manager</a>
+            
+            <small class="text-uppercase text-muted fw-bold px-3 mt-4 mb-2 d-block" style="font-size: 0.75rem; letter-spacing: 0.5px;">Career</small>
+            <a href="jobs.html" class="nav-link-sidebar"><i class="bi bi-search"></i> Find Jobs</a>
+            <a href="applications.html" class="nav-link-sidebar d-flex justify-content-between align-items-center">
+                <span><i class="bi bi-send"></i> Applications</span>
+                <span class="badge bg-primary rounded-pill">12</span>
+            </a>
+            <a href="saved-jobs.html" class="nav-link-sidebar"><i class="bi bi-bookmark"></i> Saved Jobs</a>
+            
+            <small class="text-uppercase text-muted fw-bold px-3 mt-4 mb-2 d-block" style="font-size: 0.75rem; letter-spacing: 0.5px;">Network</small>
+            <a href="connections.html" class="nav-link-sidebar"><i class="bi bi-people"></i> Connections</a>
+            <a href="messages.html" class="nav-link-sidebar d-flex justify-content-between align-items-center">
+                <span><i class="bi bi-chat-dots"></i> Messages</span>
+                <span class="badge bg-danger rounded-pill">3</span>
+            </a>
+            
+            <small class="text-uppercase text-muted fw-bold px-3 mt-4 mb-2 d-block" style="font-size: 0.75rem; letter-spacing: 0.5px;">Account</small>
+            <a href="settings.html" class="nav-link-sidebar"><i class="bi bi-gear"></i> Settings</a>
+        </div>
+
+        <div class="p-3 border-top mt-auto">
+            <div class="d-flex align-items-center gap-3 p-2">
+                <img src="https://ui-avatars.com/api/?name=Alex+Carter&background=0A66C2&color=fff" class="rounded-circle" width="40" alt="User">
+                <div class="flex-grow-1">
+                    <h6 class="mb-0 fw-bold text-dark fs-sm">Alex Carter</h6>
+                    <small class="text-muted">Frontend Developer</small>
+                </div>
+                <a href="../guest/login.html" class="text-muted"><i class="bi bi-box-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Topbar Mobile -->
+        <div class="d-flex align-items-center justify-content-between mb-4 d-lg-none">
+            <a class="navbar-brand fs-4 mb-0 fw-bold d-flex align-items-center gap-2" href="#">
+                <i class="bi bi-briefcase-fill text-primary"></i> SkillBridge
+            </a>
+            <button class="btn btn-light border" id="openSidebar"><i class="bi bi-list fs-4"></i></button>
+        </div>
+
+        <!-- Dashboard Header -->
+        <div class="d-flex justify-content-between align-items-end mb-4 slide-up">
+            <div>
+                <h3 class="fw-bold mb-1">Welcome back, Alex! 👋</h3>
+                <p class="text-muted mb-0">Here is what's happening with your job search today.</p>
+            </div>
+            <button class="btn btn-primary rounded-pill d-none d-md-block"><i class="bi bi-cloud-arrow-up me-1"></i> Update Resume</button>
+        </div>
+
+        <!-- Profile Completion Widget (Premium SaaS feel) -->
+        <div class="card bg-primary text-white border-0 shadow-sm mb-4 slide-up delay-100 overflow-hidden position-relative">
+            <div class="position-absolute end-0 top-0 h-100 opacity-25" style="width: 30%;">
+                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="w-100 h-100">
+                    <path fill="#ffffff" d="M42.1,-70.6C54.4,-61.6,64,-48.9,71.2,-34.5C78.4,-20.1,83.1,-3.9,79.5,10.6C75.8,25.1,63.7,37.9,51.8,49.2C39.9,60.6,28.2,70.5,13.8,74.9C-0.6,79.2,-17.8,78.1,-31.8,71.8C-45.7,65.5,-56.3,54,-65.4,40.9C-74.4,27.8,-81.9,13.9,-81.5,0.2C-81.1,-13.4,-72.8,-26.8,-63.4,-38.7C-54,-50.7,-43.3,-61.2,-30.7,-69.9C-18.1,-78.7,-3.6,-85.7,5.5,-87C14.6,-88.2,29.8,-79.6,42.1,-70.6Z" transform="translate(100 100)" />
+                </svg>
+            </div>
+            <div class="card-body p-4 position-relative z-1 d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-4">
+                <div class="flex-grow-1">
+                    <h5 class="fw-bold mb-2">Complete your profile to get discovered!</h5>
+                    <p class="text-white-50 mb-0">You are 2 steps away from a stellar profile. Add your latest project to stand out.</p>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                    <h2 class="display-6 fw-bold mb-0">85%</h2>
+                    <div class="progress bg-white bg-opacity-25" style="width: 150px; height: 8px;">
+                        <div class="progress-bar bg-white" style="width: 85%;"></div>
+                    </div>
+                    <button class="btn btn-light rounded-pill px-4 ms-2 fw-medium text-primary">Complete Now</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats Overview -->
+        <div class="row g-4 mb-4">
+            <div class="col-md-6 col-lg-3 slide-up delay-200">
+                <div class="stat-card">
+                    <div class="stat-icon bg-primary bg-opacity-10 text-primary">
+                        <i class="bi bi-send-check"></i>
+                    </div>
+                    <div>
+                        <h3 class="fw-bold mb-0">24</h3>
+                        <p class="text-muted mb-0 fw-medium">Jobs Applied</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 slide-up delay-200">
+                <div class="stat-card">
+                    <div class="stat-icon bg-warning bg-opacity-10 text-warning">
+                        <i class="bi bi-calendar-event"></i>
+                    </div>
+                    <div>
+                        <h3 class="fw-bold mb-0">3</h3>
+                        <p class="text-muted mb-0 fw-medium">Interviews</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 slide-up delay-300">
+                <div class="stat-card">
+                    <div class="stat-icon bg-success bg-opacity-10 text-success">
+                        <i class="bi bi-eye"></i>
+                    </div>
+                    <div>
+                        <h3 class="fw-bold mb-0">142</h3>
+                        <p class="text-muted mb-0 fw-medium">Profile Views</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 slide-up delay-300">
+                <div class="stat-card">
+                    <div class="stat-icon bg-info bg-opacity-10 text-info">
+                        <i class="bi bi-bookmark"></i>
+                    </div>
+                    <div>
+                        <h3 class="fw-bold mb-0">12</h3>
+                        <p class="text-muted mb-0 fw-medium">Saved Jobs</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4 mb-4">
+            <!-- Charts -->
+            <div class="col-lg-8 slide-up delay-300">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                        <h6 class="fw-bold mb-0">Application Activity</h6>
+                        <select class="form-select form-select-sm w-auto border-0 bg-light">
+                            <option>Past 6 Months</option>
+                            <option>Past Year</option>
+                        </select>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="applicationChart" height="100"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activity -->
+            <div class="col-lg-4 slide-up delay-300">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-header bg-white">
+                        <h6 class="fw-bold mb-0">Recent Activity</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex align-items-start gap-3 mb-4">
+                            <div class="bg-success text-white rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 36px; height: 36px;">
+                                <i class="bi bi-check-lg"></i>
+                            </div>
+                            <div>
+                                <h6 class="fw-semibold mb-1">Application Viewed</h6>
+                                <p class="text-muted text-sm mb-0">Microsoft reviewed your application for <strong>Frontend Engineer</strong>.</p>
+                                <small class="text-muted">2 hours ago</small>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-start gap-3 mb-4">
+                            <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 36px; height: 36px;">
+                                <i class="bi bi-send"></i>
+                            </div>
+                            <div>
+                                <h6 class="fw-semibold mb-1">Application Sent</h6>
+                                <p class="text-muted text-sm mb-0">You applied for <strong>Senior React Developer</strong> at Stripe.</p>
+                                <small class="text-muted">Yesterday</small>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-start gap-3">
+                            <div class="bg-warning text-white rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 36px; height: 36px;">
+                                <i class="bi bi-calendar"></i>
+                            </div>
+                            <div>
+                                <h6 class="fw-semibold mb-1">Interview Scheduled</h6>
+                                <p class="text-muted text-sm mb-0">Technical screen with Amazon team.</p>
+                                <small class="text-muted">2 days ago</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/jobseeker.js"></script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!-- restaurant/templates/restaurant/add_restaurant.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ page_title }}</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 40px auto; padding: 20px; }
+        .form-control { width: 100%; padding: 8px; margin: 6px 0 16px; border: 1px solid #ccc; border-radius: 4px; }
+        label { font-weight: bold; color: #333; }
+        .submit-btn { background: #e65c00; color: white; padding: 10px 24px; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; }
+        .submit-btn:hover { background: #cc5200; }
+        .error { color: red; font-size: 13px; }
+    </style>
+</head>
+<body>
+
+<h2>🍽️ {{ page_title }}</h2>
+
+<!-- METHOD="GET" → Data URL mein jayega -->
+<form method="GET" action="{% url 'my_app:add_restaurant' %}">
+
+    {% csrf_token %}
+
+    <!-- Option 1: Ek saath poora form render karo (simple) -->
+    <!-- {{ form.as_p }} -->
+
+    <!-- Option 2: Full control ke saath (recommended) -->
+
+    <!-- Field 1: Restaurant Name -->
+    <div>
+        <label for="{{ form.restaurant_name.id_for_label }}">
+            {{ form.restaurant_name.label }}
+        </label>
+        {{ form.restaurant_name }}
+        {% if form.restaurant_name.errors %}
+            <p class="error">{{ form.restaurant_name.errors }}</p>
+        {% endif %}
+    </div>
+
+    <!-- Field 2: Cuisine Type -->
+    <div>
+        <label for="{{ form.cuisine_type.id_for_label }}">
+            {{ form.cuisine_type.label }}
+        </label>
+        {{ form.cuisine_type }}
+        {% if form.cuisine_type.errors %}
+            <p class="error">{{ form.cuisine_type.errors }}</p>
+        {% endif %}
+    </div>
+
+    <!-- Field 3: Contact Email -->
+    <div>
+        <label for="{{ form.contact_email.id_for_label }}">
+            {{ form.contact_email.label }}
+        </label>
+        {{ form.contact_email }}
+        {% if form.contact_email.errors %}
+            <p class="error">{{ form.contact_email.errors }}</p>
+        {% endif %}
+    </div>
+
+    <button type="submit" class="submit-btn">Add Restaurant ➕</button>
+
+</form>
+
+</body>
+</html>

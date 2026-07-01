@@ -1,0 +1,175 @@
+Q1.Add a feature to your project that allows users to search for restaurants by cuisine and location, similar to Zomato's search — create a Restaurant model with name, cuisine, and location fields, and implement a search function that filters restaurants based on user input.
+~~>
+class Restaurant(models.Model):
+    name = models.CharField(max_length=100)
+    cuisine = models.CharField(max_length=100)
+    location = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
+
+   ___________
+   
+   from django.db.models import Q
+
+   def restaurant_search(request):
+
+      cuisine = request.POST["cuisine"]
+      location = request.POST["location"]
+
+      restaurants = Restaurant.objects.all()
+
+      if cuisine or location:
+
+         restaurants = Restaurant.objects.filter(
+               Q(cuisine__icontains=cuisine) |
+               Q(location__icontains=location)
+         )
+
+      return render(request, "restaurant_search.html", {
+         "restaurants": restaurants
+      })
+
+Q2.Implement a login and OTP verification system for a movie ticket booking app — create registration and login forms, generate a 6-digit OTP on login, and verify the OTP before allowing access to the user dashboard.<br><br><em><strong>Hint:</strong> Store OTPs temporarily and expire them after 3 minutes.
+~~>
+    def user_login(request):
+      if request.POST:
+         username = request.POST["username"]
+         password = request.POST["password"]
+         user = authenticate(username=username, password=password)
+         if user:
+               otp = random.randint(100000,999999)
+               request.session["otp"] = str(otp)
+               request.session["user_id"] = user.id
+               # OTP expires in 3 minutes
+                request.session.set_expiry(180)
+                send_mail("Movie Ticket OTP",f"Your OTP is {otp}","admin@gmail.com", [user.email])
+                return redirect("verify_otp")
+      return render(request,"login.html")
+
+
+~>  Verify OTP
+   def verify_otp(request):
+      if request.method == "POST":
+
+         otp = request.POST["otp"]
+
+         if otp == request.session.get("otp"):
+
+               user = User.objects.get(id=request.session["user_id"])
+
+               login(request,user)
+
+               del request.session["otp"]
+
+               return redirect("dashboard")
+
+      return render(request,"verify_otp.html")
+
+
+
+Q3.Build a user profile management page for a Flipkart-style shopping app — allow users to update their name, email, delivery address, and profile picture, and display the updated details on the profile page.
+~~>
+1. models.py
+
+   class UserProfile(models.Model):
+      name = models.CharField(max_length=100)
+      email = models.EmailField()
+      address = models.TextField()
+      profile_pic = models.ImageField(upload_to="profile_pics/",blank=True,null=True)
+
+      def __str__(self):
+         return self.name
+
+  ____________ forms.py
+
+   from django import forms
+   from .models import UserProfile
+
+   class UserProfileForm(forms.ModelForm):
+
+      class Meta:
+         model = UserProfile
+         fields = "__all__"
+
+   _________ views.py
+
+   from .models import UserProfile
+   from .forms import UserProfileForm
+
+   def profile(request):
+
+      if request.POST:
+
+         form = UserProfileForm(
+               request.POST,
+               request.FILES
+         )
+         if form.is_valid():
+               form.save()
+               return redirect("profile")
+         form = UserProfileForm(instance=profile)
+      return render(request,"profile.html",{"form": form,"profile": profile})
+
+
+Q4.Integrate Google Maps into a cab booking app page — show the user's current location on the map and allow them to select a pickup location by clicking on the map.Use the Google Maps JavaScript API and geolocation features.
+~~>
+settings.py
+   GOOGLE_MAPS_API_KEY = "google/location/fetch/alfa/map"
+
+_________________ 2. views.py
+   def cab_booking(request):
+      return render( request, "cab_booking.html", {"api_key": settings.GOOGLE_MAPS_API_KEY})
+_________________templates/cab_booking.html
+ <html>
+   <head>
+   <style>
+   #map{
+      height:500px;
+      width:100%;
+      }
+   </style>
+   </head>
+   <body>
+   <h2>Cab Booking</h2>
+   <p>Click on the map to select your pickup location.</p>
+   <div id="map"></div>
+   <br>
+   <label>Pickup Latitude</label>
+   <input type="text" id="lat" readonly>
+   <br><br>
+   <label>Pickup Longitude</label>
+   <input type="text" id="lng" readonly>
+   <script>
+   function initMap(){
+      navigator.geolocation.getCurrentPosition(function(position){
+         const userLocation={
+               lat:position.coords.latitude,
+               lng:position.coords.longitude };
+         const map=new google.maps.Map(
+               document.getElementById("map"),
+               {
+                  zoom:15,
+                  center:userLocation
+               }
+         );
+         const marker=new google.maps.Marker({
+               position:userLocation,
+               map:map,
+               title:"Your Current Location"
+         });
+         map.addListener("click",function(event){
+               marker.setPosition(event.latLng);
+               document.getElementById("lat").value=event.latLng.lat();
+               document.getElementById("lng").value=event.latLng.lng();
+         });
+      });
+   }
+   </script>
+   <script
+   src="https://maps.googleapis.com/maps/api/js?key={{api_key}}&callback=initMap"
+   </script>
+   </body>
+   </html>
+
+

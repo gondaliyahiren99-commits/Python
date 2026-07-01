@@ -1,0 +1,64 @@
+Q1.Create a Django model named Restaurant with fields name (CharField), location (CharField), and rating (FloatField) in a new app called foodiespot.
+~~> Project ke location pr app create karo foodiespot naam vali.. App create karne ke bad seting.py me app ko Insatalled App me add karo.
+Uske model.py me Model cretae karo jisaka namm Restaurant Rakho.
+
+class Restaurant(models.Model):
+    name=models.CharField(max_length = 30,unique=True)
+    location=models.CharField(max_length = 30)
+    rating=models.FloatField()
+    cuisine = models.ForeignKey(Cuisine,on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
+
+Q2.Add a Cuisine model to your foodiespot app with fields: name (CharField) and description (TextField), then set up a ForeignKey in Restaurant to link each restaurant to a cuisine.
+~~> 
+class Cuisine(models.Model):
+    name=models.CharField(max_length = 30)
+    description=models.TextField()
+
+    def __str__(self):
+        return self.name
+
+Q3.Run makemigrations and migrate commands to create the database tables for your Restaurant and Cuisine models, then verify the tables are created in your SQLite database using DB Browser for SQLite or the Django shell.
+~~> python manage.py makemigrations
+    python manage.py migrate
+
+    Uske bad Project ki admin.py ki file me dono models ko add karo
+    admin.site.register(Restaurant),
+    admin.site.register(Cuisine)
+    Ab , Admin panel me dono Database sj=how karega.
+
+Q4.Change your Django project's database settings to connect to a MySQL database using pymysql, and update your foodiespot app's models to work with MySQL instead of SQLite.Install pymysql and update DATABASES in settings.py. Make sure MySQL server is running and you have created the database.
+~~> Apne mysql me Database create karo jisaka name foodiespot  karo.
+    Database banne ke bad apne project ke seting me Configure karo mysql karo.
+    seting.py me 
+    'default': {
+    'ENGINE': 'django.db.backends.mysql',
+    'NAME': 'foodiespot', (database name)
+    'USER': 'user_name',
+    'PASSWORD': 'user_password',
+    'HOST': 'localhost',
+    'PORT': '3306',
+}
+
+config Hone ke bad Project ke  __init__.py file me mysql import karo or usko django ke bacckend name se change karo.kyunki django apne bacckend me jo name save he usko find karega jo na mile to error de sakta he.
+        import pymysql
+        pymysql.install_as_MySQLdb()
+
+
+Q5.Use Django's ORM to add three new Restaurant objects and two Cuisine objects, then write a query to get all restaurants with a rating above 4.0 and print their names.
+~~>  Django Ke Model ,Database Or ORM Use karane ke liye apne terminal  me python manage.py shell command likhte he. Ab Cuisine me Data enter karne ke liye :
+        c1 = Cuisine.objects.create(name="Indian",description="Indian Food")  
+        c2 = Cuisine.objects.create(name="Chinese",description="Chinese Food")
+        isko Resturant me Reference dene liye variable me store karte he.
+Ab Resturant me Data Add Ke liye :
+        Resturant.objects.create(name="Pizza",location="Ahemdabad",rating=4.5,cuisine=c1)
+        Resturant.objects.create(name="Burger",location="Baroda",rating=3.5,cuisine=c2)
+        Resturant.objects.create(name="FrenchFries",location="Surat",rating=4.8,cuisine=c2)
+
+Jis Menu ki Rating 4 Se High he:
+        for restaurant in restaurants:
+            print(restaurant.name)
+
+    

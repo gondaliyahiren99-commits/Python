@@ -1,0 +1,47 @@
+Q1.Create a Django model called Restaurant with fields name, cuisine, and rating, then use filter() to get all restaurants with cuisine='Chinese' and rating greater than 4.
+~~~> 
+from django.shortcuts import render
+from .models import Restaurant
+def restaurant_list(request):
+    restaurants = Restaurant.objects.filter(cuisine="Chinese",rating__gt=4)
+    return render(request,"restaurant_list.html",{"restaurants": restaurants})
+
+Q2.In your Django shell, use exclude() to get all users from the User model who do NOT have 'gmail.com' in their email address.Use the __contains lookup with exclude().
+~~~> 
+    python manage.py shell
+    users = User.objects.exclude(email__contains="gmail.com")
+    for user in users:
+        print(user.username,user.email)
+
+Q3.Build a Django QuerySet using annotate() to count the number of reviews for each Movie in a Movie and Review model setup, and print each movie's name with its review count.
+~~~> 
+from django.shortcuts import render
+from django.db.models import Count
+from .models import Movie
+def movie_list(request):
+    movies = Movie.objects.annotate(review_count=Count("review"))
+    return render(request, "movie_list.html",{"movies": movies})
+
+Q4.Given a Product and Category model (where Product has a foreign key to Category), use select_related() to fetch all products with their categories in a single query and display each product's name along with its category name.
+~~~> 
+from django.shortcuts import render
+from .models import Product
+def product_list(request):
+    products = Product.objects.select_related("category")
+    return render(request,"product_list.html",{"products": products})
+
+Q5.Use Q() objects to filter all Flipkart-style products that are either in the 'Electronics' category or have a price less than 1000, and paginate the results to show 5 products per page using Django's Paginator.
+~~~> 
+from django.shortcuts import render
+from django.db.models import Q
+from django.core.paginator import Paginator
+from .models import Product
+def product_list(request):
+    products = Product.objects.filter(
+        Q(category="Electronics") |
+        Q(price__lt=1000)
+    )
+    paginator = Paginator(products, 5)
+    page_number = request.GET.get("page")
+    page_obj = paginator.get_page(page_number)
+    return render(request,"product_list.html",{"page_obj": page_obj})

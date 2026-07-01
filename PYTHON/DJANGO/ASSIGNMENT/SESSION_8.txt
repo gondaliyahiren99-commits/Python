@@ -1,0 +1,112 @@
+1.Create a Python Django project called musiczone and add a User model if not already present. Set up the default authentication system so users can register, log in, and log out through Django's built-in views.
+~~~> 
+from django.shortcuts import render, redirect
+from django.contrib.auth.forms import UserCreationForm
+def register(request):
+    if request.method == "POST":
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("login")
+    else:
+        form = UserCreationForm()
+    return render(request, "registration/register.html", {"form": form})
+
+    or Urls me:
+    from django.urls import path
+    from django.contrib.auth import views as auth_views
+    from .views import register
+
+    urlpatterns = [
+            path("register/", register, name="register"),
+            path("login/",auth_views.LoginView.as_view(template_name="registration/login.html"),name="login"),
+            path("logout/",auth_views.LogoutView.as_view(),name="logout")
+            ]
+
+            Django ka buit in view use kar rahe he to to redirect bhi karvane padega.kyunki Usnke View me redirect karta nahi he.seting.py me 
+            LOGIN_REDIRECT_URL = "/"
+            LOGOUT_REDIRECT_URL = "/accounts/login/"
+  
+2.Build a signup form for a food delivery app (like Zomato) using Django. The form should collect username, email, and password, and save new users securely with hashed passwords.
+~~~> 
+from django import forms
+class SignupForm(forms.Form):
+    username = forms.CharField(max_length=100)
+    email = forms.EmailField()
+    password = forms.CharField(widget=forms.PasswordInput())
+
+
+from django.shortcuts import render, redirect
+from django.contrib.auth.models import User
+from .forms import SignupForm
+def signup(request):
+    if request.method == "POST":
+        form = SignupForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data["username"]
+            email = form.cleaned_data["email"]
+            password = form.cleaned_data["password"]
+
+            User.objects.create_user(username=username,email=email,password=password)
+            return redirect("login")
+    else:
+        form = SignupForm()
+    return render(request, "signup.html", {"form": form})
+
+*create_user : ye karne se Djnago passwird ko automatically hashed password me save karega.   
+
+3.Implement a login feature for a movie booking site (BookMyShow style) using Django's authentication backend. After login, redirect the user to a welcome page showing their username.
+~~~> 
+view me ::
+from django.contrib.auth.decorators import login_required
+def user_login(request):
+    if request.method == "POST":
+        username = request.POST["username"]
+        password = request.POST["password"]
+        user = authenticate(request, username=username,password=password)
+        if user is not None:
+            login(request, user)
+            return redirect("welcome")
+    return render(request, "login.html")
+
+isme login validate authenticate check karega useename aur password same he ya nahi.
+
+@login_required
+def welcome(request):
+    return render(request, "welcome.html")
+
+
+4.Display the logged-in user's username in the navbar of your e-commerce app (Flipkart-style) template. Show 'Login' and 'Signup' links if no user is logged in, and 'Logout' if a user is logged in.Use Django's template tags like {% if user.is_authenticated %} to conditionally render navbar items.
+<nav>
+    <a href="/">Home</a>
+    {% if user.is_authenticated %}
+        <span>Welcome {{ user.username }}</span>
+        <a href="{% url 'logout' %}">Logout</a>
+    {% else %}
+        <a href="{% url 'login' %}">Login</a>
+        <a href="{% url 'signup' %}">Signup</a>
+    {% endif %}
+</nav>
+Django login hone ke baad template me user object automatically bhej deta hai (agar authentication middleware enabled hai, jo by default hota hai).
+
+
+5.Add a logout button to your app's navbar that logs out the user and redirects them to the homepage. Test that after logging out, the username is no longer shown and the login/signup links appear.
+<nav>
+
+    <a href="/">Home</a>
+
+    {% if user.is_authenticated %}
+
+        Welcome {{ user.username }}
+
+        <a href="{% url 'logout' %}">Logout</a>
+
+    {% else %}
+
+        <a href="{% url 'login' %}">Login</a>
+
+        <a href="{% url 'signup' %}">Signup</a>
+
+    {% endif %}
+
+</nav>

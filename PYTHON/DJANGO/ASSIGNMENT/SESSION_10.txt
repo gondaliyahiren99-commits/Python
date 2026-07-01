@@ -1,0 +1,74 @@
+Q1.Create a Django view called forgot_password_view that renders a form where users enter their email to request a password reset.
+~~~>
+urls.py me
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path(
+        "forgot-password/", views.forgot_password_view,name="forgot_password")
+]
+
+Q2.Generate a random 6-digit OTP in your Django view, store it in the session, and send it to the user's email using Django's send_mail function.Use request.session['otp'] to save the OTP and settings.py to configure email backend for testing.
+~~~>
+import random
+from django.shortcuts import render
+from django.core.mail import send_mail
+
+def send_otp(request):
+    if request.method == "POST":
+        email = request.POST["email"]
+        otp = random.randint(100000,999999)
+        request.session["otp"] = otp
+        send_mail("Password Reset OTP",f"Your OTP is : {otp}","yourgmail@gmail.com",[email],fail_silently=False)
+        return render(request,"success.html")
+    return render(request,"forgot_password.html")
+
+
+Q3.Build a Django form where the user enters the OTP they received via email; validate the OTP by comparing it with the value stored in the session, and display a success or error message accordingly.
+~~~>
+from django.shortcuts import render
+
+def verify_otp(request):
+    if request.method == "POST":
+        user_otp = request.POST["otp"]
+        session_otp = str(request.session.get("otp"))
+        if user_otp == session_otp:
+            return render(request, "success.html")
+        else:
+            return render(request, "error.html")
+    return render(request, "verify_otp.html")
+
+
+Q4.Set a session expiry time of 5 minutes for the OTP in your Django app so that the OTP becomes invalid after that period. Use request.session.set_expiry(300) after setting the OTP.
+~~~> 
+import random
+from django.shortcuts import render
+from django.core.mail import send_mail
+def send_otp(request):
+    if request.method == "POST":
+        email = request.POST["email"]
+        otp = random.randint(100000,999999)
+        request.session["otp"] = otp
+        request.session.set_expiry(300)
+        send_mail("Password Reset OTP",f"Your OTP is : {otp}","yourgmail@gmail.com",[email],fail_silently=False)
+        return render(request,"success.html")
+    return render(request,"forgot_password.html")
+
+
+Q5.Create a custom Django middleware called BlockExpiredOTPAccessMiddleware that checks if the OTP session key is missing or expired, and if so, redirects users trying to access the OTP verification page back to the forgot password form.
+~~~> 
+project me middleware.py ki file banao  
+
+from django.shortcuts import redirect
+class BlockExpiredOTPAccessMiddleware:
+    def __init__(self, get_response):
+        self.get_response = get_response
+
+    def __call__(self, request):
+        if request.path == "/verify-otp/":
+            otp = request.session.get("otp")
+            if otp is None:
+                return redirect("forgot_password")
+        response = self.get_response(request)
+        return response

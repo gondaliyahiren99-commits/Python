@@ -1,0 +1,102 @@
+Q1.Create a Product model for a Flipkart-style app with fields: name, price, and category, then use Django's ModelForm to build a form for adding new products.
+~~~> 
+from django.shortcuts import render, redirect
+from .forms import ProductForm
+def add_product(request):
+    if request.method == "POST":
+        form = ProductForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("add_product")
+    else:
+        form = ProductForm()
+    return render(request,"add_product.html",{"form": form})
+Q2.Build a view in Django that displays a list of all products from your Product model, showing name and price in a table, with an 'Edit' and 'Delete' button for each product.
+~~~> 
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Products</title>
+    </head>
+    <body>
+        <h2>Product List</h2>
+        <table border="1">
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Action</th>
+            </tr>
+            {% for product in products %}
+            <tr>
+                <td>{{ product.name }}</td>
+                <td>{{ product.price }}</td>
+                <td>
+                    <a href="{% url 'edit_product' product.id %}">Edit</a>
+                    <a href="{% url 'delete_product' product.id %}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>        
+    </body>
+</html>
+
+
+Q3.Implement the edit feature for your Product model: clicking 'Edit' should open a pre-filled ModelForm allowing the user to update the product details and save changes.
+~~~> 
+from django.shortcuts import render, redirect
+from .models import Product
+from .forms import ProductForm
+def product_list(request):
+    products = Product.objects.all()
+    return render(
+        request,
+        "product_list.html",
+        {
+            "products": products
+        }
+    )
+def edit_product(request, id):
+    product = Product.objects.get(id=id)
+    if request.method == "POST":
+        form = ProductForm(
+            request.POST,
+            instance=product
+        )
+        if form.is_valid():
+            form.save()
+            return redirect("product_list")
+    else:
+        form = ProductForm(instance=product)
+    return render( request, "edit_product.html",{"form": form})
+
+
+Q4.Add a delete confirmation page: when the user clicks 'Delete' on a product, show a confirmation page with the product name and 'Yes, delete' and 'Cancel' options before actually deleting.
+~~~> 
+from django.shortcuts import render, redirect
+from .models import Product
+def product_list(request):
+    products = Product.objects.all()
+    return render(request,"product_list.html",{"products": products})
+
+def delete_product(request, id):
+    product = Product.objects.get(id=id)
+    if request.method == "POST":
+        product.delete()
+        return redirect("product_list")
+    return render(request,"delete_product.html",{"product": product})
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Delete Product</title>
+    </head>
+    <body>
+        <h2>Delete Product</h2>
+        <p>Are you sure you want to delete<strong>{{ product.name }}</strong> ?</p>
+        <form method="POST">
+            {% csrf_token %}
+            <button type="submit">Yes, Delete</button>
+            <a href="{% url 'product_list' %}">Cancel</a>
+        </form>
+    </body>
+</html>

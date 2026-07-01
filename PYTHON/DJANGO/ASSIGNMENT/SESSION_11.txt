@@ -1,0 +1,90 @@
+1.Set up MEDIA_ROOT and MEDIA_URL in your Django project's settings.py so that uploaded media files are stored in a folder named 'user_uploads' and can be accessed via '/media/'.
+~~>
+seting.py me 
+from pathlib import Path
+BASE_DIR = Path(__file__).resolve().parent.parent
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "user_uploads"
+
+from django.contrib import admin
+from django.urls import path, include
+
+from django.conf import settings
+from django.conf.urls.static import static
+
+urlpatterns = [
+    path("admin/", admin.site.urls),
+    path("", include("myapp.urls"))
+] + static( settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+2.Create a Django model called InfluencerProfile with fields: user (OneToOneField), display_name (CharField), bio (TextField), and profile_pic (ImageField). Ensure profile_pic uploads to 'profile_pics/'.
+from django.db import models
+from django.contrib.auth.models import User
+
+class InfluencerProfile(models.Model):
+    user = models.OneToOneField( User,on_delete=models.CASCADE)
+    display_name = models.CharField(max_length=100)
+    bio = models.TextField()
+    profile_pic = models.ImageField(upload_to="profile_pics/")
+
+    def __str__(self):
+        return self.display_name
+    
+    python manage.py makemigrations
+    python manage.py migrate
+
+3.Build a profile edit page where users can update their display name, bio, and upload a new profile picture, similar to editing your Instagram profile.
+from django.shortcuts import render, redirect
+from .models import InfluencerProfile
+from .forms import InfluencerProfileForm
+
+def edit_profile(request):
+    profile = InfluencerProfile.objects.get(user=request.user)
+    if request.method == "POST":
+        form = InfluencerProfileForm(
+            request.POST,
+            request.FILES,
+            instance=profile
+        )
+        if form.is_valid():
+            form.save()
+            return redirect("edit_profile")
+    else:
+        form = InfluencerProfileForm(instance=profile)
+
+    return render(request,"edit_profile.html",{"form": form})
+
+
+4.Display the uploaded profile picture on the user's profile page, falling back to a default image if no picture is uploaded.Use the MEDIA_URL setting and check if profile_pic exists for the user.
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Profile</title>
+    </head>
+    <body>
+        <h2>{{ profile.display_name }}</h2>
+        {% if profile.profile_pic %}
+        <img src="{{ profile.profile_pic.url }}" width="200" height="200">
+        {% else %}
+        <img src="/media/default.png" width="200" height="200">
+        {% endif %}
+        <p> {{ profile.bio }}</p>
+    </body>
+</html>
+5.Add a phone number field to your InfluencerProfile model, update the edit form to allow changing it, and validate that the phone number is exactly 10 digits. Show an error message if the phone number is invalid.
+
+from django import forms
+from .models import InfluencerProfile
+class InfluencerProfileForm(forms.ModelForm):
+    class Meta:
+        model = InfluencerProfile
+        fields = ["display_name",bio","phone_number","profile_pic"]
+
+    def clean_phone_number(self):
+        phone = self.cleaned_data["phone_number"]
+        if len(phone) != 10 or not phone.isdigit():
+            raise forms.ValidationError(
+                "Phone number must be exactly 10 digits."
+            )
+        return phone

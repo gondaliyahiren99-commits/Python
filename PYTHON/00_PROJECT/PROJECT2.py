@@ -59,7 +59,7 @@ while status:
             if USER_SCORE_BORD[2]==6:
                 USER_SCORE_BORD[2]=0
                 USER_SCORE_BORD[3]+=1
-            if USER_SCORE_BORD[3]<20 and USER_SCORE_BORD[1]<10:
+            if USER_SCORE_BORD[3]<1 and USER_SCORE_BORD[1]<2:
                 BALL_PROB=[0,1,2,3,4,5,6,"WICKET","WIDE","NO BALL"]
                 input("PressEnter>>>>>>".upper())
                 if input:
@@ -94,7 +94,7 @@ while status:
                         OP_SCORE_BOARD[2]=0
                         OP_SCORE_BOARD[3]+=1
 
-                    if OP_SCORE_BOARD[3]<20 and OP_SCORE_BOARD[1]<10:
+                    if OP_SCORE_BOARD[3]<1 and OP_SCORE_BOARD[1]<2:
                         if OP_SCORE_BOARD[0]<USER_SCORE_BORD[0]:
                             BALL_PROB=[0,1,2,3,4,5,6,"WICKET","WIDE","NO BALL"]
                             input(f"PressEnter to balling {OP_SCORE_BOARD[2]}>>>>>>>".upper())

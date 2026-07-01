@@ -1,0 +1,401 @@
+{% load static %}
+<html lang="en">
+
+<head>
+  <!-- ================================================
+       Meta & Title
+  ================================================ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="JobConnect – Sign in to your Job Seeker account and explore thousands of career opportunities." />
+  <meta name="keywords" content="job seeker login, job portal, career opportunities, find jobs" />
+  <meta name="author" content="JobConnect" />
+  <title>Job Seeker Login | JobConnect</title>
+
+  <!-- ================================================
+       Bootstrap 5 CDN
+  ================================================ -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+
+  <!-- ================================================
+       Bootstrap Icons CDN
+  ================================================ -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+
+  <!-- ================================================
+       Google Fonts – Inter
+  ================================================ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+
+  <!-- ================================================
+       Custom CSS
+  ================================================ -->
+  <link rel="stylesheet" href="jobseeker-login.css" />
+</head>
+
+<body>
+
+  <!-- ================================================
+       MAIN WRAPPER
+  ================================================ -->
+  <main class="login-wrapper" id="main-content" role="main">
+    <div class="container-fluid h-100 p-0">
+      <div class="row g-0 h-100">
+
+        <!-- ============================================
+             LEFT — HERO SECTION
+        ============================================ -->
+        <div class="col-lg-6 d-none d-lg-flex hero-section" aria-label="Hero: Find Your Dream Job">
+
+          <!-- Decorative Background Blobs -->
+          <div class="hero-blob hero-blob--1" aria-hidden="true"></div>
+          <div class="hero-blob hero-blob--2" aria-hidden="true"></div>
+          <div class="hero-blob hero-blob--3" aria-hidden="true"></div>
+
+          <!-- Floating Decorative Icons -->
+          <div class="floating-icon floating-icon--briefcase" aria-hidden="true">
+            <i class="bi bi-briefcase-fill"></i>
+          </div>
+          <div class="floating-icon floating-icon--star" aria-hidden="true">
+            <i class="bi bi-star-fill"></i>
+          </div>
+          <div class="floating-icon floating-icon--graph" aria-hidden="true">
+            <i class="bi bi-graph-up-arrow"></i>
+          </div>
+          <div class="floating-icon floating-icon--people" aria-hidden="true">
+            <i class="bi bi-people-fill"></i>
+          </div>
+          <div class="floating-icon floating-icon--check" aria-hidden="true">
+            <i class="bi bi-patch-check-fill"></i>
+          </div>
+
+          <!-- Hero Content -->
+          <div class="hero-content">
+
+            <!-- Brand Logo in Hero -->
+            <div class="hero-brand" aria-label="JobConnect Logo">
+              <div class="hero-brand__icon" aria-hidden="true">
+                <i class="bi bi-lightning-charge-fill"></i>
+              </div>
+              <span class="hero-brand__name">JobConnect</span>
+            </div>
+
+            <!-- Illustration Placeholder -->
+            <div class="hero-illustration" aria-label="Professional job seeker illustration">
+              <div class="illustration-card illustration-card--main">
+                <div class="illustration-avatar" aria-hidden="true">
+                  <i class="bi bi-person-workspace"></i>
+                </div>
+                <div class="illustration-info">
+                  <p class="illustration-info__name">Sarah Johnson</p>
+                  <p class="illustration-info__role">Senior UX Designer</p>
+                  <div class="illustration-info__tags" aria-label="Skills">
+                    <span class="skill-tag">UI/UX</span>
+                    <span class="skill-tag">Figma</span>
+                    <span class="skill-tag">React</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Floating Mini Cards -->
+              <div class="mini-card mini-card--jobs" aria-label="Jobs available">
+                <i class="bi bi-briefcase-fill" aria-hidden="true"></i>
+                <div>
+                  <p class="mini-card__number">12,840</p>
+                  <p class="mini-card__label">Jobs Available</p>
+                </div>
+              </div>
+
+              <div class="mini-card mini-card--hired" aria-label="People hired this week">
+                <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
+                <div>
+                  <p class="mini-card__number">+2,300</p>
+                  <p class="mini-card__label">Hired This Week</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Hero Headings -->
+            <h1 class="hero-heading">
+              Find Your <span class="hero-heading__accent">Dream Job</span>
+            </h1>
+            <p class="hero-subtitle">
+              Connect with top companies and explore thousands of opportunities tailored just for you.
+            </p>
+
+            <!-- Trust Badges -->
+            <div class="hero-trust" aria-label="Platform statistics">
+              <div class="trust-badge">
+                <span class="trust-badge__number">50K+</span>
+                <span class="trust-badge__label">Companies</span>
+              </div>
+              <div class="trust-divider" aria-hidden="true"></div>
+              <div class="trust-badge">
+                <span class="trust-badge__number">1.2M+</span>
+                <span class="trust-badge__label">Job Listings</span>
+              </div>
+              <div class="trust-divider" aria-hidden="true"></div>
+              <div class="trust-badge">
+                <span class="trust-badge__number">98%</span>
+                <span class="trust-badge__label">Success Rate</span>
+              </div>
+            </div>
+
+          </div><!-- /hero-content -->
+        </div><!-- /hero-section -->
+
+        <!-- ============================================
+             RIGHT — LOGIN FORM SECTION
+        ============================================ -->
+        <div class="col-lg-6 col-12 form-section d-flex align-items-center justify-content-center">
+
+          <!-- Form Card -->
+          <div class="login-card" role="region" aria-labelledby="login-heading">
+
+            <!-- Logo Area -->
+            <div class="login-card__logo" aria-label="JobConnect brand logo">
+              <div class="logo-icon" aria-hidden="true">
+                <i class="bi bi-lightning-charge-fill"></i>
+              </div>
+              <span class="logo-text">JobConnect</span>
+            </div>
+
+            <!-- Welcome Text -->
+            <div class="login-card__header">
+              <h2 class="login-card__title" id="login-heading">Welcome Back 👋</h2>
+              <p class="login-card__subtitle">Sign in to continue your job search journey.</p>
+            </div>
+
+            <!-- Login Form -->
+            <form class="login-form" id="jobseeker-login-form" novalidate aria-label="Job seeker login form">
+
+              <!-- Email Field -->
+              <div class="form-group-custom">
+                <label class="form-label-custom" for="login-email">
+                  <i class="bi bi-envelope-fill" aria-hidden="true"></i> Email Address
+                </label>
+                <div class="input-wrapper">
+                  <input
+                    type="email"
+                    class="form-control form-input-custom"
+                    id="login-email"
+                    name="email"
+                    placeholder="you@example.com"
+                    autocomplete="email"
+                    required
+                    aria-required="true"
+                    aria-describedby="email-error"
+                  />
+                  <span class="input-icon" aria-hidden="true">
+                    <i class="bi bi-envelope"></i>
+                  </span>
+                </div>
+                <div class="invalid-feedback" id="email-error" role="alert">
+                  Please enter a valid email address.
+                </div>
+              </div>
+
+              <!-- Password Field -->
+              <div class="form-group-custom">
+                <label class="form-label-custom" for="login-password">
+                  <i class="bi bi-lock-fill" aria-hidden="true"></i> Password
+                </label>
+                <div class="input-wrapper">
+                  <input
+                    type="password"
+                    class="form-control form-input-custom"
+                    id="login-password"
+                    name="password"
+                    placeholder="Enter your password"
+                    autocomplete="current-password"
+                    required
+                    aria-required="true"
+                    aria-describedby="password-error"
+                  />
+                  <span class="input-icon" aria-hidden="true">
+                    <i class="bi bi-lock"></i>
+                  </span>
+                  <!-- Show / Hide Password Toggle -->
+                  <button
+                    type="button"
+                    class="password-toggle"
+                    id="password-toggle-btn"
+                    aria-label="Toggle password visibility"
+                    aria-pressed="false"
+                    title="Show or hide password"
+                  >
+                    <i class="bi bi-eye" id="password-toggle-icon" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <div class="invalid-feedback" id="password-error" role="alert">
+                  Password must be at least 8 characters.
+                </div>
+              </div>
+
+              <!-- Remember Me & Forgot Password -->
+              <div class="form-options">
+                <div class="form-check remember-check">
+                  <input
+                    class="form-check-input custom-checkbox"
+                    type="checkbox"
+                    id="remember-me"
+                    name="remember_me"
+                  />
+                  <label class="form-check-label remember-label" for="remember-me">
+                    Remember me
+                  </label>
+                </div>
+                <a href="#" class="forgot-link" aria-label="Forgot your password? Reset it here">
+                  Forgot Password?
+                </a>
+              </div>
+
+              <!-- Login Button -->
+              <button
+                type="submit"
+                class="btn btn-login"
+                id="login-submit-btn"
+                aria-label="Sign in to your account"
+              >
+                <span class="btn-login__text">Sign In</span>
+                <i class="bi bi-arrow-right-short btn-login__icon" aria-hidden="true"></i>
+                <!-- Spinner shown on loading -->
+                <span class="btn-login__spinner spinner-border spinner-border-sm d-none" role="status" aria-live="polite" aria-label="Signing in…"></span>
+              </button>
+
+            </form>
+            <!-- /login-form -->
+
+            <!-- OR Divider -->
+            <div class="divider-or" aria-label="Or continue with">
+              <span class="divider-or__line" aria-hidden="true"></span>
+              <span class="divider-or__text">OR</span>
+              <span class="divider-or__line" aria-hidden="true"></span>
+            </div>
+
+            <!-- Social Login Buttons -->
+            <div class="social-login" aria-label="Social sign-in options">
+
+              <!-- Google -->
+              <button
+                type="button"
+                class="btn btn-social btn-social--google"
+                id="google-login-btn"
+                aria-label="Continue with Google"
+              >
+                <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                  <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                  <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                  <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                </svg>
+                Continue with Google
+              </button>
+
+              <!-- LinkedIn -->
+              <button
+                type="button"
+                class="btn btn-social btn-social--linkedin"
+                id="linkedin-login-btn"
+                aria-label="Continue with LinkedIn"
+              >
+                <i class="bi bi-linkedin social-icon--li" aria-hidden="true"></i>
+                Continue with LinkedIn
+              </button>
+
+            </div>
+            <!-- /social-login -->
+
+            <!-- Sign Up Link -->
+            <p class="signup-link" role="navigation" aria-label="Create a new account">
+              Don't have an account?
+              <a href="#" class="signup-link__anchor" aria-label="Create a free account">
+                Create Free Account <i class="bi bi-arrow-right" aria-hidden="true"></i>
+              </a>
+            </p>
+
+            <!-- Recruiter Switch -->
+            <p class="recruiter-switch" role="navigation" aria-label="Switch to recruiter login">
+              Are you a recruiter?
+              <a href="#" class="recruiter-switch__anchor" aria-label="Go to recruiter login">
+                Recruiter Login
+              </a>
+            </p>
+
+          </div>
+          <!-- /login-card -->
+
+        </div>
+        <!-- /form-section -->
+
+      </div>
+    </div>
+  </main>
+  <!-- /login-wrapper -->
+
+  <!-- ================================================
+       Bootstrap 5 JS Bundle (Popper + Bootstrap)
+  ================================================ -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc4s9bIOgUxi8T/jzmL2FExMZqXvRoKK+Q9wMNfEsO0p"
+    crossorigin="anonymous"></script>
+
+  <!-- ================================================
+       Password Toggle Script (no inline JS)
+  ================================================ -->
+  <script>
+    /* ─── Password Show/Hide ─── */
+    (function () {
+      const toggleBtn = document.getElementById('password-toggle-btn');
+      const passwordInput = document.getElementById('login-password');
+      const toggleIcon = document.getElementById('password-toggle-icon');
+
+      if (toggleBtn && passwordInput && toggleIcon) {
+        toggleBtn.addEventListener('click', function () {
+          const isPassword = passwordInput.type === 'password';
+          passwordInput.type = isPassword ? 'text' : 'password';
+          toggleIcon.className = isPassword ? 'bi bi-eye-slash' : 'bi bi-eye';
+          toggleBtn.setAttribute('aria-pressed', isPassword ? 'true' : 'false');
+          toggleBtn.setAttribute('aria-label', isPassword ? 'Hide password' : 'Show password');
+        });
+      }
+    })();
+
+    /* ─── Login Form Loading State ─── */
+    (function () {
+      const form = document.getElementById('jobseeker-login-form');
+      const submitBtn = document.getElementById('login-submit-btn');
+
+      if (form && submitBtn) {
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          const btnText = submitBtn.querySelector('.btn-login__text');
+          const btnIcon = submitBtn.querySelector('.btn-login__icon');
+          const btnSpinner = submitBtn.querySelector('.btn-login__spinner');
+
+          /* Show loading state */
+          submitBtn.disabled = true;
+          btnText.textContent = 'Signing In…';
+          btnIcon.classList.add('d-none');
+          btnSpinner.classList.remove('d-none');
+
+          /* Simulate async – remove in production */
+          setTimeout(function () {
+            submitBtn.disabled = false;
+            btnText.textContent = 'Sign In';
+            btnIcon.classList.remove('d-none');
+            btnSpinner.classList.add('d-none');
+          }, 2500);
+        });
+      }
+    })();
+  </script>
+
+</body>
+</html>

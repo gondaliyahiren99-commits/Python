@@ -1,0 +1,11 @@
+1.Register for a free Google Maps API key and write a Python script that takes an address (e.g., 'IIM Ahmedabad, Gujarat') and prints its latitude and longitude using the Google Geocoding API.
+
+
+2.Create a Django view called show_restaurant_location that takes a restaurant's address as input and displays a web page with an embedded Google Map showing the restaurant's location.Use the Google Maps Embed API and pass the latitude and longitude to the template.
+
+
+3.Write a Python function find_nearby_cafes(user_lat, user_lng, cafes) where cafes is a list of dictionaries with 'name', 'lat', and 'lng'. Return all cafes within 3 km of the user's location using the Haversine formula.<br><br><em><strong>Constraint:</strong> Do not use any geolocation libraries—implement the distance calculation manually.</em>
+
+
+
+4.Build a Django view called search_by_distance that allows users to enter their current address and see a list of Flipkart pickup points (use at least 5 hardcoded addresses) sorted by nearest distance on the results page.
