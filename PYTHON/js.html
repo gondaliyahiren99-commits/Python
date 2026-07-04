@@ -1,0 +1,77 @@
+<input type="text" id="name" placeholder="Enter Name">
+<button onclick="add()">Add</button>
+
+<div id="myid"></div>
+
+<script>
+    function add() {
+        // Input field ko select karo
+        let name = document.getElementById("name");
+
+        // Div ko select karo
+        let div = document.getElementById("myid");
+
+        // Naya h3 element banao
+        let h3 = document.createElement("h3");
+
+        // Input ki value h3 me set karo
+        h3.innerText = name.value;
+
+        // h3 ko div ke andar add karo
+        div.appendChild(h3);
+
+        // Input clear kar do
+        name.value = "";
+    }
+</script>
+
+==============================================================================================================================
+
+<input type="text" id="name" placeholder="Enter Name">
+<button onclick="add()">Add</button>
+
+<ul id="myList"></ul>
+
+<script>
+    function add() {
+        let name = document.getElementById("name");
+        let list = document.getElementById("myList");
+
+        
+        let li = document.createElement("li");
+
+        
+        li.innerText = name.value;
+
+        
+        list.append(li);
+
+        
+        name.value = "";
+    }
+</script>
+
+==========================================================================================================================
+<style>
+    table
+    {
+        border_collaps:collaps;
+        width=50;
+    }
+    tr,td
+    {
+        boreder : 3px solid black;
+    }
+</style>
+
+<input type="text" id="name" placeholder="Enter Name"/>
+<input type="text" id="lname" placeholder="Enter last_name"/>
+<input type="text" id="subject" placeholder="Enter subject"/>
+
+<script>
+    let name= document.getElementById("name")
+    let lname= document.getElementById("name")
+    let subject= document.getElementById("name")
+
+
+<script/>
