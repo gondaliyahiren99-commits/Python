@@ -14,10 +14,11 @@ Q3.Customize the Restaurant admin by displaying name, cuisine, and rating in the
     from django.contrib import admin
     from .models import Restaurant
     class RestaurantAdmin(admin.ModelAdmin):
-        list_display = ('name', 'cuisine', 'rating')
-
+        list_display =['name', 'cuisine', 'rating']
     admin.site.register(Restaurant, RestaurantAdmin)
 
+    ya fir class ke upar 
+    @admin.register(Restaurant)
 Q4.Add search functionality in the Restaurant admin so you can search restaurants by name or cuisine using the search_fields option.
  ~~>  
     from django.contrib import admin

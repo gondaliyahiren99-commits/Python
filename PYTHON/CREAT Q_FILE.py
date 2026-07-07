@@ -310,10 +310,11 @@ Q 135: Catching Multiple Exceptions with Specific Messages
 Write a function perform_operation(a, b, operation) that performs a mathematical operation (addition, subtraction, etc.) based on the input. Use exception handling to catch and print specific messages for ZeroDivisionError, ValueError, and TypeError.""".split("Q")
 Q=reversed(question)
 import os 
-os.mkdir("HELLO")
+os.mkdir("Hiren1")
 Q="QUE"
-os.chdir(os.getcwd()+"\\HELLO")
+os.chdir(os.getcwd()+"\\Hiren1")
 for i in range(135,0,-1) :
     f = open(f"EX_{i}.py","w")
     f.write(f"\"\"\"\nQUE {question[i].upper()}\"\"\"")
     f.close()
+print("Ok")

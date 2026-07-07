@@ -12,5 +12,5 @@ input("prompt message")
 
 """
 
-name = input("Enter  your name")
+name = input("Enter your name")
 print("hi", name)

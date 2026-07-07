@@ -21,6 +21,6 @@ class Restaurant(models.Model):
     def __str__(self):
         return self.name
 
-class Resturant_admin(admin.ModelAdmin):
-    list_display = ('name','rating','location','cuisine')
-    search_fields = ('name', 'location')
+# class Resturant_admin(admin.ModelAdmin):
+#     list_display = ('name','rating','location','cuisine')
+#     search_fields = ('name', 'location',)
